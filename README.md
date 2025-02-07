@@ -1,8 +1,8 @@
-# Giardino-Digitale
+# blank
 
-🌱 Giardino Digitale per Fondazione Cascina Cotica
+blank
 
-✨ **Tech Stack:**
+## Attributes
 
-- Costruito con **Payload CMS**
-- Utilizza **React** e **Next.js**
+- **Database**: mongodb
+- **Storage Adapter**: localDisk
