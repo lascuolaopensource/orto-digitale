@@ -28,8 +28,12 @@ export interface Config {
   db: {
     defaultIDType: string;
   };
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    giardino: Giardino;
+  };
+  globalsSelect: {
+    giardino: GiardinoSelect<false> | GiardinoSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -214,6 +218,288 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "giardino".
+ */
+export interface Giardino {
+  id: string;
+  Atelier?: {
+    'testo-atelier'?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  Compostiera?: {
+    'testo-compostiera'?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  Alberi?: {
+    'testo-alberi'?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  'Ingresso orto'?: {
+    'testo-ingresso-orto'?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  'Orto Digitale'?: {
+    'testo-orto-digitale'?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  'Percorso Alimurgico'?: {
+    'testo-percorso-alimurgico'?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  'Percorso Aromatico'?: {
+    'testo-percorso-aromatico'?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  'Ricettario di Quartiere'?: {
+    'testo-ricettario-di-quartiere'?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  "Serra d'Artista"?: {
+    'testo-serra-d-artista'?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  Serra?: {
+    'testo-serra'?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  Tapee?: {
+    'testo-tapee'?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  'Vasche CPS'?: {
+    'testo-vasche-cps'?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "giardino_select".
+ */
+export interface GiardinoSelect<T extends boolean = true> {
+  Atelier?:
+    | T
+    | {
+        'testo-atelier'?: T;
+      };
+  Compostiera?:
+    | T
+    | {
+        'testo-compostiera'?: T;
+      };
+  Alberi?:
+    | T
+    | {
+        'testo-alberi'?: T;
+      };
+  'Ingresso orto'?:
+    | T
+    | {
+        'testo-ingresso-orto'?: T;
+      };
+  'Orto Digitale'?:
+    | T
+    | {
+        'testo-orto-digitale'?: T;
+      };
+  'Percorso Alimurgico'?:
+    | T
+    | {
+        'testo-percorso-alimurgico'?: T;
+      };
+  'Percorso Aromatico'?:
+    | T
+    | {
+        'testo-percorso-aromatico'?: T;
+      };
+  'Ricettario di Quartiere'?:
+    | T
+    | {
+        'testo-ricettario-di-quartiere'?: T;
+      };
+  "Serra d'Artista"?:
+    | T
+    | {
+        'testo-serra-d-artista'?: T;
+      };
+  Serra?:
+    | T
+    | {
+        'testo-serra'?: T;
+      };
+  Tapee?:
+    | T
+    | {
+        'testo-tapee'?: T;
+      };
+  'Vasche CPS'?:
+    | T
+    | {
+        'testo-vasche-cps'?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

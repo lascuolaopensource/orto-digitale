@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import 'tailwindcss/preflight';
+@tailwind utilities;
 
 :root {
   --font-mono: 'Roboto Mono', monospace;
@@ -11,8 +13,7 @@
 html {
   font-size: 18px;
   line-height: 32px;
-
-  background: rgb(220, 207, 207);
+  background: bg-garden-bg;
   -webkit-font-smoothing: antialiased;
 }
 
