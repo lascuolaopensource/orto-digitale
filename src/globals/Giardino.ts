@@ -1,6 +1,6 @@
 import type { GlobalConfig } from 'payload'
 
-export const Girdino: GlobalConfig = {
+export const Giardino: GlobalConfig = {
   label: 'Giardino',
   access: {
     read: () => true,
