@@ -1,0 +1,61 @@
+services:
+  db:
+    image: mongo:7
+    container_name: db_giardino_digitale
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - 27017:27017
+    volumes:
+      - 'db_data:/data/db'
+  minio:
+    image: 'quay.io/minio/minio:latest'
+    container_name: minio_giardino_digitale
+    command: 'server /data --console-address ":9001"'
+    ports:
+      - 9000:9000
+      - 9001:9001
+    environment:
+      - MINIO_ROOT_USER=${S3_ACCESS_KEY_ID}
+      - MINIO_ROOT_PASSWORD=${S3_SECRET_ACCESS_KEY}
+    volumes:
+      - 'minio_data:/data'
+  email:
+    image: inbucket/inbucket
+    ports:
+      - '2500:2500'
+      - '1100:1100'
+      - '8000:8000'
+    environment:
+      INBUCKET_LOGLEVEL: 'info'
+      INBUCKET_MAILBOXNAMING: 'local'
+      INBUCKET_SMTP_ADDR: '0.0.0.0:2500'
+      INBUCKET_SMTP_DOMAIN: 'inbucket'
+      INBUCKET_SMTP_MAXRECIPIENTS: '200'
+      INBUCKET_SMTP_MAXMESSAGEBYTES: '10240000'
+      INBUCKET_SMTP_DEFAULTACCEPT: 'true'
+      INBUCKET_SMTP_REJECTDOMAINS: ''
+      INBUCKET_SMTP_DEFAULTSTORE: 'true'
+      INBUCKET_SMTP_DISCARDDOMAINS: ''
+      INBUCKET_SMTP_TIMEOUT: '300s'
+      INBUCKET_SMTP_TLSENABLED: 'false'
+      INBUCKET_POP3_ADDR: '0.0.0.0:1100'
+      INBUCKET_POP3_DOMAIN: 'inbucket'
+      INBUCKET_POP3_TIMEOUT: '600s'
+      INBUCKET_WEB_BASEPATH: ''
+      INBUCKET_WEB_ADDR: '0.0.0.0:8000'
+      INBUCKET_WEB_MONITORVISIBLE: 'true'
+      INBUCKET_WEB_MONITORHISTORY: '30'
+      INBUCKET_WEB_PPROF: 'false'
+      INBUCKET_STORAGE_TYPE: 'memory'
+      INBUCKET_STORAGE_PARAMS: ''
+      INBUCKET_STORAGE_RETENTIONPERIOD: '24h'
+      INBUCKET_STORAGE_RETENTIONSLEEP: '50ms'
+      INBUCKET_STORAGE_MAILBOXMSGCAP: '500'
+
+volumes:
+  db_data:
+    driver: local
+  minio_data:
+    driver: local
