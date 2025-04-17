@@ -5,7 +5,7 @@ import { routing } from '@/i18n/routing'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { Navbar } from '@/components/navbar'
-
+import Footer from '@/components/footer/footer'
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
@@ -27,6 +27,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           <main className="flex-grow px-6">{children}</main>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
