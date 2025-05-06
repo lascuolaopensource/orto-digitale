@@ -19,7 +19,7 @@ export function Navbar() {
   const t = useTranslations('navbar')
 
   return (
-    <div className="sticky top-0 z-50 w-full">
+    <div className="w-full">
       <div className="relative flex h-16 w-full items-center justify-start px-4">
         <NavigationMenu className="mr-auto">
           <NavigationMenuList>
@@ -31,21 +31,21 @@ export function Navbar() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
+              <Link href="/aree" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   {t('allAreas')}
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
+              <Link href="/piante" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   {t('explorePlants')}
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
+              <Link href="/ricettario" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   {t('recipes')}
                 </NavigationMenuLink>

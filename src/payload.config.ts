@@ -9,11 +9,29 @@ import sharp from 'sharp'
 // Collections
 import { User } from './collections/User'
 import { Media } from './collections/Media'
+import { Piante } from './collections/Piante'
+import { Ricette } from './collections/Ricette'
+// Globals
+import { Aree } from './collections/globals/Aree'
+import { AdminTools } from './collections/globals/AdminTools'
 // Storage
 import { s3Storage } from '@payloadcms/storage-s3'
 import { defaultLexical } from './fields/defaultLexical'
 
 import { seoPlugin } from '@payloadcms/plugin-seo'
+
+import {
+  lexicalEditor,
+  BoldFeature,
+  ParagraphFeature,
+  HeadingFeature,
+  InlineToolbarFeature,
+  ItalicFeature,
+  LinkFeature,
+  OrderedListFeature,
+  UnderlineFeature,
+  UnorderedListFeature,
+} from '@payloadcms/richtext-lexical'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -59,9 +77,26 @@ export default buildConfig({
         },
       ],
     },
+    components: {
+      // Rimuoviamo il componente Nav personalizzato che sta causando problemi
+      // Nav: '/components/admin/CustomNav',
+    },
   },
-  collections: [User, Media],
-  editor: defaultLexical,
+  collections: [User, Media, Piante, Ricette],
+  globals: [Aree, AdminTools],
+  editor: lexicalEditor({
+    features: () => [
+      InlineToolbarFeature(),
+      ParagraphFeature(),
+      BoldFeature(),
+      ItalicFeature(),
+      UnderlineFeature(),
+      LinkFeature(),
+      HeadingFeature(),
+      OrderedListFeature(),
+      UnorderedListFeature(),
+    ],
+  }),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

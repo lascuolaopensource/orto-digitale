@@ -3,6 +3,29 @@
     "home": "Giardino Digitale",
     "allAreas": "Tutte le aree",
     "explorePlants": "Esplora le piante",
-    "recipes": "Ricette"
+    "recipes": "Ricettario"
+  },
+  "plants": {
+    "ourPlants": "Le nostre piante",
+    "cardShortDefault": "Scopri di più su questa pianta",
+    "cardPlantDetails": "Dettagli pianta",
+    "cardExploreLinkText": "Esplora la pianta"
+  },
+  "garden": {
+    "estate": "Estate",
+    "inverno": "Inverno"
+  },
+  "aree": {
+    "plantsInThisArea": "Piante in questa area",
+    "areaNotFound": "Area non trovata",
+    "backToAreas": "Torna alle aree",
+    "default_description": "Scopri di più su questa area del giardino",
+    "exploreLinkText": "Esplora l'area",
+    "noPlantsInArea": "Nessuna pianta in questa area"
+  },
+  "recipes": {
+    "ourRecipes": "Le nostre ricette",
+    "cardShortDefault": "Scopri di più su questa ricetta",
+    "details": "Dettagli ricetta"
   }
 }

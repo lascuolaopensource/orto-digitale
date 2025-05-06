@@ -28,7 +28,7 @@ export function LocaleSwitcher() {
 
   return (
     <select
-      className="max-w-50 w-full p-2 text-sm"
+      className="max-w-50 w-full bg-[#fefcf1] p-2 text-sm"
       defaultValue={locale}
       disabled={isPending}
       onChange={onSelectChange}
