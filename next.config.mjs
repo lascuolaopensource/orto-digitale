@@ -16,6 +16,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: process.env.NEXT_PUBLIC_DOMAIN.replace('https://', ''),
       },
+      {
+        protocol: process.env.S3_ENDPOINT?.startsWith('https') ? 'https' : 'http',
+        hostname: process.env.S3_ENDPOINT?.replace(/^https?:\/\//, '').split('/')[0], // Extracts hostname
+      },
     ],
   },
   async rewrites() {

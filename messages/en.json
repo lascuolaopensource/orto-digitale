@@ -11,7 +11,7 @@
     "cardPlantDetails": "Plant Details",
     "cardExploreLinkText": "Explore the plant",
     "plantNotFound": "Plant not found",
-    "backToPlants": "← Back to Plants",
+    "backToPlants": "Back to Plants",
     "whereToFindThisPlant": "Where to find this plant",
     "plantsUsed": "Plants used",
     "noPlantsUsed": "No plants used"
@@ -32,7 +32,7 @@
     "ourRecipes": "Our Recipes",
     "cardShortDefault": "Discover more about this recipe",
     "details": "Discover the recipe",
-    "backToRecipes": "← Back to Recipes",
+    "backToRecipes": "Back to Recipes",
     "recipeBy": "Recipe by:",
     "ingredients": "Ingredients",
     "noIngredients": "No ingredients specified",

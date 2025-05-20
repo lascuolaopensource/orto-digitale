@@ -47,9 +47,11 @@ export default async function Piante() {
             <h2 className="mb-3 text-xl font-semibold capitalize transition-colors group-hover:text-primary">
               {plant.name}
             </h2>
-            <p className="text-muted-foreground">{getPlantDescription(plant)}</p>
+            <p className="text-muted-foreground">
+              {plant.content?.short_description || t('plants.cardShortDefault')}
+            </p>
             <span className="mt-4 inline-flex items-center text-sm font-medium text-primary">
-              Dettagli pianta
+              {t('plants.cardPlantDetails')}
               <svg
                 className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5"
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,26 +70,4 @@ export default async function Piante() {
       </div>
     </div>
   )
-}
-
-async function getPlantDescription(plant: any): Promise<string> {
-  const t = await getTranslations()
-  // First check for short_description field
-  if (plant && plant.short_description) {
-    return plant.short_description
-  }
-
-  // Fall back to rich text descrizione field
-  if (plant && plant.descrizione) {
-    // Try to extract text from the rich text field if it exists
-    if (typeof plant.descrizione === 'object' && plant.descrizione?.root?.children?.[0]?.text) {
-      const text = plant.descrizione.root.children
-        .map((child: any) => child.text || '')
-        .join(' ')
-        .trim()
-      return text.substring(0, 100) + (text.length > 100 ? '...' : '')
-    }
-  }
-
-  return t('plants.cardShortDefault')
 }

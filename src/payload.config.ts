@@ -13,10 +13,8 @@ import { Piante } from './collections/Piante'
 import { Ricette } from './collections/Ricette'
 // Globals
 import { Aree } from './collections/globals/Aree'
-import { AdminTools } from './collections/globals/AdminTools'
 // Storage
 import { s3Storage } from '@payloadcms/storage-s3'
-import { defaultLexical } from './fields/defaultLexical'
 
 import { seoPlugin } from '@payloadcms/plugin-seo'
 
@@ -83,7 +81,7 @@ export default buildConfig({
     },
   },
   collections: [User, Media, Piante, Ricette],
-  globals: [Aree, AdminTools],
+  globals: [Aree],
   editor: lexicalEditor({
     features: () => [
       InlineToolbarFeature(),

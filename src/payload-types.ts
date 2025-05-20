@@ -90,11 +90,9 @@ export interface Config {
   };
   globals: {
     aree: Aree;
-    'admin-tools': AdminTool;
   };
   globalsSelect: {
     aree: AreeSelect<false> | AreeSelect<true>;
-    'admin-tools': AdminToolsSelect<false> | AdminToolsSelect<true>;
   };
   locale: 'it' | 'en';
   user: User & {
@@ -805,15 +803,6 @@ export interface Aree {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "admin-tools".
- */
-export interface AdminTool {
-  id: string;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "aree_select".
  */
 export interface AreeSelect<T extends boolean = true> {
@@ -1004,15 +993,6 @@ export interface AreeSelect<T extends boolean = true> {
               piante?: T;
             };
       };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "admin-tools_select".
- */
-export interface AdminToolsSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

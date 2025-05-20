@@ -11,9 +11,9 @@
     "cardPlantDetails": "Dettagli pianta",
     "cardExploreLinkText": "Esplora la pianta",
     "plantNotFound": "Pianta non trovata",
-    "backToPlants": "← Torna alle piante",
+    "backToPlants": "Torna alle piante",
     "whereToFindThisPlant": "Dove trovare questa pianta",
-    "plantsUsed": "Piante utilizzate",
+    "plantsUsed": "Ingredienti nel giardino",
     "noPlantsUsed": "Nessuna pianta utilizzata"
   },
   "garden": {
@@ -21,7 +21,7 @@
     "inverno": "Inverno"
   },
   "aree": {
-    "plantsInThisArea": "Piante in questa area",
+    "plantsInThisArea": "In questa area trovarai:",
     "areaNotFound": "Area non trovata",
     "backToAreas": "Torna alle aree",
     "default_description": "Scopri di più su questa area del giardino",
@@ -32,7 +32,7 @@
     "ourRecipes": "Le nostre ricette",
     "cardShortDefault": "Scopri di più su questa ricetta",
     "details": "Scopri la ricetta",
-    "backToRecipes": "← Torna alle ricette",
+    "backToRecipes": "Torna alle ricette",
     "recipeBy": "Ricetta di:",
     "ingredients": "Ingredienti",
     "noIngredients": "Nessun ingrediente specificato",

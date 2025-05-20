@@ -8,9 +8,12 @@ type BackLinkProps = {
 export function BackLink({ href, label }: BackLinkProps) {
   return (
     <div className="mb-8">
-      <Link href={href} className="inline-flex items-center text-sm font-medium text-primary">
+      <Link
+        href={href}
+        className="group inline-flex items-center text-sm font-medium text-primary transition-colors hover:text-primary/80"
+      >
         <svg
-          className="mr-1 h-4 w-4"
+          className="mr-1 h-4 w-4 transition-transform group-hover:-translate-x-0.5"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
