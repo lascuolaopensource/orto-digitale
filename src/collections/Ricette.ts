@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import * as F from '@/collections/index'
 import { formatSlug } from '@/fields/slug/formatSlug'
+import { lexicalEditor, RelationshipFeature, UploadFeature } from '@payloadcms/richtext-lexical'
 
 export const Ricette: CollectionConfig = {
   slug: 'ricette',
@@ -106,6 +107,26 @@ export const Ricette: CollectionConfig = {
               },
               type: 'richText',
               localized: true,
+              editor: lexicalEditor({
+                features: ({ defaultFeatures }) => [
+                  ...defaultFeatures,
+
+                  UploadFeature({
+                    collections: {
+                      Media: {
+                        fields: [
+                          {
+                            name: 'alt',
+                            type: 'text',
+                            required: true,
+                            localized: true,
+                          },
+                        ],
+                      },
+                    },
+                  }),
+                ],
+              }),
             },
             {
               name: 'piante',

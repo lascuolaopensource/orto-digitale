@@ -6,7 +6,9 @@ import { Link } from '@/i18n/routing'
 import { Aree, Media, Piante } from '@/payload-types'
 import { PlantCard, PlantsList } from '@/components/PlantCard'
 import { MediaDisplay } from '@/components/MediaDisplay'
+import { NotFound } from '@/components/ui/NotFound'
 import { notFound } from 'next/navigation'
+import { BackLink } from '@/components/ui/BackLink'
 
 type PageProps = {
   params: { slug: string }
@@ -33,12 +35,13 @@ export default async function Area({ params }: PageProps) {
   // Not found se il global aree non esiste o l'area specifica non esiste
   if (!areeGlobal || !areaData || typeof areaData !== 'object') {
     return (
-      <div className="flex min-h-[80vh] flex-col items-center justify-center">
-        <h2 className="mb-4 text-2xl font-semibold text-gray-800">{t('aree.areaNotFound')}</h2>
-        <Link href="/aree" className="text-primary hover:underline">
-          {t('aree.backToAreas')}
-        </Link>
-      </div>
+      <NotFound
+        title={t('aree.areaNotFound')}
+        backLink={{
+          href: '/aree',
+          label: t('aree.backToAreas'),
+        }}
+      />
     )
   }
 
@@ -61,6 +64,9 @@ export default async function Area({ params }: PageProps) {
 
   return (
     <div>
+      {/* Back navigation */}
+      <BackLink href="/aree" label={t('aree.backToAreas')} />
+
       <header className="mb-6">
         <h1 className="text-2xl font-bold">{areaData.informazioni?.nome || areaKey}</h1>
       </header>

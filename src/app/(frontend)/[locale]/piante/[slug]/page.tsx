@@ -6,7 +6,9 @@ import Image from 'next/image'
 import { Link } from '@/i18n/routing'
 import { MediaDisplay } from '@/components/MediaDisplay'
 import { PlantAreas } from '@/components/PlantAreas'
+import { NotFound } from '@/components/ui/NotFound'
 import type { Piante as PianteType, Aree, Media } from '@/payload-types'
+import { BackLink } from '@/components/ui/BackLink'
 
 type PageProps = {
   params: Promise<{ slug: string }>
@@ -43,12 +45,13 @@ export default async function PiantaDetail({ params }: PageProps) {
 
   if (!pianta) {
     return (
-      <div className="flex min-h-[80vh] flex-col items-center justify-center">
-        <h2 className="mb-4 text-2xl font-semibold text-gray-800">{t('plants.plantNotFound')}</h2>
-        <Link href="/piante" className="text-primary hover:underline">
-          {t('plants.backToPlants')}
-        </Link>
-      </div>
+      <NotFound
+        title={t('plants.plantNotFound')}
+        backLink={{
+          href: '/piante',
+          label: t('plants.backToPlants'),
+        }}
+      />
     )
   }
 
@@ -86,6 +89,9 @@ export default async function PiantaDetail({ params }: PageProps) {
 
   return (
     <div>
+      {/* Back navigation */}
+      <BackLink href="/piante" label={t('plants.backToPlants')} />
+
       {/* Title at the top */}
       <header className="mb-6">
         <h1 className="text-3xl font-bold">{pianta.name}</h1>
