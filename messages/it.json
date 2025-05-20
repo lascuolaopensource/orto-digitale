@@ -12,7 +12,9 @@
     "cardExploreLinkText": "Esplora la pianta",
     "plantNotFound": "Pianta non trovata",
     "backToPlants": "← Torna alle piante",
-    "whereToFindThisPlant": "Dove trovare questa pianta"
+    "whereToFindThisPlant": "Dove trovare questa pianta",
+    "plantsUsed": "Piante utilizzate",
+    "noPlantsUsed": "Nessuna pianta utilizzata"
   },
   "garden": {
     "estate": "Estate",
@@ -29,7 +31,14 @@
   "recipes": {
     "ourRecipes": "Le nostre ricette",
     "cardShortDefault": "Scopri di più su questa ricetta",
-    "details": "Scopri la ricetta"
+    "details": "Scopri la ricetta",
+    "backToRecipes": "← Torna alle ricette",
+    "recipeBy": "Ricetta di:",
+    "ingredients": "Ingredienti",
+    "noIngredients": "Nessun ingrediente specificato",
+    "preparation": "Preparazione",
+    "noPreparation": "Nessuna preparazione specificata",
+    "recipeNotFound": "Ricetta non trovata"
   },
   "media": {
     "noImageAvailable": "Nessuna immagine disponibile"
