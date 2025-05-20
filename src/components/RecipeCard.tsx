@@ -8,19 +8,20 @@ interface RecipeCardProps {
 }
 
 export function RecipeCard({ recipe, detailsText }: RecipeCardProps) {
+  const firstImageItem = recipe.content?.immagine?.[0]
+  const imageUrl = typeof firstImageItem === 'string' ? firstImageItem : firstImageItem?.url
+
   return (
     <Link
       href={`/ricette/${recipe.id}`}
       key={recipe.id}
       className="group block rounded-lg border border-gray-200 p-6 transition-all hover:border-gray-300 hover:shadow-sm"
     >
-      {recipe.immagine && (
+      {imageUrl && (
         <div className="mb-4 overflow-hidden rounded-md">
           <div className="relative aspect-square w-full">
             <Image
-              src={
-                typeof recipe.immagine === 'string' ? recipe.immagine : recipe.immagine?.url || ''
-              }
+              src={imageUrl}
               alt={recipe.name || 'Immagine ricetta'}
               fill
               className="object-cover transition-transform group-hover:scale-105"
@@ -31,7 +32,7 @@ export function RecipeCard({ recipe, detailsText }: RecipeCardProps) {
       <h2 className="mb-3 text-xl font-semibold capitalize transition-colors group-hover:text-primary">
         {recipe.name}
       </h2>
-      <p className="text-muted-foreground">{recipe.autore}</p>
+      <p className="text-muted-foreground">{recipe.content?.autore}</p>
       <span className="mt-4 inline-flex items-center text-sm font-medium text-primary">
         {detailsText}
         <svg
