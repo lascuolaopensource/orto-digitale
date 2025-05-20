@@ -9,7 +9,10 @@
     "ourPlants": "Le nostre piante",
     "cardShortDefault": "Scopri di più su questa pianta",
     "cardPlantDetails": "Dettagli pianta",
-    "cardExploreLinkText": "Esplora la pianta"
+    "cardExploreLinkText": "Esplora la pianta",
+    "plantNotFound": "Pianta non trovata",
+    "backToPlants": "← Torna alle piante",
+    "whereToFindThisPlant": "Dove trovare questa pianta"
   },
   "garden": {
     "estate": "Estate",
@@ -18,7 +21,7 @@
   "aree": {
     "plantsInThisArea": "Piante in questa area",
     "areaNotFound": "Area non trovata",
-    "backToAreas": "Torna alle aree",
+    "backToAreas": "← Torna alle aree",
     "default_description": "Scopri di più su questa area del giardino",
     "exploreLinkText": "Esplora l'area",
     "noPlantsInArea": "Nessuna pianta in questa area"
@@ -27,5 +30,8 @@
     "ourRecipes": "Le nostre ricette",
     "cardShortDefault": "Scopri di più su questa ricetta",
     "details": "Dettagli ricetta"
+  },
+  "media": {
+    "noImageAvailable": "Nessuna immagine disponibile"
   }
 }

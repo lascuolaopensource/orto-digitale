@@ -36,6 +36,12 @@ export const area = (nome: string): any => {
             type: 'richText',
             localized: true,
           },
+          {
+            name: 'immagine',
+            label: 'immagine',
+            type: 'upload',
+            relationTo: 'media',
+          },
 
           {
             name: 'piante',

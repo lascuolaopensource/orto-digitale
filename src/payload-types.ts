@@ -546,6 +546,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
+      immagine?: (string | null) | Media;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -570,6 +571,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
+      immagine?: (string | null) | Media;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -594,6 +596,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
+      immagine?: (string | null) | Media;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -618,6 +621,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
+      immagine?: (string | null) | Media;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -642,6 +646,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
+      immagine?: (string | null) | Media;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -666,6 +671,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
+      immagine?: (string | null) | Media;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -690,6 +696,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
+      immagine?: (string | null) | Media;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -714,6 +721,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
+      immagine?: (string | null) | Media;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -738,6 +746,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
+      immagine?: (string | null) | Media;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -762,6 +771,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
+      immagine?: (string | null) | Media;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -786,6 +796,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
+      immagine?: (string | null) | Media;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -819,6 +830,7 @@ export interface AreeSelect<T extends boolean = true> {
           | T
           | {
               descrizione?: T;
+              immagine?: T;
               piante?: T;
             };
       };
@@ -835,6 +847,7 @@ export interface AreeSelect<T extends boolean = true> {
           | T
           | {
               descrizione?: T;
+              immagine?: T;
               piante?: T;
             };
       };
@@ -851,6 +864,7 @@ export interface AreeSelect<T extends boolean = true> {
           | T
           | {
               descrizione?: T;
+              immagine?: T;
               piante?: T;
             };
       };
@@ -867,6 +881,7 @@ export interface AreeSelect<T extends boolean = true> {
           | T
           | {
               descrizione?: T;
+              immagine?: T;
               piante?: T;
             };
       };
@@ -883,6 +898,7 @@ export interface AreeSelect<T extends boolean = true> {
           | T
           | {
               descrizione?: T;
+              immagine?: T;
               piante?: T;
             };
       };
@@ -899,6 +915,7 @@ export interface AreeSelect<T extends boolean = true> {
           | T
           | {
               descrizione?: T;
+              immagine?: T;
               piante?: T;
             };
       };
@@ -915,6 +932,7 @@ export interface AreeSelect<T extends boolean = true> {
           | T
           | {
               descrizione?: T;
+              immagine?: T;
               piante?: T;
             };
       };
@@ -931,6 +949,7 @@ export interface AreeSelect<T extends boolean = true> {
           | T
           | {
               descrizione?: T;
+              immagine?: T;
               piante?: T;
             };
       };
@@ -947,6 +966,7 @@ export interface AreeSelect<T extends boolean = true> {
           | T
           | {
               descrizione?: T;
+              immagine?: T;
               piante?: T;
             };
       };
@@ -963,6 +983,7 @@ export interface AreeSelect<T extends boolean = true> {
           | T
           | {
               descrizione?: T;
+              immagine?: T;
               piante?: T;
             };
       };
@@ -979,6 +1000,7 @@ export interface AreeSelect<T extends boolean = true> {
           | T
           | {
               descrizione?: T;
+              immagine?: T;
               piante?: T;
             };
       };

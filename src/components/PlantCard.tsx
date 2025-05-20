@@ -14,18 +14,37 @@ export const PlantCard: React.FC<PlantCardProps> = ({ plant }) => {
     <Link
       href={`/piante/${plant.slug}`}
       key={plant.slug}
-      className="group flex items-start gap-4 rounded-lg border border-black p-4 transition-all hover:border-gray-700 hover:shadow-sm"
+      className="group flex items-start gap-4 rounded-lg border border-gray-200 p-6 transition-all hover:border-gray-300 hover:shadow-sm"
     >
-      {plant.content?.immagine && plant.content?.immagine[0] && (
-        <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-md">
-          <Image
-            src={(plant.content?.immagine?.[0] as Media).sizes?.medium?.url || ''}
-            alt={plant.name || ''}
-            fill
-            className="object-cover"
-          />
+      <div className="flex-shrink-0 overflow-hidden rounded-md">
+        <div className="relative h-24 w-24 bg-gray-100">
+          {plant.content?.immagine && plant.content?.immagine[0] ? (
+            <Image
+              src={(plant.content?.immagine?.[0] as Media).sizes?.medium?.url || ''}
+              alt={plant.name || ''}
+              fill
+              className="object-cover transition-transform group-hover:scale-105"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center text-gray-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+          )}
         </div>
-      )}
+      </div>
       <div className="flex-grow">
         <h3 className="font-semibold capitalize transition-colors group-hover:text-primary">
           {plant.name}
@@ -33,10 +52,10 @@ export const PlantCard: React.FC<PlantCardProps> = ({ plant }) => {
         <p className="text-muted-foreground">
           {plant.content?.short_description || t('plants.cardShortDefault')}
         </p>
-        <span className="mt-1 inline-flex items-center text-sm font-medium text-primary">
-          {t('aree.exploreLinkText')}
+        <span className="mt-2 inline-flex items-center text-sm font-medium text-primary">
+          {t('plants.cardPlantDetails')}
           <svg
-            className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-0.5"
+            className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -50,5 +69,19 @@ export const PlantCard: React.FC<PlantCardProps> = ({ plant }) => {
         </span>
       </div>
     </Link>
+  )
+}
+
+type PlantsListProps = {
+  plants: Piante[]
+}
+
+export const PlantsList: React.FC<PlantsListProps> = ({ plants }) => {
+  return (
+    <div className="w-full space-y-6">
+      {plants.map((plant) => (
+        <PlantCard key={plant.id} plant={plant} />
+      ))}
+    </div>
   )
 }
