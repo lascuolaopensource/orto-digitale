@@ -2,9 +2,7 @@ import { loadDb } from '@/lib/db'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
-import Image from 'next/image'
-import { Link } from '@/i18n/routing'
-import { MediaDisplay } from '@/components/MediaDisplay'
+import { RecipeImageGallery } from '@/components/RecipeImageGallery'
 import { PlantAreas } from '@/components/PlantAreas'
 import { NotFound } from '@/components/ui/NotFound'
 import type { Piante as PianteType, Aree, Media } from '@/payload-types'
@@ -14,11 +12,8 @@ type PageProps = {
   params: Promise<{ slug: string }>
 }
 
-type PiantaMedia = {
-  url: string
-  alt?: string
-  filename?: string
-}
+type AreaKey = keyof Omit<Aree, 'id' | 'updatedAt' | 'createdAt'>
+type SingleArea = Exclude<Aree[AreaKey], undefined>
 
 export default async function PiantaDetail({ params }: PageProps) {
   const db = await loadDb()
@@ -38,6 +33,7 @@ export default async function PiantaDetail({ params }: PageProps) {
       },
     },
     locale: locale,
+    depth: 2,
   })
 
   // Get the first result if exists
@@ -58,32 +54,29 @@ export default async function PiantaDetail({ params }: PageProps) {
   // Fetch all areas to find which ones contain this plant
   const areeGlobal = (await db.findGlobal({
     slug: 'aree',
-    depth: 2,
+    depth: 3,
     locale,
   })) as Aree
 
   // Find areas where this plant is located
-  const areasWithPlant: { id: string; name: string; slug: string; description: string }[] = []
+  const areasWithPlant: [string, SingleArea][] = []
 
   // Loop through all areas and check if this plant is in them
   Object.entries(areeGlobal).forEach(([areaSlug, areaData]) => {
     // Skip non-object entries (like updatedAt, etc.)
     if (typeof areaData !== 'object' || !areaData) return
 
+    const typedAreaData = areaData as SingleArea
+
     // Check if this area has plants and if the current plant is in the area
-    const areaPlants = areaData.contenuto?.piante || []
+    const areaPlants = typedAreaData.contenuto?.piante || []
     const plantInArea = areaPlants.some((plantId: string | { id: string }) => {
       const id = typeof plantId === 'string' ? plantId : plantId.id
       return id === pianta.id
     })
 
     if (plantInArea) {
-      areasWithPlant.push({
-        id: areaSlug,
-        name: areaData.informazioni?.nome || areaSlug,
-        slug: areaSlug,
-        description: areaData.informazioni?.short_description || '',
-      })
+      areasWithPlant.push([areaSlug, typedAreaData])
     }
   })
 
@@ -101,30 +94,22 @@ export default async function PiantaDetail({ params }: PageProps) {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {/* Colonna sinistra: immagini */}
         <div className="prose prose-lg">
-          <div className="w-full">
-            <MediaDisplay
-              media={
-                (Array.isArray(pianta.content?.immagine) && pianta.content?.immagine.length > 0
-                  ? (pianta.content?.immagine[0] as unknown as PiantaMedia)
-                  : (pianta.content?.immagine as unknown as PiantaMedia)
-                )?.url || ''
-              }
-              alt={pianta.name || ''}
+          <div className="not-prose w-full">
+            <RecipeImageGallery
+              immagine={pianta.content?.immagine}
+              altText={pianta.name || 'Immagine Pianta'}
+              priority
             />
           </div>
-        </div>
-
-        {/* Colonna destra: dettagli della pianta */}
-        <div className="mt-2">
-          {pianta.content?.descrizione && (
-            <div className="prose prose-lg mb-8">
-              <RichText data={pianta.content?.descrizione as SerializedEditorState} />
-            </div>
-          )}
-
           {/* Sezione delle aree dove si trova questa pianta */}
           <PlantAreas areas={areasWithPlant} />
         </div>
+
+        {pianta.content?.descrizione && (
+          <div className="prose prose-lg -mt-5">
+            <RichText data={pianta.content?.descrizione as SerializedEditorState} />
+          </div>
+        )}
       </div>
     </div>
   )

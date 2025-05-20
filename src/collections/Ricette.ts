@@ -89,6 +89,7 @@ export const Ricette: CollectionConfig = {
               },
               type: 'upload',
               relationTo: 'media',
+              hasMany: true,
             },
             {
               name: 'ingredienti',

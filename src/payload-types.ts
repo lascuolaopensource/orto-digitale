@@ -257,7 +257,7 @@ export interface Ricette {
       };
       [k: string]: unknown;
     } | null;
-    immagine?: (string | null) | Media;
+    immagine?: (string | Media)[] | null;
     ingredienti?: {
       root: {
         type: string;
@@ -546,7 +546,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
-      immagine?: (string | null) | Media;
+      immagine?: (string | Media)[] | null;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -571,7 +571,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
-      immagine?: (string | null) | Media;
+      immagine?: (string | Media)[] | null;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -596,7 +596,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
-      immagine?: (string | null) | Media;
+      immagine?: (string | Media)[] | null;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -621,7 +621,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
-      immagine?: (string | null) | Media;
+      immagine?: (string | Media)[] | null;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -646,7 +646,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
-      immagine?: (string | null) | Media;
+      immagine?: (string | Media)[] | null;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -671,7 +671,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
-      immagine?: (string | null) | Media;
+      immagine?: (string | Media)[] | null;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -696,7 +696,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
-      immagine?: (string | null) | Media;
+      immagine?: (string | Media)[] | null;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -721,7 +721,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
-      immagine?: (string | null) | Media;
+      immagine?: (string | Media)[] | null;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -746,7 +746,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
-      immagine?: (string | null) | Media;
+      immagine?: (string | Media)[] | null;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -771,7 +771,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
-      immagine?: (string | null) | Media;
+      immagine?: (string | Media)[] | null;
       piante?: (string | Piante)[] | null;
     };
   };
@@ -796,7 +796,7 @@ export interface Aree {
         };
         [k: string]: unknown;
       } | null;
-      immagine?: (string | null) | Media;
+      immagine?: (string | Media)[] | null;
       piante?: (string | Piante)[] | null;
     };
   };

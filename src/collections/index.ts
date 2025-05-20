@@ -41,6 +41,7 @@ export const area = (nome: string): any => {
             label: 'immagine',
             type: 'upload',
             relationTo: 'media',
+            hasMany: true,
           },
 
           {

@@ -4,14 +4,14 @@ import { RichText } from '@payloadcms/richtext-lexical/react'
 import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 import { Link } from '@/i18n/routing'
 import { Aree, Media, Piante } from '@/payload-types'
-import { PlantCard, PlantsList } from '@/components/PlantCard'
-import { MediaDisplay } from '@/components/MediaDisplay'
+import { RecipeImageGallery } from '@/components/RecipeImageGallery'
 import { NotFound } from '@/components/ui/NotFound'
 import { notFound } from 'next/navigation'
 import { BackLink } from '@/components/ui/BackLink'
+import { AreaPlantsSection } from '@/components/AreaPlantsSection'
 
 type PageProps = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 type AreaKey = keyof Omit<Aree, 'id' | 'updatedAt' | 'createdAt'>
@@ -22,6 +22,9 @@ export default async function Area({ params }: PageProps) {
   const locale = (await getLocale()) as 'it' | 'en'
   const t = await getTranslations()
 
+  // Resolve the params promise before accessing its properties
+  const resolvedParams = await params
+
   // Get all areas from the global 'aree'
   const areeGlobal = await db.findGlobal({
     slug: 'aree',
@@ -29,7 +32,7 @@ export default async function Area({ params }: PageProps) {
     locale,
   })
 
-  const areaKey = params.slug
+  const areaKey = resolvedParams.slug
   const areaData = areeGlobal?.[areaKey as keyof typeof areeGlobal] as SingleArea
 
   // Not found se il global aree non esiste o l'area specifica non esiste
@@ -74,31 +77,21 @@ export default async function Area({ params }: PageProps) {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {/* Colonna sinistra: immagine dell'area */}
         <div className="prose prose-lg">
-          {/* Area image */}
-          <div className="w-full">
-            <MediaDisplay
-              media={(areaData?.contenuto?.immagine as Media).url}
-              alt={areaData.informazioni?.nome || areaKey}
+          <div className="not-prose w-full">
+            <RecipeImageGallery
+              immagine={areaData?.contenuto?.immagine}
+              altText={areaData.informazioni?.nome || areaKey}
+              priority
             />
           </div>
+          <AreaPlantsSection pianteCorrelate={pianteCorrelate} />
         </div>
 
         {/* Colonna destra: descrizione e piante correlate */}
-        <div className="mt-2">
-          <div className="prose prose-lg mb-8">
+        <div className="-mt-5">
+          <div className="prose prose-lg">
             <RichText data={areaData.contenuto?.descrizione as SerializedEditorState} />
           </div>
-
-          {pianteCorrelate && pianteCorrelate.length > 0 ? (
-            <div>
-              <h2 className="mb-4 text-2xl font-bold">{t('aree.plantsInThisArea')}</h2>
-              <PlantsList plants={pianteCorrelate} />
-            </div>
-          ) : (
-            <div className="rounded-lg border border-dashed border-gray-300 p-6 text-center">
-              <p className="text-gray-600">{t('aree.noPlantsInArea')}</p>
-            </div>
-          )}
         </div>
       </div>
     </div>

@@ -1,35 +1,34 @@
-import Image from 'next/image'
 import { Link } from '@/i18n/routing'
 import { Piante, Media } from '@/payload-types'
-import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 type PlantCardProps = {
   plant: Piante
+  exploreLinkText?: string
 }
 
-export const PlantCard: React.FC<PlantCardProps> = ({ plant }) => {
-  const t = useTranslations()
-
+export function PlantCard({ plant, exploreLinkText = 'Scopri di più' }: PlantCardProps) {
   return (
     <Link
       href={`/piante/${plant.slug}`}
-      key={plant.slug}
-      className="group flex items-start gap-4 rounded-lg border border-gray-200 p-6 transition-all hover:border-gray-300 hover:shadow-sm"
+      className="group flex w-full overflow-hidden rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm"
     >
-      <div className="flex-shrink-0 overflow-hidden rounded-md">
-        <div className="relative h-24 w-24 bg-gray-100">
-          {plant.content?.immagine && plant.content?.immagine[0] ? (
+      <div className="flex-shrink-0">
+        <div className="relative m-3 h-16 w-16 overflow-hidden rounded-md">
+          {plant.content?.immagine &&
+          plant.content.immagine[0] &&
+          typeof plant.content.immagine[0] !== 'string' ? (
             <Image
-              src={(plant.content?.immagine?.[0] as Media).sizes?.medium?.url || ''}
+              src={(plant.content.immagine[0] as Media).url || ''}
               alt={plant.name || ''}
               fill
-              className="object-cover transition-transform group-hover:scale-105"
+              className="object-cover"
             />
           ) : (
-            <div className="flex h-full w-full items-center justify-center text-gray-400">
+            <div className="flex h-full w-full items-center justify-center bg-gray-100">
               <svg
+                className="h-8 w-8 text-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -38,24 +37,22 @@ export const PlantCard: React.FC<PlantCardProps> = ({ plant }) => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={1.5}
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14"
                 />
               </svg>
             </div>
           )}
         </div>
       </div>
-      <div className="flex-grow">
-        <h3 className="font-semibold capitalize transition-colors group-hover:text-primary">
+      <div className="flex-1 py-3 pr-3">
+        <h3 className="text-base font-medium transition-colors group-hover:text-primary">
           {plant.name}
         </h3>
-        <p className="text-muted-foreground">
-          {plant.content?.short_description || t('plants.cardShortDefault')}
-        </p>
-        <span className="mt-2 inline-flex items-center text-sm font-medium text-primary">
-          {t('plants.cardPlantDetails')}
+        <p className="text-xs text-muted-foreground">{plant.content?.short_description}</p>
+        <span className="mt-1 inline-flex items-center text-xs font-medium text-primary">
+          {exploreLinkText}
           <svg
-            className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5"
+            className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-0.5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -72,13 +69,9 @@ export const PlantCard: React.FC<PlantCardProps> = ({ plant }) => {
   )
 }
 
-type PlantsListProps = {
-  plants: Piante[]
-}
-
-export const PlantsList: React.FC<PlantsListProps> = ({ plants }) => {
+export function PlantsList({ plants }: { plants: Piante[] }) {
   return (
-    <div className="w-full space-y-6">
+    <div className="grid w-full grid-cols-1 gap-4">
       {plants.map((plant) => (
         <PlantCard key={plant.id} plant={plant} />
       ))}

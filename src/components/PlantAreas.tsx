@@ -1,15 +1,13 @@
 import { Link } from '@/i18n/routing'
 import { getTranslations } from 'next-intl/server'
+import Image from 'next/image'
+import { type Media, type Aree } from '@/payload-types'
 
-type Area = {
-  id: string
-  name: string
-  slug: string
-  description: string
-}
+type AreaKey = keyof Omit<Aree, 'id' | 'updatedAt' | 'createdAt'>
+type SingleArea = Exclude<Aree[AreaKey], undefined>
 
 type PlantAreasProps = {
-  areas: Area[]
+  areas: [string, SingleArea][]
 }
 
 export async function PlantAreas({ areas }: PlantAreasProps) {
@@ -18,36 +16,37 @@ export async function PlantAreas({ areas }: PlantAreasProps) {
 
   return (
     <div>
-      <h2 className="mb-4 text-xl font-semibold">{t('plants.whereToFindThisPlant')}</h2>
-      <div className="grid grid-cols-1 gap-3">
-        {areas.map((area) => (
-          <Link
-            key={area.id}
-            href={`/aree/${area.slug}`}
-            className="group flex flex-col rounded-lg border border-gray-200 p-4 transition-all hover:border-gray-300 hover:shadow-sm"
-          >
-            <h3 className="font-semibold capitalize transition-colors group-hover:text-primary">
-              {area.name}
-            </h3>
-            {area.description && <p className="mt-1 text-sm text-gray-600">{area.description}</p>}
-            <span className="mt-2 inline-flex items-center text-sm font-medium text-primary">
-              {t('aree.exploreLinkText')}
-              <svg
-                className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-0.5"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-                  clipRule="evenodd"
+      <h2 className="mb-2 text-lg font-medium text-gray-900">{t('plants.whereToFindThisPlant')}</h2>
+
+      {areas.map(([areaKey, area]) => {
+        // Get the first image if it exists and is a Media object
+        const firstImage = area.contenuto?.immagine?.[0]
+        const thumbnailUrl =
+          typeof firstImage !== 'string' ? firstImage?.sizes?.thumbnail?.url : null
+        const name = area.informazioni?.nome || areaKey
+
+        return (
+          <div key={areaKey}>
+            <Link
+              href={`/aree/${areaKey}`}
+              className="group flex items-center py-1.5 text-base text-gray-800 hover:text-primary"
+            >
+              {thumbnailUrl ? (
+                <Image
+                  src={thumbnailUrl}
+                  alt={name}
+                  width={24}
+                  height={24}
+                  className="mr-3 h-6 w-6 rounded-sm object-cover"
                 />
-              </svg>
-            </span>
-          </Link>
-        ))}
-      </div>
+              ) : (
+                <div className="mr-3 h-6 w-6 rounded-sm bg-gray-300" />
+              )}
+              <span className="capitalize">{name}</span>
+            </Link>
+          </div>
+        )
+      })}
     </div>
   )
 }

@@ -22,7 +22,9 @@ export function RecipeCard({ recipe, detailsText }: RecipeCardProps) {
               src={
                 typeof content.immagine === 'string'
                   ? content.immagine
-                  : content.immagine?.url || ''
+                  : Array.isArray(content.immagine) && content.immagine.length > 0
+                    ? content.immagine[0]?.url || ''
+                    : content.immagine?.url || ''
               }
               alt={recipe.name || 'Immagine ricetta'}
               fill

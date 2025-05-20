@@ -2,11 +2,13 @@ import { loadDb } from '@/lib/db'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
-import Image from 'next/image'
-import { PlantCard } from '@/components/PlantCard'
 import { NotFound } from '@/components/ui/NotFound'
-import type { Ricette as RicetteType, Piante } from '@/payload-types'
+import type { Ricette as RicetteType, Piante, Media } from '@/payload-types'
 import { BackLink } from '@/components/ui/BackLink'
+import { RecipeImageGallery } from '@/components/RecipeImageGallery'
+import { RecipePlantsSection } from '@/components/RecipePlantsSection'
+import { Link } from '@/i18n/routing'
+import Image from 'next/image'
 
 type PageProps = {
   params: Promise<{ slug: string }>
@@ -29,7 +31,7 @@ export default async function RecipeDetail({ params }: PageProps) {
         equals: slug,
       },
     },
-    depth: 2,
+    depth: 3,
     locale,
   })
 
@@ -49,8 +51,37 @@ export default async function RecipeDetail({ params }: PageProps) {
     )
   }
 
-  // Get related plants if any
-  const relatedPlants = recipe.content?.piante || []
+  // Get related plants - ensure we have complete plant data
+  let relatedPlants: Piante[] = []
+
+  // Extract plant IDs from recipe
+  const plantRefs = recipe.content?.piante || []
+
+  // If we have plant references, fetch the full data
+  if (plantRefs.length > 0) {
+    const plantIds = plantRefs
+      .map((plant) => (typeof plant === 'string' ? plant : plant.id))
+      .filter(Boolean)
+
+    if (plantIds.length > 0) {
+      // Fetch full plant data
+      const plantsResult = await db.find({
+        collection: 'piante',
+        where: {
+          id: {
+            in: plantIds,
+          },
+        },
+        depth: 2, // Ensure we get image data
+        locale,
+      })
+
+      relatedPlants = plantsResult.docs as Piante[]
+    }
+  }
+
+  // Debug log
+  console.log(`Found ${relatedPlants.length} plants with complete data`)
 
   return (
     <div>
@@ -62,7 +93,7 @@ export default async function RecipeDetail({ params }: PageProps) {
         <h1 className="mb-2 text-3xl font-bold">{recipe.name}</h1>
         {recipe.content?.autore && (
           <p className="text-lg text-gray-600">
-            {t('recipes.recipeBy')}
+            {t('recipes.recipeBy')} {}
             <span className="font-medium">{recipe.content.autore}</span>
           </p>
         )}
@@ -72,49 +103,16 @@ export default async function RecipeDetail({ params }: PageProps) {
       <div className="mb-10 grid grid-cols-1 gap-8 lg:grid-cols-3">
         {/* Recipe hero image */}
         <div className="lg:col-span-2">
-          {recipe.content?.immagine ? (
-            <div className="overflow-hidden rounded-lg">
-              <div className="relative aspect-[16/9] w-full">
-                <Image
-                  src={
-                    typeof recipe.content.immagine === 'string'
-                      ? recipe.content.immagine
-                      : recipe.content.immagine?.url || ''
-                  }
-                  alt={recipe.name || ''}
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 66vw"
-                />
-              </div>
-            </div>
-          ) : (
-            <div className="flex aspect-[16/9] w-full items-center justify-center rounded-lg bg-gray-100">
-              <span className="text-muted-foreground">{t('media.noImageAvailable')}</span>
-            </div>
-          )}
+          <RecipeImageGallery
+            immagine={recipe.content?.immagine}
+            altText={recipe.name || ''}
+            priority
+          />
         </div>
 
         {/* Related Plants next to the image */}
         <div className="lg:col-span-1">
-          {relatedPlants.length > 0 ? (
-            <div>
-              <h2 className="mb-4 text-xl font-semibold">{t('plants.plantsUsed')}</h2>
-              <div className="space-y-4">
-                {relatedPlants.map((plant: string | Piante) => {
-                  const plantData = typeof plant === 'string' ? null : plant
-                  if (!plantData) return null
-
-                  return <PlantCard key={plantData.id} plant={plantData} />
-                })}
-              </div>
-            </div>
-          ) : (
-            <div className="rounded-lg border border-dashed border-gray-300 p-6 text-center">
-              <p className="text-gray-600">{t('plants.noPlantsUsed')}</p>
-            </div>
-          )}
+          <RecipePlantsSection relatedPlants={relatedPlants} />
         </div>
       </div>
 
