@@ -28,14 +28,14 @@ export default async function Piante() {
             key={plant.slug}
             className="group block rounded-lg border border-gray-200 p-6 transition-all hover:border-gray-300 hover:shadow-sm"
           >
-            {plant.content?.immagine && plant.content?.immagine.length > 0 && (
+            {plant.immagine && plant.immagine.length > 0 && (
               <div className="mb-4 overflow-hidden rounded-md">
                 <div className="relative aspect-square w-full">
                   <Image
                     src={
-                      typeof plant.content?.immagine[0] === 'string'
-                        ? plant.content?.immagine[0]
-                        : plant.content?.immagine[0]?.url || ''
+                      typeof plant.immagine[0] === 'string'
+                        ? plant.immagine[0]
+                        : plant.immagine[0]?.url || ''
                     }
                     alt={plant.name || 'Immagine pianta'}
                     fill
@@ -47,9 +47,9 @@ export default async function Piante() {
             <h2 className="mb-3 text-xl font-semibold capitalize transition-colors group-hover:text-primary">
               {plant.name}
             </h2>
-            <p className="text-muted-foreground">
-              {plant.content?.short_description || t('plants.cardShortDefault')}
-            </p>
+            {/* <p className="text-muted-foreground">
+              {plant.short_description || t('plants.cardShortDefault')}
+            </p> */}
             <span className="mt-4 inline-flex items-center text-sm font-medium text-primary">
               {t('plants.cardPlantDetails')}
               <svg

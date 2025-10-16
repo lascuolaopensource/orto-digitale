@@ -18,7 +18,7 @@ export async function RecipePlantsSection({ relatedPlants }: RecipePlantsSection
 
           <div className="space-y-2.5">
             {relatedPlants.map((plant) => {
-              const firstImage = plant.content?.immagine?.[0]
+              const firstImage = plant.immagine?.[0]
               const thumbnailUrl =
                 typeof firstImage !== 'string' ? firstImage?.sizes?.thumbnail?.url : null
 

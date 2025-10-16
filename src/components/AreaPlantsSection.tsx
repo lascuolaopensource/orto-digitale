@@ -18,7 +18,7 @@ export async function AreaPlantsSection({ pianteCorrelate }: AreaPlantsSectionPr
 
           <div className="space-y-2.5">
             {pianteCorrelate.map((pianta) => {
-              const firstImage = pianta.content?.immagine?.[0]
+              const firstImage = pianta.immagine?.[0]
               const thumbnailUrl =
                 typeof firstImage !== 'string' ? firstImage?.sizes?.thumbnail?.url : null
 

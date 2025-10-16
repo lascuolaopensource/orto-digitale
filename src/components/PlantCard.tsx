@@ -15,11 +15,9 @@ export function PlantCard({ plant, exploreLinkText = 'Scopri di più' }: PlantCa
     >
       <div className="flex-shrink-0">
         <div className="relative m-3 h-16 w-16 overflow-hidden rounded-md">
-          {plant.content?.immagine &&
-          plant.content.immagine[0] &&
-          typeof plant.content.immagine[0] !== 'string' ? (
+          {plant.immagine && plant.immagine[0] && typeof plant.immagine[0] !== 'string' ? (
             <Image
-              src={(plant.content.immagine[0] as Media).url || ''}
+              src={(plant.immagine[0] as Media).url || ''}
               alt={plant.name || ''}
               fill
               className="object-cover"
@@ -48,7 +46,7 @@ export function PlantCard({ plant, exploreLinkText = 'Scopri di più' }: PlantCa
         <h3 className="text-base font-medium transition-colors group-hover:text-primary">
           {plant.name}
         </h3>
-        <p className="text-xs text-muted-foreground">{plant.content?.short_description}</p>
+        {/* <p className="text-xs text-muted-foreground">{plant.short_description}</p> */}
         <span className="mt-1 inline-flex items-center text-xs font-medium text-primary">
           {exploreLinkText}
           <svg
