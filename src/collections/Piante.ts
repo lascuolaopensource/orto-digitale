@@ -2,7 +2,7 @@ import type { CollectionConfig } from 'payload'
 import * as F from '@/collections/index'
 import { formatSlug } from '@/fields/slug/formatSlug'
 
-export const Piante: CollectionConfig = {
+export const Piante = {
   slug: 'piante',
   defaultPopulate: {
     slug: true,
@@ -48,39 +48,78 @@ export const Piante: CollectionConfig = {
   },
   fields: [
     {
-      name: 'name',
-      type: 'text',
-      localized: true,
-    },
-    {
-      type: 'tabs',
-      tabs: [
+      type: 'row',
+      fields: [
         {
-          name: 'content',
-          fields: [
-            {
-              name: 'short_description',
-              type: 'text',
-              localized: true,
-            },
-            {
-              name: 'descrizione',
-              type: 'richText',
-              localized: true,
-            },
-            {
-              name: 'immagine',
-              type: 'upload',
-              relationTo: 'media',
-              hasMany: true,
-            },
-          ],
+          name: 'name',
+          label: 'Nome',
+          type: 'text',
         },
         {
-          label: 'Link',
-          fields: [...F.slugField('name')],
+          name: 'latin_name',
+          label: 'Nome latino',
+          type: 'text',
         },
       ],
     },
+
+    {
+      name: 'slug',
+      label: 'Slug',
+      type: 'text',
+    },
+
+    {
+      name: 'seasone',
+      label: 'Stagione',
+      type: 'select',
+      options: [
+        {
+          label: 'Primavera / Estate',
+          value: 'primavera_estate',
+        },
+        {
+          label: 'Autunno / Inverno',
+          value: 'autunno_inverno',
+        },
+        {
+          label: "Tutto l'anno",
+          value: 'tutto_l_anno',
+        },
+      ],
+    },
+
+    {
+      name: 'zones',
+      label: 'Zonizzazione',
+      type: 'select',
+      options: [
+        {
+          label: 'Percorso Alimurgico',
+          value: 'percorso_alimurgico',
+        },
+        {
+          label: 'Verdure',
+          value: 'verdure',
+        },
+        {
+          label: 'Arboree da frutto',
+          value: 'arboree_da_frutto',
+        },
+      ],
+    },
+
+    {
+      name: 'immagine',
+      type: 'upload',
+      relationTo: 'media',
+      hasMany: true,
+    },
+
+    {
+      name: 'descrizione',
+      type: 'richText',
+      localized: true,
+    },
   ],
-}
+} satisfies CollectionConfig

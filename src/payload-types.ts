@@ -207,27 +207,26 @@ export interface Media {
 export interface Piante {
   id: string;
   name?: string | null;
-  content?: {
-    short_description?: string | null;
-    descrizione?: {
-      root: {
-        type: string;
-        children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-    immagine?: (string | Media)[] | null;
-  };
+  latin_name?: string | null;
   slug?: string | null;
-  slugLock?: boolean | null;
+  seasone?: ('primavera_estate' | 'autunno_inverno' | 'tutto_l_anno') | null;
+  zones?: ('percorso_alimurgico' | 'verdure' | 'arboree_da_frutto') | null;
+  immagine?: (string | Media)[] | null;
+  descrizione?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -452,15 +451,12 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface PianteSelect<T extends boolean = true> {
   name?: T;
-  content?:
-    | T
-    | {
-        short_description?: T;
-        descrizione?: T;
-        immagine?: T;
-      };
+  latin_name?: T;
   slug?: T;
-  slugLock?: T;
+  seasone?: T;
+  zones?: T;
+  immagine?: T;
+  descrizione?: T;
   updatedAt?: T;
   createdAt?: T;
 }

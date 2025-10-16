@@ -7,6 +7,8 @@ import { PlantAreas } from '@/components/PlantAreas'
 import { NotFound } from '@/components/ui/NotFound'
 import type { Piante as PianteType, Aree, Media } from '@/payload-types'
 import { BackLink } from '@/components/ui/BackLink'
+import { Piante } from '@/collections/Piante'
+import Image from 'next/image'
 
 type PageProps = {
   params: Promise<{ slug: string }>
@@ -80,6 +82,8 @@ export default async function PiantaDetail({ params }: PageProps) {
     }
   })
 
+  const cover = getImage(pianta.immagine)
+
   return (
     <div>
       {/* Back navigation */}
@@ -87,30 +91,60 @@ export default async function PiantaDetail({ params }: PageProps) {
 
       {/* Title at the top */}
       <header className="mb-6">
-        <h1 className="text-3xl font-bold">{pianta.name}</h1>
+        <h1 className="text-3xl font-bold">
+          {pianta.name} <span className="italic">({pianta.latin_name})</span>
+        </h1>
+        <p>
+          {getZoneLabel(pianta.zones)} / {getSeasoneLabel(pianta.seasone)}
+        </p>
       </header>
 
       {/* Content grid with perfectly aligned columns */}
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {/* Colonna sinistra: immagini */}
         <div className="prose prose-lg">
-          <div className="not-prose w-full">
-            <RecipeImageGallery
-              immagine={pianta.content?.immagine}
-              altText={pianta.name || 'Immagine Pianta'}
-              priority
-            />
-          </div>
+          <img src="/Users/giovanniabbatepaolo/Desktop/Achillea_millefolium.jpg" alt="Img" />
           {/* Sezione delle aree dove si trova questa pianta */}
           <PlantAreas areas={areasWithPlant} />
         </div>
 
-        {pianta.content?.descrizione && (
-          <div className="prose prose-lg -mt-5">
-            <RichText data={pianta.content?.descrizione as SerializedEditorState} />
+        {pianta.descrizione && (
+          <div className="prose -mt-5">
+            <RichText data={pianta.descrizione as SerializedEditorState} />
           </div>
         )}
       </div>
     </div>
   )
+}
+
+function getZoneLabel(zone: string | null | undefined) {
+  switch (zone) {
+    case 'percorso_alimurgico':
+      return 'Percorso Alimurgico'
+    case 'verdure':
+      return 'Verdure'
+    case 'arboree_da_frutto':
+      return 'Arboree da frutto'
+  }
+}
+
+function getSeasoneLabel(seasone: string | null | undefined) {
+  switch (seasone) {
+    case 'primavera_estate':
+      return 'Primavera / Estate'
+    case 'autunno_inverno':
+      return 'Autunno / Inverno'
+    case 'tutto_l_anno':
+      return "Tutto l'anno"
+  }
+}
+
+function getImage(
+  immagine: string | Media | (string | Media)[] | undefined | null,
+): Media | undefined {
+  if (Array.isArray(immagine)) {
+    return immagine.at(0) as Media
+  }
+  return immagine as Media
 }
