@@ -69,8 +69,6 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    piante: Piante;
-    ricette: Ricette;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -79,8 +77,6 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    piante: PianteSelect<false> | PianteSelect<true>;
-    ricette: RicetteSelect<false> | RicetteSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -88,13 +84,9 @@ export interface Config {
   db: {
     defaultIDType: string;
   };
-  globals: {
-    aree: Aree;
-  };
-  globalsSelect: {
-    aree: AreeSelect<false> | AreeSelect<true>;
-  };
-  locale: 'it' | 'en';
+  globals: {};
+  globalsSelect: {};
+  locale: null;
   user: User & {
     collection: 'users';
   };
@@ -136,6 +128,13 @@ export interface User {
   hash?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
   password?: string | null;
 }
 /**
@@ -145,7 +144,6 @@ export interface User {
 export interface Media {
   id: string;
   alt: string;
-  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -157,140 +155,6 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
-  sizes?: {
-    thumbnail?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    medium?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    large?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    xlarge?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    og?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-  };
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "piante".
- */
-export interface Piante {
-  id: string;
-  name?: string | null;
-  latin_name?: string | null;
-  slug?: string | null;
-  seasone?: ('primavera_estate' | 'autunno_inverno' | 'tutto_l_anno') | null;
-  zones?: ('percorso_alimurgico' | 'verdure' | 'arboree_da_frutto') | null;
-  immagine?: (string | Media)[] | null;
-  descrizione?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ricette".
- */
-export interface Ricette {
-  id: string;
-  name?: string | null;
-  content?: {
-    autore?: string | null;
-    descrizione?: {
-      root: {
-        type: string;
-        children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-    immagine?: (string | Media)[] | null;
-    ingredienti?: {
-      root: {
-        type: string;
-        children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-    preparazione?: {
-      root: {
-        type: string;
-        children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-    piante?: (string | Piante)[] | null;
-  };
-  slug?: string | null;
-  slugLock?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -306,14 +170,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: string | Media;
-      } | null)
-    | ({
-        relationTo: 'piante';
-        value: string | Piante;
-      } | null)
-    | ({
-        relationTo: 'ricette';
-        value: string | Ricette;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -371,6 +227,13 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -378,7 +241,6 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
-  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -390,96 +252,6 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
-  sizes?:
-    | T
-    | {
-        thumbnail?:
-          | T
-          | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
-        medium?:
-          | T
-          | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
-        large?:
-          | T
-          | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
-        xlarge?:
-          | T
-          | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
-        og?:
-          | T
-          | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
-      };
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "piante_select".
- */
-export interface PianteSelect<T extends boolean = true> {
-  name?: T;
-  latin_name?: T;
-  slug?: T;
-  seasone?: T;
-  zones?: T;
-  immagine?: T;
-  descrizione?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ricette_select".
- */
-export interface RicetteSelect<T extends boolean = true> {
-  name?: T;
-  content?:
-    | T
-    | {
-        autore?: T;
-        descrizione?: T;
-        immagine?: T;
-        ingredienti?: T;
-        preparazione?: T;
-        piante?: T;
-      };
-  slug?: T;
-  slugLock?: T;
-  updatedAt?: T;
-  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -512,486 +284,6 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "aree".
- */
-export interface Aree {
-  id: string;
-  entrata?: {
-    informazioni?: {
-      nome?: string | null;
-      short_description?: string | null;
-    };
-    contenuto?: {
-      descrizione?: {
-        root: {
-          type: string;
-          children: {
-            type: string;
-            version: number;
-            [k: string]: unknown;
-          }[];
-          direction: ('ltr' | 'rtl') | null;
-          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-          indent: number;
-          version: number;
-        };
-        [k: string]: unknown;
-      } | null;
-      immagine?: (string | Media)[] | null;
-      piante?: (string | Piante)[] | null;
-    };
-  };
-  atelier?: {
-    informazioni?: {
-      nome?: string | null;
-      short_description?: string | null;
-    };
-    contenuto?: {
-      descrizione?: {
-        root: {
-          type: string;
-          children: {
-            type: string;
-            version: number;
-            [k: string]: unknown;
-          }[];
-          direction: ('ltr' | 'rtl') | null;
-          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-          indent: number;
-          version: number;
-        };
-        [k: string]: unknown;
-      } | null;
-      immagine?: (string | Media)[] | null;
-      piante?: (string | Piante)[] | null;
-    };
-  };
-  vasche?: {
-    informazioni?: {
-      nome?: string | null;
-      short_description?: string | null;
-    };
-    contenuto?: {
-      descrizione?: {
-        root: {
-          type: string;
-          children: {
-            type: string;
-            version: number;
-            [k: string]: unknown;
-          }[];
-          direction: ('ltr' | 'rtl') | null;
-          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-          indent: number;
-          version: number;
-        };
-        [k: string]: unknown;
-      } | null;
-      immagine?: (string | Media)[] | null;
-      piante?: (string | Piante)[] | null;
-    };
-  };
-  ricettario?: {
-    informazioni?: {
-      nome?: string | null;
-      short_description?: string | null;
-    };
-    contenuto?: {
-      descrizione?: {
-        root: {
-          type: string;
-          children: {
-            type: string;
-            version: number;
-            [k: string]: unknown;
-          }[];
-          direction: ('ltr' | 'rtl') | null;
-          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-          indent: number;
-          version: number;
-        };
-        [k: string]: unknown;
-      } | null;
-      immagine?: (string | Media)[] | null;
-      piante?: (string | Piante)[] | null;
-    };
-  };
-  percorso_alimurgico?: {
-    informazioni?: {
-      nome?: string | null;
-      short_description?: string | null;
-    };
-    contenuto?: {
-      descrizione?: {
-        root: {
-          type: string;
-          children: {
-            type: string;
-            version: number;
-            [k: string]: unknown;
-          }[];
-          direction: ('ltr' | 'rtl') | null;
-          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-          indent: number;
-          version: number;
-        };
-        [k: string]: unknown;
-      } | null;
-      immagine?: (string | Media)[] | null;
-      piante?: (string | Piante)[] | null;
-    };
-  };
-  serra?: {
-    informazioni?: {
-      nome?: string | null;
-      short_description?: string | null;
-    };
-    contenuto?: {
-      descrizione?: {
-        root: {
-          type: string;
-          children: {
-            type: string;
-            version: number;
-            [k: string]: unknown;
-          }[];
-          direction: ('ltr' | 'rtl') | null;
-          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-          indent: number;
-          version: number;
-        };
-        [k: string]: unknown;
-      } | null;
-      immagine?: (string | Media)[] | null;
-      piante?: (string | Piante)[] | null;
-    };
-  };
-  percorso_aromatico?: {
-    informazioni?: {
-      nome?: string | null;
-      short_description?: string | null;
-    };
-    contenuto?: {
-      descrizione?: {
-        root: {
-          type: string;
-          children: {
-            type: string;
-            version: number;
-            [k: string]: unknown;
-          }[];
-          direction: ('ltr' | 'rtl') | null;
-          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-          indent: number;
-          version: number;
-        };
-        [k: string]: unknown;
-      } | null;
-      immagine?: (string | Media)[] | null;
-      piante?: (string | Piante)[] | null;
-    };
-  };
-  alberi_da_frutto?: {
-    informazioni?: {
-      nome?: string | null;
-      short_description?: string | null;
-    };
-    contenuto?: {
-      descrizione?: {
-        root: {
-          type: string;
-          children: {
-            type: string;
-            version: number;
-            [k: string]: unknown;
-          }[];
-          direction: ('ltr' | 'rtl') | null;
-          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-          indent: number;
-          version: number;
-        };
-        [k: string]: unknown;
-      } | null;
-      immagine?: (string | Media)[] | null;
-      piante?: (string | Piante)[] | null;
-    };
-  };
-  eventi?: {
-    informazioni?: {
-      nome?: string | null;
-      short_description?: string | null;
-    };
-    contenuto?: {
-      descrizione?: {
-        root: {
-          type: string;
-          children: {
-            type: string;
-            version: number;
-            [k: string]: unknown;
-          }[];
-          direction: ('ltr' | 'rtl') | null;
-          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-          indent: number;
-          version: number;
-        };
-        [k: string]: unknown;
-      } | null;
-      immagine?: (string | Media)[] | null;
-      piante?: (string | Piante)[] | null;
-    };
-  };
-  tapee?: {
-    informazioni?: {
-      nome?: string | null;
-      short_description?: string | null;
-    };
-    contenuto?: {
-      descrizione?: {
-        root: {
-          type: string;
-          children: {
-            type: string;
-            version: number;
-            [k: string]: unknown;
-          }[];
-          direction: ('ltr' | 'rtl') | null;
-          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-          indent: number;
-          version: number;
-        };
-        [k: string]: unknown;
-      } | null;
-      immagine?: (string | Media)[] | null;
-      piante?: (string | Piante)[] | null;
-    };
-  };
-  compostiera?: {
-    informazioni?: {
-      nome?: string | null;
-      short_description?: string | null;
-    };
-    contenuto?: {
-      descrizione?: {
-        root: {
-          type: string;
-          children: {
-            type: string;
-            version: number;
-            [k: string]: unknown;
-          }[];
-          direction: ('ltr' | 'rtl') | null;
-          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-          indent: number;
-          version: number;
-        };
-        [k: string]: unknown;
-      } | null;
-      immagine?: (string | Media)[] | null;
-      piante?: (string | Piante)[] | null;
-    };
-  };
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "aree_select".
- */
-export interface AreeSelect<T extends boolean = true> {
-  entrata?:
-    | T
-    | {
-        informazioni?:
-          | T
-          | {
-              nome?: T;
-              short_description?: T;
-            };
-        contenuto?:
-          | T
-          | {
-              descrizione?: T;
-              immagine?: T;
-              piante?: T;
-            };
-      };
-  atelier?:
-    | T
-    | {
-        informazioni?:
-          | T
-          | {
-              nome?: T;
-              short_description?: T;
-            };
-        contenuto?:
-          | T
-          | {
-              descrizione?: T;
-              immagine?: T;
-              piante?: T;
-            };
-      };
-  vasche?:
-    | T
-    | {
-        informazioni?:
-          | T
-          | {
-              nome?: T;
-              short_description?: T;
-            };
-        contenuto?:
-          | T
-          | {
-              descrizione?: T;
-              immagine?: T;
-              piante?: T;
-            };
-      };
-  ricettario?:
-    | T
-    | {
-        informazioni?:
-          | T
-          | {
-              nome?: T;
-              short_description?: T;
-            };
-        contenuto?:
-          | T
-          | {
-              descrizione?: T;
-              immagine?: T;
-              piante?: T;
-            };
-      };
-  percorso_alimurgico?:
-    | T
-    | {
-        informazioni?:
-          | T
-          | {
-              nome?: T;
-              short_description?: T;
-            };
-        contenuto?:
-          | T
-          | {
-              descrizione?: T;
-              immagine?: T;
-              piante?: T;
-            };
-      };
-  serra?:
-    | T
-    | {
-        informazioni?:
-          | T
-          | {
-              nome?: T;
-              short_description?: T;
-            };
-        contenuto?:
-          | T
-          | {
-              descrizione?: T;
-              immagine?: T;
-              piante?: T;
-            };
-      };
-  percorso_aromatico?:
-    | T
-    | {
-        informazioni?:
-          | T
-          | {
-              nome?: T;
-              short_description?: T;
-            };
-        contenuto?:
-          | T
-          | {
-              descrizione?: T;
-              immagine?: T;
-              piante?: T;
-            };
-      };
-  alberi_da_frutto?:
-    | T
-    | {
-        informazioni?:
-          | T
-          | {
-              nome?: T;
-              short_description?: T;
-            };
-        contenuto?:
-          | T
-          | {
-              descrizione?: T;
-              immagine?: T;
-              piante?: T;
-            };
-      };
-  eventi?:
-    | T
-    | {
-        informazioni?:
-          | T
-          | {
-              nome?: T;
-              short_description?: T;
-            };
-        contenuto?:
-          | T
-          | {
-              descrizione?: T;
-              immagine?: T;
-              piante?: T;
-            };
-      };
-  tapee?:
-    | T
-    | {
-        informazioni?:
-          | T
-          | {
-              nome?: T;
-              short_description?: T;
-            };
-        contenuto?:
-          | T
-          | {
-              descrizione?: T;
-              immagine?: T;
-              piante?: T;
-            };
-      };
-  compostiera?:
-    | T
-    | {
-        informazioni?:
-          | T
-          | {
-              nome?: T;
-              short_description?: T;
-            };
-        contenuto?:
-          | T
-          | {
-              descrizione?: T;
-              immagine?: T;
-              piante?: T;
-            };
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
