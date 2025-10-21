@@ -36,5 +36,7 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit"
     }
-  }
+  },
+  "editor.codeActionsOnSave": ["source.organizeImports", "source.fixAll.eslint"],
+  "eslint.validate": ["javascript", "typescript"]
 }
