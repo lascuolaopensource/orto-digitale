@@ -1,6 +1,5 @@
 import * as F from '@/db/fields'
 import type { CollectionConfig } from 'payload'
-import { Collection as C } from './_index'
 
 export const AREAS_IDS = {
 	atelier: 'atelier',
@@ -17,7 +16,7 @@ export const AREAS_IDS = {
 } as const
 
 export const Areas = {
-	slug: C.Areas,
+	slug: 'areas',
 	access: {
 		read: () => true,
 	},
@@ -30,6 +29,7 @@ export const Areas = {
 	},
 	fields: [
 		F.name,
+
 		{
 			name: 'key',
 			label: 'ID',
@@ -43,6 +43,7 @@ export const Areas = {
 				position: 'sidebar',
 			},
 		},
+
 		{
 			name: 'short_description',
 			label: 'Descrizione breve',
@@ -50,29 +51,28 @@ export const Areas = {
 			required: true,
 		},
 		F.description,
-		{
+
+		F.media({
 			name: 'icon',
 			label: 'Icona',
-			type: 'upload',
-			relationTo: 'media',
 			admin: {
 				position: 'sidebar',
 			},
-		},
-		{
+		}),
+
+		F.media({
 			name: 'gallery',
 			label: 'Galleria',
-			type: 'upload',
-			relationTo: 'media',
 			hasMany: true,
 			admin: {
 				position: 'sidebar',
 			},
-		},
+		}),
+
 		F.join({
 			name: 'plants',
 			label: "Piante nell'area",
-			collection: C.Plants,
+			collection: 'plants',
 			on: 'area',
 			admin: { position: 'sidebar' },
 		}),

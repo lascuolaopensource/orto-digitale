@@ -1,8 +1,7 @@
 import type { CollectionConfig } from 'payload'
-import { Collection } from './_index'
 
 export const Media: CollectionConfig = {
-	slug: Collection.Media,
+	slug: 'media',
 	access: {
 		read: () => true,
 	},

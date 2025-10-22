@@ -1,11 +1,8 @@
 import * as F from '@/db/fields'
 import type { CollectionConfig } from 'payload'
-import { Collection } from './_index'
-
-//
 
 export const Recipes: CollectionConfig = {
-	slug: Collection.Recipes,
+	slug: 'recipes',
 	access: {
 		read: () => true,
 	},
@@ -19,15 +16,14 @@ export const Recipes: CollectionConfig = {
 	fields: [
 		F.name,
 		F.description,
-		{
+		F.relation({
 			name: 'plants_used',
 			label: 'Piante utilizzate',
-			type: 'relationship',
-			relationTo: Collection.Plants,
+			collection: 'plants',
 			hasMany: true,
 			admin: {
 				position: 'sidebar',
 			},
-		},
+		}),
 	],
-} as const satisfies CollectionConfig
+}
