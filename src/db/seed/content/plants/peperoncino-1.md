@@ -1,6 +1,6 @@
 ---
 name: "Peperoncino"
-latinName: ""
+latinName: "Capsicum annuum L."
 zoning: "serra"
 season: "spring-summer"
 ---

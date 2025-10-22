@@ -239,8 +239,8 @@ export interface Plant {
     };
     [k: string]: unknown;
   } | null;
-  latin_name?: string | null;
-  season?: ('spring-summer' | 'fall-winter' | 'all-year') | null;
+  latin_name: string;
+  season: 'spring-summer' | 'fall-winter' | 'all-year';
   area?: (number | null) | Area;
   immagine?: (number | null) | Media;
   recipes?: {

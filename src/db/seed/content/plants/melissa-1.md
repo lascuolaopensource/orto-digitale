@@ -1,6 +1,6 @@
 ---
 name: "Melissa"
-latinName: ""
+latinName: "Melissa officinalis L."
 zoning: "percorso-aromatico"
 season: "spring-summer"
 ---

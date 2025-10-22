@@ -1,6 +1,6 @@
 ---
 name: "Tarassaco"
-latinName: ""
+latinName: "Taraxacum officinale F.H.Wigg."
 zoning: "percorso-alimurgico"
 season: "spring-summer"
 ---

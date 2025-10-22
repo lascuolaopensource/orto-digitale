@@ -1,6 +1,6 @@
 ---
 name: "Mirto"
-latinName: ""
+latinName: "Myrtus communis L."
 zoning: "percorso-alimurgico"
 season: "all-year"
 ---

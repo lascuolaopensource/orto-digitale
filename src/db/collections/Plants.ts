@@ -25,6 +25,7 @@ export const Plants: CollectionConfig = {
 			name: 'latin_name',
 			label: 'Nome latino',
 			type: 'text',
+			required: true,
 			admin: {
 				position: 'sidebar',
 			},
@@ -34,6 +35,7 @@ export const Plants: CollectionConfig = {
 			name: 'season',
 			label: 'Stagione',
 			type: 'select',
+			required: true,
 			options: [
 				{
 					label: 'Primavera / Estate',

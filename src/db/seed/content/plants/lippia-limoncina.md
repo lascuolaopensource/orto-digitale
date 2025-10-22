@@ -1,6 +1,6 @@
 ---
 name: "Lippia Limoncina"
-latinName: ""
+latinName: "Aloysia citrodora Palau"
 zoning: "serra"
 season: "spring-summer"
 ---

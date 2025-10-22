@@ -1,6 +1,6 @@
 ---
 name: "Peperoncino"
-latinName: ""
+latinName: "Pyrus communis L."
 zoning: "serra"
 season: "spring-summer"
 ---

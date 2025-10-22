@@ -1,6 +1,6 @@
 ---
 name: "Radicchio"
-latinName: ""
+latinName: "Cichorium intybus L."
 zoning: "serra"
 season: "spring-summer"
 ---

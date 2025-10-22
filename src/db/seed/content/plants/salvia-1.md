@@ -1,6 +1,6 @@
 ---
 name: "Salvia"
-latinName: ""
+latinName: "Salvia officinalis L."
 zoning: "percorso-aromatico"
 season: "all-year"
 ---

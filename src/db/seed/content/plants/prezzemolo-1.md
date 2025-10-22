@@ -1,6 +1,6 @@
 ---
 name: "Prezzemolo"
-latinName: ""
+latinName: "Petroselinum crispum (Mill.) Fuss"
 zoning: "percorso-aromatico"
 season: "all-year"
 ---

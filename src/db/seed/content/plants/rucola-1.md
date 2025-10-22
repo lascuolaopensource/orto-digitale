@@ -1,6 +1,6 @@
 ---
 name: "Rucola"
-latinName: ""
+latinName: "Eruca sativa Mill."
 zoning: "serra"
 season: "spring-summer"
 ---

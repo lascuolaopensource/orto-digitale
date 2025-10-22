@@ -1,6 +1,6 @@
 ---
 name: "Ruta"
-latinName: ""
+latinName: "Ruta graveolens L."
 zoning: "percorso-alimurgico"
 season: "all-year"
 ---

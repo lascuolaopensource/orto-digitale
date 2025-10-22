@@ -1,6 +1,6 @@
 ---
 name: "Origano"
-latinName: ""
+latinName: "Origanum vulgare L."
 zoning: "percorso-aromatico"
 season: "all-year"
 ---

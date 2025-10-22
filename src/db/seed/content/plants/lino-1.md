@@ -1,6 +1,6 @@
 ---
 name: "Lino"
-latinName: ""
+latinName: "Linum usitatissimum L."
 zoning: "serra"
 season: "spring-summer"
 ---

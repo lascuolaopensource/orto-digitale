@@ -1,6 +1,6 @@
 ---
 name: "Nasturzio"
-latinName: ""
+latinName: "Tropaeolum majus L."
 zoning: "percorso-alimurgico"
 season: "spring-summer"
 ---

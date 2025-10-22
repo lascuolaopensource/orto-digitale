@@ -1,6 +1,6 @@
 ---
 name: "Menta"
-latinName: ""
+latinName: "Mentha × piperita L."
 zoning: "percorso-aromatico"
 season: "all-year"
 ---

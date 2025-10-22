@@ -1,6 +1,6 @@
 ---
 name: "Timo"
-latinName: ""
+latinName: "Thymus vulgaris L."
 zoning: "percorso-aromatico"
 season: "all-year"
 ---

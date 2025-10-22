@@ -1,6 +1,6 @@
 ---
 name: "Lavanda"
-latinName: ""
+latinName: "Lavandula angustifolia Mill."
 zoning: "percorso-aromatico"
 season: "all-year"
 ---

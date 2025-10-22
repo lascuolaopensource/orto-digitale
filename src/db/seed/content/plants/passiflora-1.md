@@ -1,6 +1,6 @@
 ---
 name: "Passiflora"
-latinName: ""
+latinName: "Passiflora incarnata L."
 zoning: "serra"
 season: "all-year"
 ---

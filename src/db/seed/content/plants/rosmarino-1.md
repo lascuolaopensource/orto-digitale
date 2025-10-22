@@ -1,6 +1,6 @@
 ---
 name: "Rosmarino"
-latinName: ""
+latinName: "Rosmarinus officinalis L."
 zoning: "percorso-aromatico"
 season: "all-year"
 ---

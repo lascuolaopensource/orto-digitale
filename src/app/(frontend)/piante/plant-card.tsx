@@ -74,3 +74,5 @@ const rotationClasses = [
 	'-rotate-2 hover:-rotate-4',
 	'-rotate-4 hover:-rotate-6',
 ]
+
+type Season = NonNullable<Plant["season"]>

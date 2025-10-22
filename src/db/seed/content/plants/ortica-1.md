@@ -1,6 +1,6 @@
 ---
 name: "Ortica"
-latinName: ""
+latinName: "Urtica dioica L."
 zoning: "percorso-alimurgico"
 season: "spring-summer"
 ---
