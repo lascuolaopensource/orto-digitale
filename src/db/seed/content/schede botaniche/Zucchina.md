@@ -1,3 +1,10 @@
+---
+name: "Zucchina"
+latinName: "Cucurbita pepo L."
+zoning: "serra"
+season: "spring-summer"
+---
+
 > **Zucchina** (*Cucurbita pepo*)
 
 È una pianta della famiglia delle cucurbitacee.

@@ -1,3 +1,10 @@
+---
+name: "Broccolo"
+latinName: "Brassica oleracea var. italica L."
+zoning: "serra"
+season: "fall-winter"
+---
+
 > **CAVOLO BROCCOLO** (*Brassica Oleracea var italica*)
 
 Il cavolo Broccolo appartiene alla famiglia delle Crucifere o

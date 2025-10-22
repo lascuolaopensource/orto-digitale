@@ -1,3 +1,10 @@
+---
+name: "Basilico"
+latinName: "Ocimum basilicum L."
+zoning: "percorso-aromatico"
+season: "spring-summer"
+---
+
 **BASILICO TULSI o TULASI (***Ocinum sanctum* o anche *Ocimum
 tenuiflorum)*
 

@@ -1,3 +1,10 @@
+---
+name: "Menta"
+latinName: ""
+zoning: "percorso-aromatico"
+season: "all-year"
+---
+
 > **MENTA PIPERITA** (*Mentha piperita L.*)
 
 La menta appartiene alla famiglia delle Lamiaceae ed è originaria

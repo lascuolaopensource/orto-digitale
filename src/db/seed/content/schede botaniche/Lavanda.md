@@ -1,3 +1,10 @@
+---
+name: "Lavanda"
+latinName: ""
+zoning: "percorso-aromatico"
+season: "all-year"
+---
+
 **LAVANDA** (*Lavandula angustifolia* Miller / *Lavanda officinalis*
 Chaix / *Lavanda vera* DC.)
 

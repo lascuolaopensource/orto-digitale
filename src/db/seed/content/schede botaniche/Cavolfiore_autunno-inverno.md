@@ -1,3 +1,10 @@
+---
+name: "Cavolfiore"
+latinName: "Brassica oleracea L. conv. botrytis"
+zoning: "serra"
+season: "fall-winter"
+---
+
 **CAVOLFIORE** (*Brassica oleracea L. conv botrytis)*
 
 Il suo nome infatti deriva dal latino caulis (fusto, cavolo) e floris

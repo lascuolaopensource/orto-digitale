@@ -1,3 +1,10 @@
+---
+name: "Peperoncino"
+latinName: ""
+zoning: "serra"
+season: "spring-summer"
+---
+
 ## PERO (*Pirus communis)*
 
 ## 

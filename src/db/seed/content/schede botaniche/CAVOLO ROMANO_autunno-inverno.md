@@ -1,3 +1,10 @@
+---
+name: "Cavolo Cappuccio"
+latinName: "Brassica capitata L."
+zoning: "serra"
+season: "fall-winter"
+---
+
 **CAVOLO ROMANO** *(Brassica oleracea var. italica)*
 
 È una specie botanica della grande famiglia delle Brassicacee, molto

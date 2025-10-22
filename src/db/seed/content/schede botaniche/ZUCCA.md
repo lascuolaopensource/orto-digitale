@@ -1,3 +1,10 @@
+---
+name: "Zucca"
+latinName: "Cucurbita maxima DC."
+zoning: "serra"
+season: "fall-winter"
+---
+
 > **ZUCCA** *(Cucurbita maxima)*
 
 La zucca appartiene alla famiglia

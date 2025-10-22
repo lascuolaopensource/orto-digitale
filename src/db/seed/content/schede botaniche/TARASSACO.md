@@ -1,3 +1,10 @@
+---
+name: "Tarassaco"
+latinName: ""
+zoning: "percorso-alimurgico"
+season: "spring-summer"
+---
+
 > **TARASSACO** (*Taraxacum officinal*e)
 
 Il nome della pianta sembrerebbe derivare

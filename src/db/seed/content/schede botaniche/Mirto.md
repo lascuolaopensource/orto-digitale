@@ -1,3 +1,10 @@
+---
+name: "Mirto"
+latinName: ""
+zoning: "percorso-alimurgico"
+season: "all-year"
+---
+
 **MIRTO** (*Myrtus communis KL.*
 
 ## Il mirto appartiene alla famiglia delle Myrtacee

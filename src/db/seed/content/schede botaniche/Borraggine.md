@@ -1,3 +1,10 @@
+---
+name: "Borragine"
+latinName: "Borago officinalis L."
+zoning: "percorso-alimurgico"
+season: "spring-summer"
+---
+
 > **Borragine** (*Borago officinalis* L.)
 
 Il nome Borragine deriva dall'arabo *abou rach* e significa padre del

@@ -1,3 +1,10 @@
+---
+name: "Lino"
+latinName: ""
+zoning: "serra"
+season: "spring-summer"
+---
+
 **LINO** (*Linum usitatissimum* L)
 
 Il lino appartiene alla famiglia delle Linaceae.

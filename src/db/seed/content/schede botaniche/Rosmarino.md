@@ -1,3 +1,10 @@
+---
+name: "Rosmarino"
+latinName: ""
+zoning: "percorso-aromatico"
+season: "all-year"
+---
+
 > **ROSMARINO** (*Rosmarinus officinalis*)
 
 Il rosmarino appartiene alla famiglia delle lamiaceae.

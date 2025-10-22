@@ -1,3 +1,10 @@
+---
+name: "Barbabietola"
+latinName: "Beta vulgaris rubra L."
+zoning: "serra"
+season: "fall-winter"
+---
+
 > Barbabietola (Beta vulgaris)
 
 La barbabietola appartiene alla famiglia delle Chenopodiacee.

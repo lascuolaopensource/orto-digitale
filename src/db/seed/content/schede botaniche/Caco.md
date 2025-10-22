@@ -1,3 +1,10 @@
+---
+name: "Caco"
+latinName: "Diospyros kaki L."
+zoning: "alberi-da-frutto"
+season: "all-year"
+---
+
 **CACO** (Diospyros kaki L.)
 
 Il nome Diosporo deriva dal greco Dios cioè dio e da pyros che significa

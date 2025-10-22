@@ -1,3 +1,10 @@
+---
+name: "Timo"
+latinName: ""
+zoning: "percorso-aromatico"
+season: "all-year"
+---
+
 > **TIMO** (Thymus Species)
 
 Il suo nome deriva da una pianta egiziana (tham) che veniva utilizzata

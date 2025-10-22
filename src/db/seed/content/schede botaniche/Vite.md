@@ -1,3 +1,10 @@
+---
+name: "Vite"
+latinName: "Vitis vinifera L."
+zoning: "alberi-da-frutto"
+season: "all-year"
+---
+
 > **Vite** (*Vitis vinifera* L)
 
 La Vitis vinifera, detta comunemente vite rossa, appartiene alla

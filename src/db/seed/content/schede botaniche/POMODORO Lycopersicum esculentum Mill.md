@@ -1,3 +1,10 @@
+---
+name: "Pomodoro"
+latinName: "Lycopersicon esculentum"
+zoning: "serra"
+season: "spring-summer"
+---
+
 > **POMODORO** (*Lycopersicum esculentum Mill.)*
 
 IL pomodoro appartiene alla famiglia delle solenacee.

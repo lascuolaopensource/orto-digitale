@@ -1,3 +1,10 @@
+---
+name: "Calendula"
+latinName: "Calendula officinalis L."
+zoning: "percorso-alimurgico"
+season: "spring-summer"
+---
+
 **CALENDULA** (*Calendula officinalis* L.)
 
 Il suo nome deriva dal latino \"calendae\" che significa "primo giorno

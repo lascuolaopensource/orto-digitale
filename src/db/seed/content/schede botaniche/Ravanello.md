@@ -1,3 +1,10 @@
+---
+name: "Ravanello"
+latinName: "Raphanus sativus L."
+zoning: "serra"
+season: "fall-winter"
+---
+
 **RAVANELLO** (*Raphanus sativus L*)
 
 Il nome "ravanello" deriva da *raphys* (rapa), parola correlata al

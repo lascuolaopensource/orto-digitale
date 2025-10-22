@@ -1,3 +1,10 @@
+---
+name: "Finocchietto"
+latinName: "Phoeniculum vulgare Mill."
+zoning: "serra"
+season: "all-year"
+---
+
 **Finocchietto** *Foeniculum vulgare Miller*
 
 Il finocchietto appartiene alla famiglia delle umbrelliferae

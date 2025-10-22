@@ -1,3 +1,10 @@
+---
+name: "Menta"
+latinName: ""
+zoning: "percorso-aromatico"
+season: "all-year"
+---
+
 **MENTA PIPERITA (***Mentha piperita L.)*
 
 **Nome Comune:** menta piperita

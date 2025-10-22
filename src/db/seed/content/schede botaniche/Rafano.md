@@ -1,3 +1,10 @@
+---
+name: "Rafano"
+latinName: "Armoracea rusticana L."
+zoning: "percorso-alimurgico"
+season: "spring-summer"
+---
+
 > **RAFANO** (*Armoracia rusticana)*
 
 Il rafano appartiene alla famiglia delle Brassicaceae. E' comunemente

@@ -1,3 +1,10 @@
+---
+name: "Rabarbaro"
+latinName: "Rheum rhaponticum"
+zoning: "serra"
+season: "spring-summer"
+---
+
 **RABARBARO** (Rheum palmatum L. o Rheum officinale)
 
 Il nome Rabarbaro deriva da *Rha* e da *barbarum*, cioè radice che i

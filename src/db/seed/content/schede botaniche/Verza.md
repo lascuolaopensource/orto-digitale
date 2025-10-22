@@ -1,3 +1,10 @@
+---
+name: "Verza"
+latinName: "Brassica oleracea L. var. sabauda L."
+zoning: "serra"
+season: "fall-winter"
+---
+
 **Verza (***Brassica oleracea* L. var. sabauda L.)
 
 La verza, detta anche cavolo verza, è una pianta biennale appartenente

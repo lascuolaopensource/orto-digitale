@@ -1,3 +1,10 @@
+---
+name: "Lippia Limoncina"
+latinName: ""
+zoning: "serra"
+season: "spring-summer"
+---
+
 **LIPPIA LIMONCINA** (Lippia citriodora)
 
 La Lippia appartiene alla famiglia delle verbenacee.

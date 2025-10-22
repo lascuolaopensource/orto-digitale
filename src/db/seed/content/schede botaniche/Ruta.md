@@ -1,3 +1,10 @@
+---
+name: "Ruta"
+latinName: ""
+zoning: "percorso-alimurgico"
+season: "all-year"
+---
+
 **RUTA** (Ruta graveolens)
 
 La ruta appartiene alla famiglia delle Rutacee.

@@ -1,3 +1,10 @@
+---
+name: "Cavoletti di Bruxxelles"
+latinName: "Brassica oleracea cv. gemmifera DC."
+zoning: "serra"
+season: "fall-winter"
+---
+
 > **Cavolini di Bruxelles** (Brassica oleracea L. varietà germinifera)
 
 I cavolini di Bruzelles appartengono alla famiglia delle Brassicacee

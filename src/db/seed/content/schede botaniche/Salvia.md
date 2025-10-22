@@ -1,3 +1,10 @@
+---
+name: "Salvia"
+latinName: ""
+zoning: "percorso-aromatico"
+season: "all-year"
+---
+
 **SALVIA** (*Salvia officinalis*)
 
 Il termine "salvia" deriva dal latino *salvatrix*, ovvero salubre.

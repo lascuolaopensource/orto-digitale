@@ -1,3 +1,10 @@
+---
+name: "Passiflora"
+latinName: ""
+zoning: "serra"
+season: "all-year"
+---
+
 **PASSIFLORA** (Passiflora incarnata L. -- Passiflora caerulea)
 
 La passiflora appartiene alla famiglia passifloracee.

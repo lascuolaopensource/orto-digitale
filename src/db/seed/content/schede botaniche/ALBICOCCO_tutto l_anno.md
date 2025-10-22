@@ -1,3 +1,10 @@
+---
+name: "Albicocco"
+latinName: "Prunus armeniaca L."
+zoning: "alberi-da-frutto"
+season: "all-year"
+---
+
 **ALBICOCCO** *(Prunus armeniaca)*
 
 L'albicocco appartiene alla famiglia delle Rosacee, è

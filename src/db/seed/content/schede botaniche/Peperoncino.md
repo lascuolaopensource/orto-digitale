@@ -1,3 +1,10 @@
+---
+name: "Peperoncino"
+latinName: ""
+zoning: "serra"
+season: "spring-summer"
+---
+
 **PEPERONCINO** (*Capsicum annuum* L.)
 
 Il peperoncino appartiene alla famiglia delle Solenacee

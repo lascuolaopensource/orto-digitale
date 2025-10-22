@@ -1,3 +1,10 @@
+---
+name: "Carciofo"
+latinName: "Cinara cardunculus L."
+zoning: "serra"
+season: "all-year"
+---
+
 > **CARCIOFO** (Cynara cardunculus. Subspecie scolymus)
 
 Il carciofo coltivato appartiene alla famiglia Asteracee.

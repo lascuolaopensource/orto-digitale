@@ -1,3 +1,10 @@
+---
+name: "Prezzemolo"
+latinName: ""
+zoning: "percorso-aromatico"
+season: "all-year"
+---
+
 > **PREZZEMOLO (***Petroselinum crispum)*
 
 Il prezzemolo appartiene alla famiglia delle Apiacee.

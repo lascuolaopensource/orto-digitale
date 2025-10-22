@@ -1,3 +1,10 @@
+---
+name: "Girasole"
+latinName: "Helianthus annuus L."
+zoning: "serra"
+season: "spring-summer"
+---
+
 > GIRASOLE (Heliantus annuus L.)
 
 Il suo nome è dovuto alla particolare capacità delle sue infiorescenze

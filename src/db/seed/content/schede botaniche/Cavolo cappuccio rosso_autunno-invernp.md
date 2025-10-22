@@ -1,3 +1,10 @@
+---
+name: "Cavolo Cappuccio"
+latinName: "Brassica capitata L."
+zoning: "serra"
+season: "fall-winter"
+---
+
 > **CAVOLO CAPPUCCIO ROSSO** (*Brassica oleracea var.capitata)*
 
 Il cavolo rosso appartiene alla famiglia delle *Brassicaceae*;

@@ -1,3 +1,10 @@
+---
+name: "Cipolla"
+latinName: "Allium cepa L."
+zoning: "serra"
+season: "spring-summer"
+---
+
 > **CIPOLLA** (Allium cepa L.)
 
 La cipolla appartiene alla famiglia Liliacee - Amaryllidaceae

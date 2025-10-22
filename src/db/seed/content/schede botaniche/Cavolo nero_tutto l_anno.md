@@ -1,3 +1,10 @@
+---
+name: "Cavolo Nero"
+latinName: "Brassica oleracea acephala var. palmifolia L."
+zoning: "serra"
+season: "fall-winter"
+---
+
 **CAVOLO NERO** (*Brassica oleracea*)
 
 Il cavolo nero è una pianta che appartiene alla famiglia delle

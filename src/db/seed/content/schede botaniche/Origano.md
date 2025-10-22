@@ -1,3 +1,10 @@
+---
+name: "Origano"
+latinName: ""
+zoning: "percorso-aromatico"
+season: "all-year"
+---
+
 **ORIGANO** (origanum volgare L.)
 
 L'origano appartiene alla famiglia delle Laminacee

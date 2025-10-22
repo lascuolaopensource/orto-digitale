@@ -1,3 +1,10 @@
+---
+name: "Rucola"
+latinName: ""
+zoning: "serra"
+season: "spring-summer"
+---
+
 > **RUCOLA** (*Euruca sativa*)
 
 La rucola appartiene alla famiglia delle Brassicacee

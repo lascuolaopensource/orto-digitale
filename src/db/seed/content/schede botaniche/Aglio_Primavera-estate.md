@@ -1,3 +1,10 @@
+---
+name: "Aglio"
+latinName: "Allium sativum L."
+zoning: "serra"
+season: "spring-summer"
+---
+
 > **AGLIO** (Allium sativum L.)
 
 La parola "aglio" sarebbe da rintracciare nel celtico *all*, che

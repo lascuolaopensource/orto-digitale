@@ -1,3 +1,10 @@
+---
+name: "Echinacea"
+latinName: "Echinacea purpurea Moeanch."
+zoning: "serra"
+season: "spring-summer"
+---
+
 ECHINACEA (*Echinacea purpurea*)
 
 Il suo nome deriva dal greco *echinos*, che significa riccio: la parte

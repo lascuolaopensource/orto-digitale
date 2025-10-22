@@ -1,3 +1,10 @@
+---
+name: "Cetriolo"
+latinName: "Cucumis sativus L."
+zoning: "serra"
+season: "spring-summer"
+---
+
 **CETRIOLO** *(Cucumis sativus)*
 
 Il cetriolo è un ortaggio di origine indiana, appartenente alla

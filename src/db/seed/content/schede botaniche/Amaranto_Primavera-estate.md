@@ -1,3 +1,10 @@
+---
+name: "Amaranto"
+latinName: "Amaranthus hybridus L. subsp. caudatus"
+zoning: "percorso-alimurgico"
+season: "spring-summer"
+---
+
 **AMARANTO (Amaranthus retroflexus)**
 
 Il nome è legato al colore rosso amaranto che spesso le foglie assumono,

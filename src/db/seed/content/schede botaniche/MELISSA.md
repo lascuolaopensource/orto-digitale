@@ -1,3 +1,10 @@
+---
+name: "Melissa"
+latinName: ""
+zoning: "percorso-aromatico"
+season: "spring-summer"
+---
+
 **MELISSA** *(Melissa officinalis)*
 
 La [melissa](https://www.greenme.it/vivere/salute-e-benessere/melissa-proprieta-benefici-tisana/) appartiene
