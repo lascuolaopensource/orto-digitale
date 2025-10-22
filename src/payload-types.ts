@@ -177,18 +177,17 @@ export interface Area {
   id: number;
   name: string;
   key:
+    | 'alberi-da-frutto'
     | 'atelier'
-    | 'entrata'
-    | 'percorso-aromatico'
-    | 'tepee'
-    | 'vasche'
-    | 'percorso-alimurgico'
     | 'compostiera'
+    | 'entrata'
+    | 'eventi'
+    | 'percorso-alimurgico'
+    | 'percorso-aromatico'
     | 'ricettario'
     | 'serra'
-    | 'eventi'
-    | 'alberi-da-frutto';
-  short_description: string;
+    | 'tepee'
+    | 'vasche';
   description?: {
     root: {
       type: string;
@@ -390,7 +389,6 @@ export interface MediaSelect<T extends boolean = true> {
 export interface AreasSelect<T extends boolean = true> {
   name?: T;
   key?: T;
-  short_description?: T;
   description?: T;
   icon?: T;
   gallery?: T;

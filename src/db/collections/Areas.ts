@@ -2,17 +2,17 @@ import * as F from '@/db/fields'
 import type { CollectionConfig } from 'payload'
 
 export const AREAS_IDS = {
+	alberiDaFrutto: 'alberi-da-frutto',
 	atelier: 'atelier',
-	entrata: 'entrata',
-	percorsoAromatico: 'percorso-aromatico',
-	tepee: 'tepee',
-	vasche: 'vasche',
-	percorsoAlimurgico: 'percorso-alimurgico',
 	compostiera: 'compostiera',
+	entrata: 'entrata',
+	eventi: 'eventi',
+	percorsoAlimurgico: 'percorso-alimurgico',
+	percorsoAromatico: 'percorso-aromatico',
 	ricettario: 'ricettario',
 	serra: 'serra',
-	eventi: 'eventi',
-	alberiDaFrutto: 'alberi-da-frutto',
+	tepee: 'tepee',
+	vasche: 'vasche',
 } as const
 
 export const Areas = {
@@ -42,13 +42,6 @@ export const Areas = {
 			admin: {
 				position: 'sidebar',
 			},
-		},
-
-		{
-			name: 'short_description',
-			label: 'Descrizione breve',
-			type: 'text',
-			required: true,
 		},
 
 		F.description,
