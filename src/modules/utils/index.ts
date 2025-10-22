@@ -14,3 +14,10 @@ export interface PageProps {
 export function getRandomItem<T>(array: T[]): T {
 	return array[Math.floor(Math.random() * array.length)]
 }
+
+export function getRecord<T>(data: T | number): T {
+	if (typeof data === 'number') {
+		throw new Error('Data is a number')
+	}
+	return data
+}
