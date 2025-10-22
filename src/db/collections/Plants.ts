@@ -1,4 +1,5 @@
 import * as F from '@/db/fields'
+import { Plant } from '@/payload-types'
 import type { CollectionConfig } from 'payload'
 
 //
@@ -14,6 +15,7 @@ export const Plants: CollectionConfig = {
 	},
 	admin: {
 		useAsTitle: F.name.name,
+		defaultColumns: ['name', 'latin_name', 'season', 'area'] as (keyof Plant)[],
 	},
 	fields: [
 		F.name,
