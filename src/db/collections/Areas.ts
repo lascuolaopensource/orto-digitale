@@ -1,5 +1,6 @@
-import { CollectionConfig } from 'payload'
-import { Collection } from '.'
+import * as F from '@/db/fields'
+import type { CollectionConfig } from 'payload'
+import { Collection as C } from './_index'
 
 export const AREAS_IDS = {
 	atelier: 'atelier',
@@ -15,24 +16,22 @@ export const AREAS_IDS = {
 	alberiDaFrutto: 'alberi-da-frutto',
 } as const
 
-export const Areas: CollectionConfig = {
-	slug: Collection.Areas,
+export const Areas = {
+	slug: C.Areas,
+	access: {
+		read: () => true,
+	},
 	labels: {
 		singular: 'Area',
 		plural: 'Aree',
 	},
 	admin: {
-		useAsTitle: 'name',
+		useAsTitle: F.name.name,
 	},
 	fields: [
+		F.name,
 		{
-			name: 'name',
-			label: 'Nome',
-			type: 'text',
-			required: true,
-		},
-		{
-			name: 'id',
+			name: 'key',
 			label: 'ID',
 			type: 'select',
 			options: Object.values(AREAS_IDS).map((id) => ({
@@ -50,12 +49,7 @@ export const Areas: CollectionConfig = {
 			type: 'text',
 			required: true,
 		},
-		{
-			name: 'description',
-			label: 'Descrizione',
-			type: 'richText',
-			required: true,
-		},
+		F.description,
 		{
 			name: 'icon',
 			label: 'Icona',
@@ -75,5 +69,12 @@ export const Areas: CollectionConfig = {
 				position: 'sidebar',
 			},
 		},
+		F.join({
+			name: 'plants',
+			label: "Piante nell'area",
+			collection: C.Plants,
+			on: 'area',
+			admin: { position: 'sidebar' },
+		}),
 	],
-}
+} as const satisfies CollectionConfig

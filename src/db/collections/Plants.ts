@@ -1,17 +1,20 @@
 import * as F from '@/db/fields'
 import type { CollectionConfig } from 'payload'
-import { Collection } from '.'
+import { Collection } from './_index'
 
 //
 
-export const Plants: CollectionConfig = {
+export const Plants = {
 	slug: Collection.Plants,
-	admin: {
-		useAsTitle: F.name.name,
+	access: {
+		read: () => true,
 	},
 	labels: {
 		singular: 'Pianta',
 		plural: 'Piante',
+	},
+	admin: {
+		useAsTitle: F.name.name,
 	},
 	fields: [
 		F.name,
@@ -23,7 +26,6 @@ export const Plants: CollectionConfig = {
 				position: 'sidebar',
 			},
 		},
-
 		{
 			name: 'season',
 			label: 'Stagione',
@@ -47,7 +49,7 @@ export const Plants: CollectionConfig = {
 			},
 		},
 		{
-			name: 'areas',
+			name: 'area',
 			label: 'Area',
 			type: 'relationship',
 			relationTo: Collection.Areas,
@@ -55,21 +57,21 @@ export const Plants: CollectionConfig = {
 				position: 'sidebar',
 			},
 		},
-
 		{
 			name: 'immagine',
 			type: 'upload',
-			relationTo: 'media',
-			hasMany: true,
+			relationTo: Collection.Media,
 			admin: {
 				position: 'sidebar',
 			},
 		},
-
-		{
-			name: 'descrizione',
-			type: 'richText',
-			localized: true,
-		},
+		F.description,
+		F.join({
+			name: 'recipes',
+			label: 'Ricette correlate',
+			collection: Collection.Recipes,
+			on: 'plants_used',
+			admin: { position: 'sidebar' },
+		}),
 	],
-}
+} as const satisfies CollectionConfig

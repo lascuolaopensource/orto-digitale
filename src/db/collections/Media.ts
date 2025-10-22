@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload'
-import { Collection } from '.'
+import { Collection } from './_index'
 
 export const Media: CollectionConfig = {
 	slug: Collection.Media,

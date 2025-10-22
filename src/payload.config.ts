@@ -11,6 +11,7 @@ import { fileURLToPath } from 'url'
 import { Areas } from './db/collections/Areas'
 import { Media } from './db/collections/Media'
 import { Plants } from './db/collections/Plants'
+import { Recipes } from './db/collections/Recipes'
 import { Users } from './db/collections/Users'
 
 //
@@ -19,7 +20,7 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
-	collections: [Users, Media, Areas, Plants],
+	collections: [Users, Media, Areas, Plants, Recipes],
 
 	plugins: [
 		// payloadCloudPlugin(),

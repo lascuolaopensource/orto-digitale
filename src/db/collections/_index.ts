@@ -3,4 +3,5 @@ export enum Collection {
 	Media = 'media',
 	Users = 'users',
 	Plants = 'plants',
+	Recipes = 'recipes',
 }
