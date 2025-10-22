@@ -12,6 +12,8 @@ export default async function HomePage(props: PageProps) {
 		page: await getPageParam(props),
 		select: {
 			name: true,
+			area: true,
+			season: true,
 		},
 	})
 

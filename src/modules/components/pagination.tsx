@@ -20,8 +20,12 @@ type PaginationProps = {
 }
 
 export async function Pagination(props: PaginationProps) {
-	let { hasNextPage, hasPrevPage, totalPages, page: currentPage = 1 } = props.docs
-	let range = Array.range(1, totalPages)
+	const { hasNextPage, hasPrevPage, totalPages, page: currentPage = 1 } = props.docs
+
+	const hasMultiplePages = totalPages > 1
+	if (!hasMultiplePages) return null
+
+	const range = Array.range(1, totalPages)
 
 	function getPageUrl(page: number) {
 		return `${props.basePath}?${PAGE_PARAM}=${page}`
