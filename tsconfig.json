@@ -21,7 +21,8 @@
 		"paths": {
 			"@/*": ["./src/*"],
 			"@payload-config": ["./src/payload.config.ts"],
-			"#/*": ["./src/modules/*"]
+			"#/*": ["./src/modules/*"],
+			"$/*": ["./src/modules/components/shadcn/*"]
 		},
 		"target": "ES2022"
 	},
