@@ -18,6 +18,7 @@ await clearDb(payload)
 const areas = await createAreas(payload, markdownConverter)
 const plants = await createPlants(payload, markdownConverter, areas)
 await createRecipes(payload, markdownConverter, plants)
+await createAbout(payload, markdownConverter)
 
 console.log('✅ Seed completed')
 process.exit(0)
@@ -104,6 +105,17 @@ async function createRecipes(
 		recipesRecords.push(recipeRecord)
 	}
 	return recipesRecords
+}
+
+async function createAbout(payload: Payload, markdownConverter: MarkdownConverter) {
+	const about = fs.readFileSync('./src/db/seed/content/globals/about.md', 'utf-8')
+	const content = markdownConverter(about)
+	await payload.updateGlobal({
+		slug: 'about',
+		data: {
+			description: content,
+		},
+	})
 }
 
 /* Utils */
