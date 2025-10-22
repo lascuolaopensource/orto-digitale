@@ -1,46 +1,63 @@
+import { PageProps } from '#/utils'
 import {
 	PaginationContent,
-	PaginationEllipsis,
 	PaginationItem,
 	PaginationLink,
 	PaginationNext,
 	PaginationPrevious,
 	Pagination as RootPagination,
 } from '$/components/ui/pagination'
-
+import { Array } from 'Effect'
 import type { PaginatedDocs } from 'payload'
 
 //
 
+const PAGE_PARAM = 'page'
+
 type PaginationProps = {
 	docs: PaginatedDocs
+	basePath: string
 }
 
-export function Pagination(props: PaginationProps) {
-	const { hasNextPage, hasPrevPage, pagingCounter, totalDocs, totalPages } = props.docs
+export async function Pagination(props: PaginationProps) {
+	let { hasNextPage, hasPrevPage, totalPages, page: currentPage = 1 } = props.docs
+	let range = Array.range(1, totalPages)
+
+	function getPageUrl(page: number) {
+		return `${props.basePath}?${PAGE_PARAM}=${page}`
+	}
 
 	return (
 		<RootPagination>
 			<PaginationContent>
 				{hasPrevPage && (
 					<PaginationItem>
-						<PaginationPrevious href="#" />
+						<PaginationPrevious href={getPageUrl(currentPage - 1)} />
 					</PaginationItem>
 				)}
 
-				<PaginationItem>
-					<PaginationLink href="#">1</PaginationLink>
-				</PaginationItem>
-				<PaginationItem>
-					<PaginationEllipsis />
-				</PaginationItem>
+				{range.map((page) => (
+					<PaginationItem key={page}>
+						<PaginationLink href={getPageUrl(page)} isActive={page === currentPage}>
+							{page}
+						</PaginationLink>
+					</PaginationItem>
+				))}
 
 				{hasNextPage && (
 					<PaginationItem>
-						<PaginationNext href="#" />
+						<PaginationNext href={getPageUrl(currentPage + 1)} />
 					</PaginationItem>
 				)}
 			</PaginationContent>
 		</RootPagination>
 	)
+}
+
+export async function getPageParam(pageProps: PageProps) {
+	const searchParams = await pageProps.searchParams
+	if (!(searchParams && PAGE_PARAM in searchParams)) return 1
+	const page = searchParams[PAGE_PARAM]
+	if (!page || Array.isArray(page)) return 1
+	return parseInt(page)
 }
