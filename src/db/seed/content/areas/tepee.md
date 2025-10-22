@@ -1,6 +1,6 @@
 ---
-name: "Testo Tepee"
-key: "tepee"
+name: 'Tepee'
+key: 'tepee'
 ---
 
 **Tepee**

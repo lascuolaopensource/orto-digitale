@@ -1,6 +1,6 @@
 ---
-name: "Vasche Cps"
-key: "vasche"
+name: 'Vasche'
+key: 'vasche'
 ---
 
 All'interno dell'orto sono presenti due vasche a disposizione del Centro

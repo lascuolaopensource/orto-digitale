@@ -68,7 +68,9 @@ export const Areas = {
 			label: "Piante nell'area",
 			collection: 'plants',
 			on: 'area',
-			admin: { position: 'sidebar' },
+			admin: {
+				defaultColumns: ['name'],
+			},
 		}),
 	],
 } as const satisfies CollectionConfig

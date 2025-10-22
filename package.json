@@ -42,16 +42,19 @@
 		"@types/react": "19.1.8",
 		"@types/react-dom": "19.1.6",
 		"@vitejs/plugin-react": "4.5.2",
+		"array-shuffle": "^4.0.0",
 		"eslint": "^9.16.0",
 		"eslint-config-next": "15.4.4",
 		"eslint-plugin-perfectionist": "^4.15.1",
+		"front-matter": "^4.0.2",
 		"jsdom": "26.1.0",
 		"playwright": "1.54.1",
 		"playwright-core": "1.54.1",
 		"prettier": "^3.6.2",
 		"typescript": "5.7.3",
 		"vite-tsconfig-paths": "5.1.4",
-		"vitest": "3.2.3"
+		"vitest": "3.2.3",
+		"zod": "^4.1.12"
 	},
 	"engines": {
 		"node": "^18.20.2 || >=20.9.0",
