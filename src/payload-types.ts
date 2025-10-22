@@ -221,10 +221,6 @@ export interface Area {
 export interface Plant {
   id: number;
   name: string;
-  latin_name?: string | null;
-  season?: ('spring-summer' | 'fall-winter' | 'all-year') | null;
-  area?: (number | null) | Area;
-  immagine?: (number | null) | Media;
   description?: {
     root: {
       type: string;
@@ -240,6 +236,10 @@ export interface Plant {
     };
     [k: string]: unknown;
   } | null;
+  latin_name?: string | null;
+  season?: ('spring-summer' | 'fall-winter' | 'all-year') | null;
+  area?: (number | null) | Area;
+  immagine?: (number | null) | Media;
   recipes?: {
     docs?: (number | Recipe)[];
     hasNextPage?: boolean;
@@ -404,11 +404,11 @@ export interface AreasSelect<T extends boolean = true> {
  */
 export interface PlantsSelect<T extends boolean = true> {
   name?: T;
+  description?: T;
   latin_name?: T;
   season?: T;
   area?: T;
   immagine?: T;
-  description?: T;
   recipes?: T;
   updatedAt?: T;
   createdAt?: T;

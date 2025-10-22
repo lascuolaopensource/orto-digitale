@@ -50,6 +50,7 @@ export const Areas = {
 			type: 'text',
 			required: true,
 		},
+
 		F.description,
 
 		F.media({
