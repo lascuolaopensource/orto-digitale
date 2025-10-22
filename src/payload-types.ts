@@ -241,7 +241,7 @@ export interface Plant {
   } | null;
   latin_name: string;
   season: 'spring-summer' | 'fall-winter' | 'all-year';
-  area?: (number | null) | Area;
+  area: number | Area;
   immagine?: (number | null) | Media;
   recipes?: {
     docs?: (number | Recipe)[];

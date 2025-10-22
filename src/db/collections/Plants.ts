@@ -59,6 +59,7 @@ export const Plants: CollectionConfig = {
 			name: 'area',
 			label: 'Area',
 			collection: 'areas',
+			required: true,
 			admin: {
 				position: 'sidebar',
 			},

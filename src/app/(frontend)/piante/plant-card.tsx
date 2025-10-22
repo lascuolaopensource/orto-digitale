@@ -1,3 +1,4 @@
+import it from '#/i18n/it.json'
 import { cn } from '$/lib/utils'
 import { getRandomItem } from '@/modules/utils'
 import { Plant } from '@/payload-types'
@@ -12,17 +13,16 @@ type PlantCardProps = {
 }
 
 export function PlantCard({ plant}: PlantCardProps) {
-	
 	const rotationClass = getRandomItem(rotationClasses)
 
 	return (
 		<Link
 			href={`/piante/${plant.id}`}
 			className={cn(
-				"p-4 group flex justify-between items-center rounded-lg gap-4",
+				"p-4 group flex justify-between items-center rounded-lg gap-4 bg-card",
 				"border border-gray-200 hover:border-gray-300 hover:shadow-sm",
 				rotationClass,
-				"transition-transform",
+				"transition-transform hover:z-10",
 			)}
 		>
 			<div className="flex items-center gap-4">
@@ -31,8 +31,8 @@ export function PlantCard({ plant}: PlantCardProps) {
 					<h3 className="text-base font-medium transition-colors group-hover:text-primary">
 						{plant.name}
 					</h3>
-					<p className="text-xs italic text-gray-500 text-balance">{plant.latin_name}</p>
-					<p className="text-sm text-gray-500">{plant.season}</p>
+					<p className="text-xs italic text-gray-500 text-balance mb-3">{plant.latin_name}</p>
+					<SeasonTag season={plant.season} className='-translate-x-1' />
 				</div>
 			</div>
 			<ArrowRight size={24} className="text-primary/20 transition-transform group-hover:translate-x-1" />
@@ -67,12 +67,53 @@ function FallbackImage() {
 }
 
 const rotationClasses = [
-	'rotate-0 hover:rotate-2',
-	'rotate-2 hover:rotate-4',
-	'rotate-4 hover:rotate-6',
+	'rotate-0 hover:-rotate-2',
+	'rotate-2 hover:rotate-0',
+	'rotate-4 hover:rotate-2',
 	'rotate-0 hover:-rotate-2',
 	'-rotate-2 hover:-rotate-4',
 	'-rotate-4 hover:-rotate-6',
 ]
 
-type Season = NonNullable<Plant["season"]>
+// 
+
+type Season = Plant["season"]
+
+type SeasonDisplayData = {
+	bgClass: string
+	label: string
+}
+
+const seasonDisplayDataMap: Record<Season, SeasonDisplayData> = {
+	'spring-summer': {
+		bgClass: 'bg-yellow-500',
+		label: it.plants.seasons.spring_summer,
+	},
+	'fall-winter': {
+		bgClass: 'bg-blue-500',
+		label: it.plants.seasons.fall_winter,
+	},
+	'all-year': {
+		bgClass: 'bg-purple-500',
+		label: it.plants.seasons.all_year,
+	},
+}
+
+type SeasonTagProps = {
+	season: Season
+	className?: string
+}
+
+function SeasonTag(props: SeasonTagProps) {
+	const { season, className } = props
+	const seasonDisplayData = seasonDisplayDataMap[season]
+	return (
+		<div className={cn(
+			'px-2 py-0.5 rounded-md text-white text-xs w-fit',
+			seasonDisplayData.bgClass,
+			className,
+		)}>
+			{seasonDisplayData.label}
+		</div>
+	)
+}

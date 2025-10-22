@@ -1,0 +1,10 @@
+{
+	"plants": {
+		"page_title":"Scopri le nostre piante!",
+		"seasons": {
+			"spring_summer": "Primavera / Estate",
+			"fall_winter": "Autunno / Inverno",
+			"all_year": "Tutto l'anno"
+		}
+	}
+}
