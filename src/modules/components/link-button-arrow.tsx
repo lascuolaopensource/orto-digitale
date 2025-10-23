@@ -1,0 +1,29 @@
+import { cn } from '$/lib/utils'
+import { ArrowRightIcon } from 'lucide-react'
+import Link from 'next/link'
+
+type Props = {
+	href: string
+	children: React.ReactNode
+	className?: string
+}
+
+export function LinkButtonArrow(props: Props) {
+	const { href, children, className } = props
+	return (
+		<Link
+			href={href}
+			className={cn(
+				'group',
+				'flex justify-center self-stretch items-center gap-1 ',
+				'p-3 py-2 rounded-lg',
+				'bg-card text-orange-600 border border-orange-500',
+				'hover:ring-2 hover:ring-orange-600',
+				className,
+			)}
+		>
+			<span>{children}</span>
+			<ArrowRightIcon size={16} className="group-hover:translate-x-1 transition-transform" />
+		</Link>
+	)
+}

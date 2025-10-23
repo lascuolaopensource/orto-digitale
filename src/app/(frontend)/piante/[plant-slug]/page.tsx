@@ -1,14 +1,14 @@
 import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 import { BackLink } from '#/components/backlink'
+import { LinkButtonArrow } from '#/components/link-button-arrow'
 import { PageContainer } from '#/components/page-container'
 import { T } from '#/components/t'
 import it from '#/i18n/it.json'
 import { getDb, getRecord } from '#/utils'
 import { cn } from '$/lib/utils'
-import { ArrowRightIcon } from 'lucide-react'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+import { BoxedHeading } from '@/modules/components/boxed-heading'
 import { RichText } from '@/modules/components/richtext'
 import { Area, Plant } from '@/payload-types'
 
@@ -44,14 +44,32 @@ export default async function Page(props: PageProps) {
 		<PageContainer>
 			<BackLink href="/piante">{it.plants.back_to_plants}</BackLink>
 
-			<div className="flex gap-8 items-start">
+			<div className="flex items-center flex-col md:flex-row gap-10 md:items-start md:justify-center pt-10">
 				<VerticalCard plant={plant} area={area} />
-				<div>
-					<RichText data={plant.description as SerializedEditorState} />
+				<div className="space-y-8 md:pt-20">
+					<div>
+						<BoxedHeading tag="h2" className="rotate-1 mb-6">
+							{it.tell_me_everything}
+						</BoxedHeading>
+						<RichText data={plant.description as SerializedEditorState} />
+					</div>
+
+					{recipes.length > 0 && (
+						<div>
+							<BoxedHeading tag="h2" className="-rotate-1 mb-6">
+								{it.plants.with_this_plant_you_can_make}:
+							</BoxedHeading>
+							<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+								{recipes.map((recipe) => (
+									<LinkButtonArrow key={recipe.id} href={`/ricette/${recipe.id}`}>
+										{recipe.name}
+									</LinkButtonArrow>
+								))}
+							</div>
+						</div>
+					)}
 				</div>
 			</div>
-
-			<pre>{JSON.stringify(plant, null, 2)}</pre>
 
 			{/* <div>
   
@@ -99,13 +117,7 @@ function VerticalCard(props: { plant: Plant; area: Area }) {
 				<SeasonTag season={plant.season} className="text-md" />
 			</Container>
 			<Container label={it.plants.you_find_in} className="gap-1 self-stretch">
-				<Link
-					href={`/aree/${area.key}`}
-					className="flex justify-center self-stretch items-center gap-1 group hover:ring-2 hover:ring-orange-600 bg-card p-3 py-2 rounded-lg border border-orange-500 text-orange-600"
-				>
-					<span className="">{area.name}</span>
-					<ArrowRightIcon size={16} className="group-hover:translate-x-1 transition-transform" />
-				</Link>
+				<LinkButtonArrow href={`/aree/${area.key}`}>{area.name}</LinkButtonArrow>
 			</Container>
 		</div>
 	)

@@ -6,5 +6,5 @@ type Props = {
 }
 
 export function PageContainer({ children, className }: Props) {
-	return <div className={cn('container mx-auto px-4 py-8', className)}>{children}</div>
+	return <div className={cn('max-w-7xl mx-auto px-6 py-8', className)}>{children}</div>
 }

@@ -1,10 +1,12 @@
 {
+	"tell_me_everything": "Raccontami tutto!",
 	"plants": {
 		"page_title": "Scopri le nostre piante!",
 		"back_to_plants": "Torna alle piante",
 		"season": "Stagione",
 		"you_find_in": "Puoi trovarla in",
 		"scientific_name": "Nome scientifico",
+		"with_this_plant_you_can_make": "Con questa pianta puoi preparare",
 		"seasons": {
 			"spring_summer": "Primavera / Estate",
 			"fall_winter": "Autunno / Inverno",
