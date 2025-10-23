@@ -1,15 +1,15 @@
+import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 import { BackLink } from '#/components/backlink'
+import { BoxedHeading } from '#/components/boxed-heading'
 import { LinkButtonArrow } from '#/components/link-button-arrow'
 import { PageContainer } from '#/components/page-container'
+import { RichText } from '#/components/richtext'
 import { T } from '#/components/t'
 import it from '#/i18n/it.json'
 import { getDb, getRecord } from '#/utils'
 import { cn } from '$/lib/utils'
-import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 import { notFound } from 'next/navigation'
 
-import { BoxedHeading } from '#/components/boxed-heading'
-import { RichText } from '#/components/richtext'
 import { Area, Plant } from '@/payload-types'
 
 import { SeasonTag } from '../utils'
