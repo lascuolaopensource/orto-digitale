@@ -1,3 +1,4 @@
+import Footer from '#/components/footer'
 import { Navbar } from '#/components/navbar'
 import React from 'react'
 
@@ -14,7 +15,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 				<main>
 					<Navbar />
 					{children}
-					{/* <Footer /> */}
+					<Footer />
 				</main>
 			</body>
 		</html>
