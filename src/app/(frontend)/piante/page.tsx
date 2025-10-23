@@ -34,12 +34,12 @@ export default async function HomePage(props: PageProps) {
 
 type PlantCardProps = {
 	plant: Plant
-	exploreLinkText?: string
+	className?: string
 }
 
-export function PlantCard({ plant }: PlantCardProps) {
+export function PlantCard({ plant, className }: PlantCardProps) {
 	return (
-		<Card href={`/piante/${plant.id}`} image={true}>
+		<Card href={`/piante/${plant.id}`} image={true} className={className}>
 			<h3 className="text-base font-medium transition-colors group-hover:text-primary">
 				{plant.name}
 			</h3>
