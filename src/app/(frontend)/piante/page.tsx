@@ -3,7 +3,7 @@ import { getPageParam } from '#/components/pagination'
 import it from '#/i18n/it.json'
 import { getDb, PageProps } from '#/utils'
 
-import { PageStructure } from '@/modules/components/page-structure'
+import { PageStructure } from '#/components/page-structure'
 import { Plant } from '@/payload-types'
 
 import { SeasonTag } from './utils'

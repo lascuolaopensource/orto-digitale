@@ -1,6 +1,6 @@
+import { Badge } from '#/components/badge'
 import it from '#/i18n/it.json'
 import { cn } from '$/lib/utils'
-import { Badge } from '@/modules/components/badge'
 import { Plant } from '@/payload-types'
 
 //

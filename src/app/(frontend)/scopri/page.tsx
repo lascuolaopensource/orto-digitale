@@ -1,10 +1,9 @@
+import { Badge } from '#/components/badge'
+import { Card } from '#/components/card'
+import { PageStructure } from '#/components/page-structure'
+import { T } from '#/components/t'
 import it from '#/i18n/it.json'
 import { getDb, getRecords } from '#/utils'
-import { Badge } from '@/modules/components/badge'
-
-import { Card } from '@/modules/components/card'
-import { PageStructure } from '@/modules/components/page-structure'
-import { T } from '@/modules/components/t'
 import { Area } from '@/payload-types'
 
 //

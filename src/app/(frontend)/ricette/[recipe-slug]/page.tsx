@@ -1,11 +1,10 @@
+import { BackLink } from '#/components/backlink'
+import { BoxedHeading } from '#/components/boxed-heading'
+import { PageContainer } from '#/components/page-container'
+import { RichText } from '#/components/richtext'
+import { T } from '#/components/t'
 import it from '#/i18n/it.json'
-import { BackLink } from '@/modules/components/backlink'
-import { BoxedHeading } from '@/modules/components/boxed-heading'
-import { PageContainer } from '@/modules/components/page-container'
-import { RichText } from '@/modules/components/richtext'
-import { T } from '@/modules/components/t'
-import { getDb, getRecords } from '@/modules/utils'
-import { notFound } from 'next/navigation'
+import { getDb, getOne, getRecords } from '#/utils'
 import { PlantCard } from '../../piante/page'
 
 //
@@ -18,17 +17,16 @@ export default async function Page(props: Props) {
 	const db = await getDb()
 	const recipeId = (await props.params)['recipe-slug']
 
-	const { docs } = await db.find({
-		collection: 'recipes',
-		where: {
-			id: {
-				equals: recipeId,
+	const recipe = getOne(
+		await db.find({
+			collection: 'recipes',
+			where: {
+				id: {
+					equals: recipeId,
+				},
 			},
-		},
-	})
-
-	const recipe = docs[0]
-	if (!recipe) return notFound()
+		}),
+	)
 
 	const plants = getRecords(recipe.plants_used)
 

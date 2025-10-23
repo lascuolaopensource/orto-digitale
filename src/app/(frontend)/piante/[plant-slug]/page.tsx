@@ -5,13 +5,9 @@ import { PageContainer } from '#/components/page-container'
 import { RichText } from '#/components/richtext'
 import { T } from '#/components/t'
 import it from '#/i18n/it.json'
-import { getDb, getRecord, getRecords } from '#/utils'
+import { getDb, getOne, getRecord, getRecords } from '#/utils'
 import { cn } from '$/lib/utils'
-import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
-import { notFound } from 'next/navigation'
-
 import { Area, Plant } from '@/payload-types'
-
 import { SeasonTag } from '../utils'
 
 //
@@ -24,18 +20,17 @@ export default async function Page(props: PageProps) {
 	const db = await getDb()
 	const plantId = (await props.params)['plant-slug']
 
-	const docs = await db.find({
-		collection: 'plants',
-		depth: 2,
-		where: {
-			id: {
-				equals: plantId,
+	const plant = getOne(
+		await db.find({
+			collection: 'plants',
+			depth: 2,
+			where: {
+				id: {
+					equals: plantId,
+				},
 			},
-		},
-	})
-
-	const plant = docs.docs[0]
-	if (!plant) return notFound()
+		}),
+	)
 
 	const area = getRecord(plant.area)
 	const recipes = getRecords(plant.recipes?.docs)
@@ -51,7 +46,7 @@ export default async function Page(props: PageProps) {
 						<BoxedHeading tag="h2" className="rotate-1 mb-6">
 							{it.tell_me_everything}
 						</BoxedHeading>
-						<RichText data={plant.description as SerializedEditorState} />
+						{plant.description && <RichText data={plant.description} />}
 					</div>
 
 					{recipes.length > 0 && (
