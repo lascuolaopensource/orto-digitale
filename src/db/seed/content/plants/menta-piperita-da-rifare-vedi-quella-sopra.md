@@ -1,11 +1,9 @@
 ---
-name: "Menta"
-latinName: "Mentha × piperita L."
-zoning: "percorso-aromatico"
-season: "all-year"
+name: 'Menta'
+latinName: 'Mentha × piperita L.'
+zoning: 'percorso-aromatico'
+season: 'all-year'
 ---
-
-**MENTA PIPERITA (***Mentha piperita L.)*
 
 **Nome Comune:** menta piperita
 
@@ -56,7 +54,7 @@ tempie opportunamente diluito (2%) in una crema o in un olio vegetale
 oppure diffuso nell'ambiente aiuta ad alleviare il mal di testa e a
 favorire la concentrazione.
 
-**Curiosità:** il nome latino *mentha* rimanda a un antico
+**Curiosità:** il nome latino _mentha_ rimanda a un antico
 mito greco raccontato da Ovidio, secondo cui una ninfa d'acqua dal nome
 Myntha, figlia del dio dei fiumi Cocito, avesse una relazione con Ade e
 che la moglie di questi, Persefone, travolta dalla gelosia, usò i suoi

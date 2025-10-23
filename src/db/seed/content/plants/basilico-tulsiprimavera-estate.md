@@ -1,12 +1,9 @@
 ---
-name: "Basilico"
-latinName: "Ocimum basilicum L."
-zoning: "percorso-aromatico"
-season: "spring-summer"
+name: 'Basilico'
+latinName: 'Ocinum sanctum (o anche Ocimum tenuiflorum)'
+zoning: 'percorso-aromatico'
+season: 'spring-summer'
 ---
-
-**BASILICO TULSI o TULASI (***Ocinum sanctum* o anche *Ocimum
-tenuiflorum)*
 
 Il basilico Tulsi appartiene alla famiglia delle Labiateae; il nome
 tulsi significa "incomparabile".
