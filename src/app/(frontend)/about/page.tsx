@@ -1,4 +1,8 @@
-import { getDb } from '@/modules/utils'
+import { BoxedHeading } from '#/components/boxed-heading'
+import { PageContainer } from '#/components/page-container'
+import { RichText } from '#/components/richtext'
+import it from '#/i18n/it.json'
+import { getDb } from '#/utils'
 
 //
 
@@ -10,8 +14,13 @@ export default async function HomePage() {
 	})
 
 	return (
-		<div>
-			<pre>{JSON.stringify(about, null, 2)}</pre>
-		</div>
+		<PageContainer>
+			<div className="max-w-xl mx-auto">
+				<BoxedHeading tag="h1" className="-rotate-2 mb-8">
+					{it.about_us}
+				</BoxedHeading>
+				<RichText data={about.description} />
+			</div>
+		</PageContainer>
 	)
 }

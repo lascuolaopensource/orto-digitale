@@ -1,5 +1,9 @@
-import { getPageParam, Pagination } from '@/modules/components/pagination'
-import { getDb, PageProps } from '@/modules/utils'
+import { LinkButtonArrow } from '#/components/link-button-arrow'
+import { PageContainer } from '#/components/page-container'
+import { getPageParam, Pagination } from '#/components/pagination'
+import { getDb, PageProps } from '#/utils'
+
+import { PageGrid } from '@/modules/components/page-grid'
 
 //
 
@@ -15,9 +19,15 @@ export default async function HomePage(props: PageProps) {
 	})
 
 	return (
-		<div>
-			<pre>{JSON.stringify(recipes, null, 2)}</pre>
+		<PageContainer>
+			<PageGrid>
+				{recipes.docs.map((recipe) => (
+					<LinkButtonArrow key={recipe.id} href={`/ricette/${recipe.id}`}>
+						{recipe.name}
+					</LinkButtonArrow>
+				))}
+			</PageGrid>
 			<Pagination docs={recipes} basePath="/ricette" />
-		</div>
+		</PageContainer>
 	)
 }

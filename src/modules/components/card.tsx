@@ -1,41 +1,40 @@
+import { getRandomItem } from '#/utils'
 import { cn } from '$/lib/utils'
-import { getRandomItem } from '@/modules/utils'
-import { Plant } from '@/payload-types'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import { SeasonTag } from './utils'
 
-// 
+//
 
-type PlantCardProps = {
-	plant: Plant
-	exploreLinkText?: string
+type Props = {
+	children: React.ReactNode
+	href: string
+	className?: string
+	image?: boolean
 }
 
-export function PlantCard({ plant}: PlantCardProps) {
+export function Card(props: Props) {
+	const { children, href, className, image = true } = props
 	const rotationClass = getRandomItem(rotationClasses)
 
 	return (
 		<Link
-			href={`/piante/${plant.id}`}
+			href={href}
 			className={cn(
-				"p-4 group flex justify-between items-center rounded-lg gap-4 bg-card",
-				"border border-gray-200 hover:border-gray-300 hover:shadow-sm",
+				'p-4 group flex justify-between items-center rounded-lg gap-4 bg-card',
+				'border border-gray-200 hover:border-gray-300 hover:shadow-sm',
 				rotationClass,
-				"transition-transform hover:z-10",
+				'transition-transform hover:z-10',
+				className,
 			)}
 		>
 			<div className="flex items-center gap-4">
-				<FallbackImage />
-				<div>
-					<h3 className="text-base font-medium transition-colors group-hover:text-primary">
-						{plant.name}
-					</h3>
-					<p className="text-xs italic text-gray-500 text-balance mb-3">{plant.latin_name}</p>
-					<SeasonTag season={plant.season} className='-translate-x-1' />
-				</div>
+				{image && <FallbackImage />}
+				<div>{children}</div>
 			</div>
-			<ArrowRight size={24} className="text-primary/20 transition-transform group-hover:translate-x-1" />
+			<ArrowRight
+				size={24}
+				className="text-primary/20 transition-transform group-hover:translate-x-1"
+			/>
 		</Link>
 	)
 }

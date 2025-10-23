@@ -1,4 +1,4 @@
-import { getDb } from '@/modules/utils'
+import { getDb } from '#/utils'
 
 //
 
