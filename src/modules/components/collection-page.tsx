@@ -16,7 +16,7 @@ type Props<Docs extends PaginatedDocs> = {
 	item: (item: Docs['docs'][number]) => React.ReactNode
 }
 
-export function PageStructure<Docs extends PaginatedDocs>(props: Props<Docs>) {
+export function CollectionPage<Docs extends PaginatedDocs>(props: Props<Docs>) {
 	const { docs, basePath, title, item } = props
 	const randomRotationClass = getRandomItem([
 		'-rotate-1',

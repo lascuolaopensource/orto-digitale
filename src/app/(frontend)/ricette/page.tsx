@@ -3,7 +3,7 @@ import { getPageParam } from '#/components/pagination'
 import it from '#/i18n/it.json'
 import { getDb, PageProps } from '#/utils'
 
-import { PageStructure } from '#/components/page-structure'
+import { CollectionPage } from '@/modules/components/collection-page'
 
 //
 
@@ -19,7 +19,7 @@ export default async function HomePage(props: PageProps) {
 	})
 
 	return (
-		<PageStructure
+		<CollectionPage
 			docs={recipes}
 			basePath="/ricette"
 			title={it.recipes.page_title}

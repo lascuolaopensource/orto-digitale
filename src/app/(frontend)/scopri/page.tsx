@@ -1,9 +1,9 @@
 import { Badge } from '#/components/badge'
 import { Card } from '#/components/card'
-import { PageStructure } from '#/components/page-structure'
 import { T } from '#/components/t'
 import it from '#/i18n/it.json'
 import { getDb, getRecords } from '#/utils'
+import { CollectionPage } from '@/modules/components/collection-page'
 import { Area } from '@/payload-types'
 
 //
@@ -20,7 +20,7 @@ export default async function HomePage() {
 	})
 
 	return (
-		<PageStructure
+		<CollectionPage
 			docs={areas}
 			basePath="/scopri"
 			title={it.discover.page_title}
