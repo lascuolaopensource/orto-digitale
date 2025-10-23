@@ -1,8 +1,9 @@
 {
 	"plants": {
-		"page_title":"Scopri le nostre piante!",
-		"back_to_plants":"Torna alle piante",
+		"page_title": "Scopri le nostre piante!",
+		"back_to_plants": "Torna alle piante",
 		"season": "Stagione",
+		"you_find_in": "Puoi trovarla in",
 		"scientific_name": "Nome scientifico",
 		"seasons": {
 			"spring_summer": "Primavera / Estate",

@@ -13,7 +13,7 @@ const compat = new FlatCompat({
 })
 
 const eslintConfig = [
-	...compat.extends('next/core-web-vitals', 'next/typescript'),
+	...compat.extends('next/typescript'),
 	{
 		rules: {
 			'@typescript-eslint/ban-ts-comment': 'warn',
@@ -41,12 +41,7 @@ const eslintConfig = [
 			perfectionist,
 		},
 		rules: {
-			'perfectionist/sort-imports': [
-				'error',
-				{
-					partitionByNewLine: true,
-				},
-			],
+			'perfectionist/sort-imports': ['error'],
 		},
 	},
 ]
