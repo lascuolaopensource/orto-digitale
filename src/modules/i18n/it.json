@@ -3,6 +3,10 @@
 		"page_title": "Scopri le nostre ricette!",
 		"back_to_recipes": "Torna alle ricette"
 	},
+	"discover": {
+		"page_title": "Scopri l'orto!",
+		"back": "Indietro"
+	},
 	"tell_me_everything": "Raccontami tutto!",
 	"about_us": "Chi siamo?",
 	"plants": {

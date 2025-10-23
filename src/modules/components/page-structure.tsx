@@ -2,10 +2,10 @@ import { getRandomItem } from '#/utils'
 import { cn } from '$/lib/utils'
 import { PaginatedDocs } from 'payload'
 
+import { BoxedHeading } from './boxed-heading'
 import { PageContainer } from './page-container'
 import { PageGrid } from './page-grid'
 import { Pagination } from './pagination'
-import { T } from './t'
 
 //
 
@@ -29,10 +29,10 @@ export function PageStructure<Docs extends PaginatedDocs>(props: Props<Docs>) {
 
 	return (
 		<PageContainer className="space-y-8">
-			<div className="py-5">
-				<T tag="h1" className={cn('text-center', randomRotationClass)}>
+			<div className="py-5 flex items-center justify-center">
+				<BoxedHeading tag="h1" className={cn('text-center px-12!', randomRotationClass)}>
 					{title}
-				</T>
+				</BoxedHeading>
 			</div>
 
 			<PageGrid>{docs.docs.map(item)}</PageGrid>
