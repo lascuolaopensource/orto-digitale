@@ -1,8 +1,11 @@
 import it from '#/i18n/it.json'
-import { getDb } from '#/utils'
+import { getDb, getRecords } from '#/utils'
+import { Badge } from '@/modules/components/badge'
 
 import { Card } from '@/modules/components/card'
 import { PageStructure } from '@/modules/components/page-structure'
+import { T } from '@/modules/components/t'
+import { Area } from '@/payload-types'
 
 //
 
@@ -22,11 +25,21 @@ export default async function HomePage() {
 			docs={areas}
 			basePath="/scopri"
 			title={it.discover.page_title}
-			item={(area) => (
-				<Card key={area.id} href={`/scopri/${area.id}`}>
-					{area.name}
-				</Card>
-			)}
+			item={(area) => <AreaCard key={area.id} area={area} />}
 		/>
+	)
+}
+
+function AreaCard({ area }: { area: Area }) {
+	const plants = getRecords(area.plants?.docs)
+	return (
+		<Card href={`/scopri/${area.id}`}>
+			<T>{area.name}</T>
+			{plants.length > 0 && (
+				<Badge className="bg-green-600 mt-1">
+					{plants.length} {it.plants_count}
+				</Badge>
+			)}
+		</Card>
 	)
 }
