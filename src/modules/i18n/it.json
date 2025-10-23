@@ -1,7 +1,8 @@
 {
 	"recipes": {
 		"page_title": "Scopri le nostre ricette!",
-		"back_to_recipes": "Torna alle ricette"
+		"back_to_recipes": "Torna alle ricette",
+		"plants_used": "Piante utilizzate"
 	},
 	"discover": {
 		"page_title": "Scopri l'orto!",

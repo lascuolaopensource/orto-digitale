@@ -21,3 +21,7 @@ export function getRecord<T>(data: T | number): T {
 	}
 	return data
 }
+
+export function getRecords<T>(data: (number | T)[] | null | undefined): T[] {
+	return data?.map(getRecord) ?? []
+}
