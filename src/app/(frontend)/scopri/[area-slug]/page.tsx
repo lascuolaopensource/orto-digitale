@@ -1,9 +1,10 @@
+import { BackLink } from '#/components/backlink'
+import { BoxedHeading } from '#/components/boxed-heading'
+import { PageContainer } from '#/components/page-container'
+import { RichText } from '#/components/richtext'
 import it from '#/i18n/it.json'
 import { getDb, getOne, getRecords } from '#/utils'
-import { BackLink } from '@/modules/components/backlink'
-import { BoxedHeading } from '@/modules/components/boxed-heading'
-import { PageContainer } from '@/modules/components/page-container'
-import { RichText } from '@/modules/components/richtext'
+
 import { PlantCard } from '../../piante/page'
 
 type Props = {
@@ -25,7 +26,7 @@ export default async function Page(props: Props) {
 
 	return (
 		<PageContainer className="max-w-4xl space-y-10">
-			<BackLink fallbackHref="/scopri">{it.discover.back}</BackLink>
+			<BackLink href="/scopri">{it.discover.back}</BackLink>
 			<div className="flex flex-col items-center justify-center gap-4">
 				<BoxedHeading tag="h1" className="w-fit">
 					{area.name}

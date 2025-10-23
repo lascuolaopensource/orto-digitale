@@ -1,4 +1,4 @@
-import { getRandomItem } from '#/utils'
+import { getRandomRotationClass } from '#/utils'
 import { cn } from '$/lib/utils'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -14,7 +14,6 @@ type Props = {
 
 export function Card(props: Props) {
 	const { children, href, className, image = true } = props
-	const rotationClass = getRandomItem(rotationClasses)
 
 	return (
 		<Link
@@ -22,7 +21,7 @@ export function Card(props: Props) {
 			className={cn(
 				'p-4 group flex justify-between items-center rounded-lg gap-4 bg-card',
 				'border border-gray-200 hover:border-gray-300 hover:shadow-sm',
-				rotationClass,
+				getRandomRotationClass('lg'),
 				'transition-transform hover:z-10',
 				className,
 			)}
@@ -64,12 +63,3 @@ function FallbackImage() {
 		</div>
 	)
 }
-
-const rotationClasses = [
-	'rotate-0 hover:-rotate-2',
-	'rotate-2 hover:rotate-0',
-	'rotate-4 hover:rotate-2',
-	'rotate-0 hover:-rotate-2',
-	'-rotate-2 hover:-rotate-4',
-	'-rotate-4 hover:-rotate-6',
-]

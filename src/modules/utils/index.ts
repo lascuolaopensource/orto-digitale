@@ -34,3 +34,29 @@ export function getRecord<T>(data: T | number): T {
 export function getRecords<T>(data: (number | T)[] | null | undefined): T[] {
 	return data?.map(getRecord) ?? []
 }
+
+//
+
+type Amplitude = 'sm' | 'md' | 'lg'
+
+export function getRandomRotationClass(amplitude: Amplitude = 'md'): string {
+	const sizeToIndex = {
+		sm: 2,
+		md: 4,
+		lg: 6,
+	}
+
+	const rotationClasses = [
+		// sm
+		'rotate-0 hover:-rotate-2',
+		'rotate-1 hover:-rotate-1',
+		// md
+		'-rotate-1 hover:-rotate-3',
+		'rotate-2 hover:rotate-0',
+		// lg
+		'-rotate-2 hover:-rotate-4',
+		'rotate-3 hover:rotate-1',
+	]
+
+	return getRandomItem(rotationClasses.slice(0, sizeToIndex[amplitude]))
+}

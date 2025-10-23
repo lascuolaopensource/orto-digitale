@@ -1,9 +1,9 @@
 import { Badge } from '#/components/badge'
 import { Card } from '#/components/card'
+import { CollectionPage } from '#/components/collection-page'
 import { T } from '#/components/t'
 import it from '#/i18n/it.json'
 import { getDb, getRecords } from '#/utils'
-import { CollectionPage } from '@/modules/components/collection-page'
 import { Area } from '@/payload-types'
 
 //

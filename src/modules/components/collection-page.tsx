@@ -1,5 +1,3 @@
-import { getRandomItem } from '#/utils'
-import { cn } from '$/lib/utils'
 import { PaginatedDocs } from 'payload'
 
 import { BoxedHeading } from './boxed-heading'
@@ -18,19 +16,11 @@ type Props<Docs extends PaginatedDocs> = {
 
 export function CollectionPage<Docs extends PaginatedDocs>(props: Props<Docs>) {
 	const { docs, basePath, title, item } = props
-	const randomRotationClass = getRandomItem([
-		'-rotate-1',
-		'-rotate-2',
-		'-rotate-3',
-		'rotate-1',
-		'rotate-2',
-		'rotate-3',
-	])
 
 	return (
 		<PageContainer className="space-y-8">
 			<div className="py-5 flex items-center justify-center">
-				<BoxedHeading tag="h1" className={cn('text-center px-12!', randomRotationClass)}>
+				<BoxedHeading tag="h1" className="text-center px-12!">
 					{title}
 				</BoxedHeading>
 			</div>

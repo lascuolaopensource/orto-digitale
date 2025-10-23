@@ -1,6 +1,9 @@
-import { Navbar } from '#/components/Navbar'
+import { Navbar } from '#/components/navbar'
 import React from 'react'
+
 import './layout.css'
+
+//
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
 	const { children } = props

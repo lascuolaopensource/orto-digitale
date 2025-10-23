@@ -3,7 +3,7 @@ import { getPageParam } from '#/components/pagination'
 import it from '#/i18n/it.json'
 import { getDb, PageProps } from '#/utils'
 
-import { CollectionPage } from '@/modules/components/collection-page'
+import { CollectionPage } from '#/components/collection-page'
 
 //
 
