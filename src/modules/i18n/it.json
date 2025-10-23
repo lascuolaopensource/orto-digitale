@@ -1,4 +1,8 @@
 {
+	"recipes": {
+		"page_title": "Scopri le nostre ricette!",
+		"back_to_recipes": "Torna alle ricette"
+	},
 	"tell_me_everything": "Raccontami tutto!",
 	"about_us": "Chi siamo?",
 	"plants": {

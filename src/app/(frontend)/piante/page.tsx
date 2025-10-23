@@ -1,11 +1,9 @@
-import { PageContainer } from '#/components/page-container'
-import { PageGrid } from '#/components/page-grid'
-import { getPageParam, Pagination } from '#/components/pagination'
-import { T } from '#/components/t'
+import { Card } from '#/components/card'
+import { getPageParam } from '#/components/pagination'
 import it from '#/i18n/it.json'
 import { getDb, PageProps } from '#/utils'
 
-import { Card } from '@/modules/components/card'
+import { PageStructure } from '@/modules/components/page-structure'
 import { Plant } from '@/payload-types'
 
 import { SeasonTag } from './utils'
@@ -23,21 +21,12 @@ export default async function HomePage(props: PageProps) {
 	})
 
 	return (
-		<PageContainer className="space-y-8">
-			<div className="py-5">
-				<T tag="h1" className="text-center -rotate-2">
-					{it.plants.page_title}
-				</T>
-			</div>
-
-			<PageGrid>
-				{plants.docs.map((plant) => (
-					<PlantCard key={plant.id} plant={plant} />
-				))}
-			</PageGrid>
-
-			<Pagination docs={plants} basePath="/piante" />
-		</PageContainer>
+		<PageStructure
+			docs={plants}
+			basePath="/piante"
+			title={it.plants.page_title}
+			item={(plant) => <PlantCard key={plant.id} plant={plant} />}
+		/>
 	)
 }
 

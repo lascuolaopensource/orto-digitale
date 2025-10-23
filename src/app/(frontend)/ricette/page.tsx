@@ -1,9 +1,9 @@
-import { LinkButtonArrow } from '#/components/link-button-arrow'
-import { PageContainer } from '#/components/page-container'
-import { getPageParam, Pagination } from '#/components/pagination'
+import { Card } from '#/components/card'
+import { getPageParam } from '#/components/pagination'
+import it from '#/i18n/it.json'
 import { getDb, PageProps } from '#/utils'
 
-import { PageGrid } from '@/modules/components/page-grid'
+import { PageStructure } from '@/modules/components/page-structure'
 
 //
 
@@ -19,15 +19,15 @@ export default async function HomePage(props: PageProps) {
 	})
 
 	return (
-		<PageContainer>
-			<PageGrid>
-				{recipes.docs.map((recipe) => (
-					<LinkButtonArrow key={recipe.id} href={`/ricette/${recipe.id}`}>
-						{recipe.name}
-					</LinkButtonArrow>
-				))}
-			</PageGrid>
-			<Pagination docs={recipes} basePath="/ricette" />
-		</PageContainer>
+		<PageStructure
+			docs={recipes}
+			basePath="/ricette"
+			title={it.recipes.page_title}
+			item={(recipe) => (
+				<Card key={recipe.id} href={`/ricette/${recipe.id}`}>
+					{recipe.name}
+				</Card>
+			)}
+		/>
 	)
 }
