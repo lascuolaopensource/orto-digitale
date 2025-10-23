@@ -5,8 +5,6 @@ zoning: "percorso-aromatico"
 season: "all-year"
 ---
 
-> **TIMO** (Thymus Species)
-
 Il suo nome deriva da una pianta egiziana (tham) che veniva utilizzata
 per l'imbalsamazione. Secondo altre fonti deriva dal greco thymus che
 significa coraggio

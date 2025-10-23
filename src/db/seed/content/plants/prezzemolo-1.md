@@ -5,8 +5,6 @@ zoning: "percorso-aromatico"
 season: "all-year"
 ---
 
-> **PREZZEMOLO (***Petroselinum crispum)*
-
 Il prezzemolo appartiene alla famiglia delle Apiacee.
 
 Il nome deriva dal greco antico *petroselium* che significa "sedano che

@@ -5,8 +5,6 @@ zoning: "serra"
 season: "spring-summer"
 ---
 
-**RABARBARO** (Rheum palmatum L. o Rheum officinale)
-
 Il nome Rabarbaro deriva da *Rha* e da *barbarum*, cioè radice che i
 barbari raccolgono nelle regioni del fiume Volga; a sua volta Rha deriva
 dal latino Rheum che significa radice. E' comunemente chiamato Rabarbaro

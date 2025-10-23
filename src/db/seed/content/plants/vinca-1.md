@@ -5,8 +5,6 @@ zoning: "serra"
 season: "spring-summer"
 ---
 
-***VINCA*** (*Catharanthus roseus -- Vinca minor -- vinca major*)
-
 Il nome vinca rosea viene dal latino vincire cioè legare, in riferimento
 ai suoi fusti striscianti usati per intrecciare ghirlande. È
 soprannominata "*occhio di bimbo"*, pervinca del Madagascar o promessi

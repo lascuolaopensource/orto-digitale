@@ -2,8 +2,6 @@
 name: 'Olio Aromatizzato al Rosmarino'
 ---
 
-# Olio Aromatizzato al Rosmarino
-
 ## Ingredienti
 
 - 500ml di olio extravergine di oliva

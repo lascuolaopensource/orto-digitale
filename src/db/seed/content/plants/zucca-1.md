@@ -5,8 +5,6 @@ zoning: "serra"
 season: "fall-winter"
 ---
 
-> **ZUCCA** *(Cucurbita maxima)*
-
 La zucca appartiene alla famiglia
 delle [cucurbitacee](https://www.ortodacoltivare.it/ortaggi/famiglie/cucurbitacee.html),
 il suo nome scientifico si richiama alle dimensioni che può assumere il

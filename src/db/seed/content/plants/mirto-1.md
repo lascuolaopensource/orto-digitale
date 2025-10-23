@@ -5,8 +5,6 @@ zoning: "percorso-alimurgico"
 season: "all-year"
 ---
 
-**MIRTO** (*Myrtus communis KL.*
-
 ## Il mirto appartiene alla famiglia delle Myrtacee
 
 Il mirto è una pianta originaria delle regioni del mediterraneo europeo

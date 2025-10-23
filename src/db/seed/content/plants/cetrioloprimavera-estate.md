@@ -5,8 +5,6 @@ zoning: "serra"
 season: "spring-summer"
 ---
 
-**CETRIOLO** *(Cucumis sativus)*
-
 Il cetriolo è un ortaggio di origine indiana, appartenente alla
 famiglia delle Cucurbuitacee.\
 Esistono diverse varietà di cetrioli da coltivare che si differenziano

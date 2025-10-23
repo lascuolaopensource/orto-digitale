@@ -1,18 +1,16 @@
 ---
-name: "Caco"
-latinName: "Diospyros kaki L."
-zoning: "alberi-da-frutto"
-season: "all-year"
+name: 'Caco'
+latinName: 'Diospyros kaki L.'
+zoning: 'alberi-da-frutto'
+season: 'all-year'
 ---
-
-**CACO** (Diospyros kaki L.)
 
 Il nome Diosporo deriva dal greco Dios cioè dio e da pyros che significa
 grano "il grano di dio"
 
 Il caco appartiene alla famiglia delle Ebenacee. E' una pianta
-originaria della Cina (nota come 柿子树 *shizishu,* il frutto
-viene chiamato 柿子 *shìzi)* e del Giappone, introdotta a fine
+originaria della Cina (nota come 柿子树 _shizishu,_ il frutto
+viene chiamato 柿子 _shìzi)_ e del Giappone, introdotta a fine
 Ottocento in America e Europa.
 
 E' un albero rustico, tipico di ambienti caldo-temperati, non molto
@@ -43,14 +41,14 @@ depurare il fegato e per l'apparato nervoso.
 
 Il cachi è comunemente chiamato in [lingua
 napoletana](https://it.wikipedia.org/wiki/Lingua_napoletana)
-*legnasanta*. L\'origine del nome sta nel fatto che è possibile, una
+_legnasanta_. L\'origine del nome sta nel fatto che è possibile, una
 volta aperto il frutto, scorgere al suo interno una caratteristica
 immagine del [Cristo](https://it.wikipedia.org/wiki/Cristo) in croce.
 
 In Sicilia, invece, si considerava sacro il seme, in quanto esso,
 spaccato a metà, mostra il germoglio della nuova piantina, che
-assomiglia a una mano bianco-diafana, ritenuta la "*manuzza di Maria*" o
-"*dâ Virgini*".
+assomiglia a una mano bianco-diafana, ritenuta la "_manuzza di Maria_" o
+"_dâ Virgini_".
 
 Una credenza popolare attribuisce ai semi del frutto la capacità di
 prevedere il clima che farà nell\'inverno successivo. Tagliando a metà

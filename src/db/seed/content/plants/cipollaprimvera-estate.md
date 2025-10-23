@@ -5,8 +5,6 @@ zoning: "serra"
 season: "spring-summer"
 ---
 
-> **CIPOLLA** (Allium cepa L.)
-
 La cipolla appartiene alla famiglia Liliacee - Amaryllidaceae
 
 Il nome deriva dal tardo latino *Caepula* diminutivo di *caepa* che

@@ -5,8 +5,6 @@ zoning: "serra"
 season: "spring-summer"
 ---
 
-## PERO (*Pirus communis)*
-
 ## 
 
 Il pero appartiene alla famiglia delle Rosacee.

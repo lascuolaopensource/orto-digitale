@@ -5,8 +5,6 @@ zoning: "percorso-alimurgico"
 season: "spring-summer"
 ---
 
-**NASTURZIO** (*Tropaeolum majus* L.)
-
 Il nasturzio comune o crescione indiano, appartiene alla famiglia delle
 Tropaeolaceae.
 

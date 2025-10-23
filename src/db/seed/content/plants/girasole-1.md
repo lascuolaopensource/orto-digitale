@@ -5,8 +5,6 @@ zoning: "serra"
 season: "spring-summer"
 ---
 
-> GIRASOLE (Heliantus annuus L.)
-
 Il suo nome è dovuto alla particolare capacità delle sue infiorescenze
 di seguire il corso del sole durante il giorno (eliotropismo); deriva
 dal greco *Helios* sole e *anthos* fiore

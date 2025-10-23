@@ -5,9 +5,7 @@ zoning: "serra"
 season: "spring-summer"
 ---
 
-> **Zucchina** (*Cucurbita pepo*)
-
-È una pianta della famiglia delle cucurbitacee.
+È una pianta della famiglia delle cucurbitacee.
 
 E' originaria dell'America centro-meridionale, per questo motivo
 richiede un clima abbastanza temperato (temperature tra 15/25 gradi) e

@@ -1,13 +1,11 @@
 ---
-name: "Aglio"
-latinName: "Allium sativum L."
-zoning: "serra"
-season: "spring-summer"
+name: 'Aglio'
+latinName: 'Allium sativum L.'
+zoning: 'serra'
+season: 'spring-summer'
 ---
 
-> **AGLIO** (Allium sativum L.)
-
-La parola "aglio" sarebbe da rintracciare nel celtico *all*, che
+La parola "aglio" sarebbe da rintracciare nel celtico _all_, che
 significherebbe "caldo, aspro, bruciante"
 
 L\'aglio è una pianta della famiglia delle Alliacee, conosciuta fin dai

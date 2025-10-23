@@ -5,8 +5,6 @@ zoning: "serra"
 season: "spring-summer"
 ---
 
-**FAGIOLO** ( *Phaseolus vulgaris L.*)
-
 Il fagiolo appartiene alla famiglia delle Papillonaceae
 
 Il nome deriva dal latino *phaseolus*

@@ -5,8 +5,6 @@ zoning: "serra"
 season: "all-year"
 ---
 
-**Finocchietto** *Foeniculum vulgare Miller*
-
 Il finocchietto appartiene alla famiglia delle umbrelliferae
 
 Il nome deriva da foeniculum, fieno, per il fatto che le sue foglie

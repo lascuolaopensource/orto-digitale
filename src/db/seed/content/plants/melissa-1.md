@@ -5,9 +5,7 @@ zoning: "percorso-aromatico"
 season: "spring-summer"
 ---
 
-**MELISSA** *(Melissa officinalis)*
-
-La [melissa](https://www.greenme.it/vivere/salute-e-benessere/melissa-proprieta-benefici-tisana/) appartiene
+La [melissa](https://www.greenme.it/vivere/salute-e-benessere/melissa-proprieta-benefici-tisana/) appartiene
 alla famiglia delle *Lamiaceae.* 
 
 Il suo nome deriva dal greco "meli", miele, probabilmente perché il suo

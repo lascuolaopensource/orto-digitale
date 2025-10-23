@@ -5,8 +5,6 @@ zoning: "percorso-alimurgico"
 season: "all-year"
 ---
 
-**RUTA** (Ruta graveolens)
-
 La ruta appartiene alla famiglia delle Rutacee.
 
 Originaria della macchia mediterranea e delle zone più aride della

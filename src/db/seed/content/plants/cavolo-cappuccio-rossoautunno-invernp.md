@@ -5,9 +5,7 @@ zoning: "serra"
 season: "fall-winter"
 ---
 
-> **CAVOLO CAPPUCCIO ROSSO** (*Brassica oleracea var.capitata)*
-
-Il cavolo rosso appartiene alla famiglia delle *Brassicaceae*;
+Il cavolo rosso appartiene alla famiglia delle *Brassicaceae*;
 è originaria del mediterraneo.
 
 La pianta si semina in primavera e resiste bene al freddo, infatti, il

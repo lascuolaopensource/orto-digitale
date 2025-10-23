@@ -5,8 +5,6 @@ zoning: "percorso-alimurgico"
 season: "spring-summer"
 ---
 
-**CALENDULA** (*Calendula officinalis* L.)
-
 Il suo nome deriva dal latino \"calendae\" che significa "primo giorno
 del mese", proprio perché la pianta, fiorisce principalmente ogni mese,
 dall'inizio della primavera a fine autunno.

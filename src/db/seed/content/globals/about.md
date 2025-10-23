@@ -1,4 +1,4 @@
-**Orto Digitale**
+# Orto Digitale
 
 Orto digitale è un progetto che vuole coinvolgere maggiormente i
 cittadini nella conoscenza della materia naturale e del progetto Orto in

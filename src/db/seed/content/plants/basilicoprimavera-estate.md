@@ -1,11 +1,9 @@
 ---
-name: "Basilico"
-latinName: "Ocimum basilicum L."
-zoning: "percorso-aromatico"
-season: "spring-summer"
+name: 'Basilico'
+latinName: 'Ocimum basilicum L.'
+zoning: 'percorso-aromatico'
+season: 'spring-summer'
 ---
-
-> **BASILICO -- *Ocimum*** ***basilicum***
 
 Il basilico appartiene alla famiglia delle Laminacee
 

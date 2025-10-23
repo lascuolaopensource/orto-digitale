@@ -5,9 +5,6 @@ zoning: "percorso-aromatico"
 season: "all-year"
 ---
 
-**LAVANDA** (*Lavandula angustifolia* Miller / *Lavanda officinalis*
-Chaix / *Lavanda vera* DC.)
-
 La lavanda appartiene alla famiglia delle Labiatae.
 
 Il nome deriva dalla parola latina "lavare" (lavandus, lavanda,

@@ -2,8 +2,6 @@
 name: 'Tisana Digestiva al Timo'
 ---
 
-# Tisana Digestiva al Timo
-
 ## Ingredienti
 
 - 1 cucchiaio di foglie di timo fresco

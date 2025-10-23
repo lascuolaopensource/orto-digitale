@@ -5,8 +5,6 @@ zoning: "serra"
 season: "fall-winter"
 ---
 
-**RAVANELLO** (*Raphanus sativus L*)
-
 Il nome "ravanello" deriva da *raphys* (rapa), parola correlata al
 termine latino *raphanus\*
 In lingua persiana ravanello deriva da "*rafe*", che significa

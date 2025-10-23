@@ -5,8 +5,6 @@ zoning: "serra"
 season: "spring-summer"
 ---
 
-**RADICCHIO** (*Chicorium Intybus*)
-
 Il radicchio appartiene alla famiglia delle Composite o
 Asteracee
 

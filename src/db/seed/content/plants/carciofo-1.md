@@ -1,16 +1,14 @@
 ---
-name: "Carciofo"
-latinName: "Cinara cardunculus L."
-zoning: "serra"
-season: "all-year"
+name: 'Carciofo'
+latinName: 'Cinara cardunculus L.'
+zoning: 'serra'
+season: 'all-year'
 ---
-
-> **CARCIOFO** (Cynara cardunculus. Subspecie scolymus)
 
 Il carciofo coltivato appartiene alla famiglia Asteracee.
 
 Il carciofo è originario del Medio Oriente. Nel IV sec. a.C.
-era coltivato dagli arabi che lo chiamavano *\'al karshuf\'* (o
+era coltivato dagli arabi che lo chiamavano _\'al karshuf\'_ (o
 kharshaf). La sua coltivazione così come oggi la conosciamo viene
 introdotta in Europa dagli arabi nel '300. La coltura del carciofo è
 diffusa in alcuni Paesi del Mediterraneo.
@@ -52,6 +50,6 @@ indurlo a trasformarla in un ortaggio elegante, dal cuore tenero come la
 ragazza, ma spinoso, come il carciofo.
 
 Nella pittura rinascimentale italiana, il carciofo è rappresentato in
-diversi quadri: \"*L\'ortolana\"* di Vincenzo Campi,
-\"*L\'estate\"* e \"*Vertumnus\"* di
+diversi quadri: \"_L\'ortolana\"_ di Vincenzo Campi,
+\"_L\'estate\"_ e \"_Vertumnus\"_ di
 Arcimboldo.

@@ -3,8 +3,6 @@ name: 'Tepee'
 key: 'tepee'
 ---
 
-**Tepee**
-
 un cerchio, una capanna, un rifugio, all'interno dell'orto è presente un
 tepee dove crescono arrampicandosi piante perenni e stagionali.
 

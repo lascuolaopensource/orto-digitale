@@ -2,8 +2,6 @@
 name: 'Salsa Verde con Erbe Aromatiche'
 ---
 
-# Salsa Verde con Erbe Aromatiche
-
 ## Ingredienti
 
 - 1 mazzo di prezzemolo

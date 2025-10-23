@@ -1,18 +1,16 @@
 ---
-name: "Broccolo"
-latinName: "Brassica oleracea var. italica L."
-zoning: "serra"
-season: "fall-winter"
+name: 'Broccolo'
+latinName: 'Brassica oleracea var. italica L.'
+zoning: 'serra'
+season: 'fall-winter'
 ---
-
-> **CAVOLO BROCCOLO** (*Brassica Oleracea var italica*)
 
 Il cavolo Broccolo appartiene alla famiglia delle Crucifere o
 Brassicacee.
 
-La parola *\'broccolo\'*, diminutivo di \'brocco\' deriva dal
-latino *broccum* che significava *dente sporgente* e
-poi *germoglio*. Il termine indica quindi in primis il tallo di
+La parola _\'broccolo\'_, diminutivo di \'brocco\' deriva dal
+latino _broccum_ che significava _dente sporgente_ e
+poi _germoglio_. Il termine indica quindi in primis il tallo di
 taluni cavoli e rape quando cominciano a fiorire.\
 Il termine Cruciferae deriva invece dalla caratteristica di queste
 piante di avere fiori con petali a croce

@@ -5,8 +5,6 @@ zoning: "alberi-da-frutto"
 season: "all-year"
 ---
 
-> **MELOGRANO** (*Punica granatum*)
-
 Il melograno appartiene alla famiglia delle Punicaceae.
 
 Si ritiene che il melograno sia originario dell\'Iran,

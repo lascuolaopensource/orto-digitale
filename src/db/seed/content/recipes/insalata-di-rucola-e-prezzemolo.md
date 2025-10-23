@@ -2,8 +2,6 @@
 name: 'Insalata di Rucola e Prezzemolo'
 ---
 
-# Insalata di Rucola e Prezzemolo
-
 ## Ingredienti
 
 - 200g di rucola fresca

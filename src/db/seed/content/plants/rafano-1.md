@@ -5,8 +5,6 @@ zoning: "percorso-alimurgico"
 season: "spring-summer"
 ---
 
-> **RAFANO** (*Armoracia rusticana)*
-
 Il rafano appartiene alla famiglia delle Brassicaceae. E' comunemente
 chiamato rafano, cren, barbaforte, ramolaccio
 

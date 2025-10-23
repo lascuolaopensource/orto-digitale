@@ -5,8 +5,6 @@ zoning: "percorso-alimurgico"
 season: "spring-summer"
 ---
 
-> **TARASSACO** (*Taraxacum officinal*e)
-
 Il nome della pianta sembrerebbe derivare
 dall'arabo *tarakchaken*: insalata o cicoria. Per altri invece
 l'etimologia risalirebbe al

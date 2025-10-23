@@ -2,8 +2,6 @@
 name: 'Tisana alla Menta'
 ---
 
-# Tisana alla Menta
-
 ## Ingredienti
 
 - 1 cucchiaio di foglie di menta fresca

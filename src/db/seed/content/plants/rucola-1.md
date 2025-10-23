@@ -5,8 +5,6 @@ zoning: "serra"
 season: "spring-summer"
 ---
 
-> **RUCOLA** (*Euruca sativa*)
-
 La rucola appartiene alla famiglia delle Brassicacee
 
 La rucola cresce bene in tutti i tipi di terreno, meglio se drenante,

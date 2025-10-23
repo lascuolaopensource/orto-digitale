@@ -1,14 +1,12 @@
 ---
-name: "Amaranto"
-latinName: "Amaranthus hybridus L. subsp. caudatus"
-zoning: "percorso-alimurgico"
-season: "spring-summer"
+name: 'Amaranto'
+latinName: 'Amaranthus hybridus L. subsp. caudatus'
+zoning: 'percorso-alimurgico'
+season: 'spring-summer'
 ---
 
-**AMARANTO (Amaranthus retroflexus)**
-
 Il nome è legato al colore rosso amaranto che spesso le foglie assumono,
-deriva dal greco *amarantus* che significa "non appassisce\".
+deriva dal greco _amarantus_ che significa "non appassisce\".
 
 L'Amaranto appartiene alla famiglia delle Amarantaceee; è di origine
 americana. Introdotta in Europa nei secoli passati, ora divenuta
@@ -35,7 +33,7 @@ di nitrati, ossalati e nefrotossine.
 
 L'amaranto è da sempre un ingrediente importante nella cucina indiana
 nel Kerala (India) viene utilizzato per preparare un piatto popolare
-chiamato *thoran.*
+chiamato _thoran._
 
 Dalle foglie di alcune varietà vengono estratti sostanze pigmentate
 utilizzate per l'estrazione di un colorante rosso usato nell'industria

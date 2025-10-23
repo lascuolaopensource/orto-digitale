@@ -5,8 +5,6 @@ zoning: "serra"
 season: "fall-winter"
 ---
 
-**CAVOLO ROMANO** *(Brassica oleracea var. italica)*
-
 È una specie botanica della grande famiglia delle Brassicacee, molto
 diffusa nelle campagne romane. Esistono varietà precoci, medie e
 tardive (Celio-Navona-Gitano-Veronica-Lazio).

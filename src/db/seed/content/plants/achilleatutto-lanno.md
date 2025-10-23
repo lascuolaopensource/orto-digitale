@@ -1,11 +1,9 @@
 ---
-name: "Achillea"
-latinName: "Achillea millefolium L."
-zoning: "percorso-alimurgico"
-season: "all-year"
+name: 'Achillea'
+latinName: 'Achillea millefolium L.'
+zoning: 'percorso-alimurgico'
+season: 'all-year'
 ---
-
-> **Achillea** (*Achillea millefolium* L.)
 
 L'achillea, o artiglio del diavolo, è originaria dei paesi asiatici e fa
 parte della famiglia delle asteracee (composite).

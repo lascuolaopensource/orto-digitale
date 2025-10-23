@@ -2,8 +2,6 @@
 name: 'Pesto al Basilico'
 ---
 
-# Pesto al Basilico
-
 ## Ingredienti
 
 - 50g di foglie di basilico fresco

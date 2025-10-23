@@ -5,8 +5,6 @@ zoning: "percorso-aromatico"
 season: "all-year"
 ---
 
-**ORIGANO** (origanum volgare L.)
-
 L'origano appartiene alla famiglia delle Laminacee
 
 Il suo nome deriva dal greco "oros" che significa "montagna" e "ganos"

@@ -1,9 +1,7 @@
 ---
-name: "Compostiera"
-key: "compostiera"
+name: 'Compostiera'
+key: 'compostiera'
 ---
-
-**Compostiera**
 
 Il suo nome è Piera la compostiera ed è un contenitore che consente di
 trasformare la sostanza organica presente nei nostri rifiuti organici in

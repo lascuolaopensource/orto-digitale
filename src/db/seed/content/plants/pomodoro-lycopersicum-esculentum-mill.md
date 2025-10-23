@@ -5,8 +5,6 @@ zoning: "serra"
 season: "spring-summer"
 ---
 
-> **POMODORO** (*Lycopersicum esculentum Mill.)*
-
 IL pomodoro appartiene alla famiglia delle solenacee.
 
 Il suo nome deriva dal nome "*pomo d'oro",* per il colore dei frutti,

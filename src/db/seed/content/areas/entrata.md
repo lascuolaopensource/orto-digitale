@@ -1,9 +1,7 @@
 ---
-name: "Ingresso Orto"
-key: "entrata"
+name: 'Ingresso Orto'
+key: 'entrata'
 ---
-
-**Testo Ingresso orto**
 
 Orto in Cotica è un orto condiviso aperto alla comunità e al territorio.
 
@@ -12,7 +10,7 @@ Cotica](https://www.cascinacotica.com/la-fondazione/) e LUM.
 
 L'orto è aperto regolarmente il **Mercoledì** e la **Domenica**: un
 luogo aperto a tutti nel quale lavorare un orto insieme, prendersi cura
-della natura, creare e progettare, trovando nel ***fare insieme*** la
+della natura, creare e progettare, trovando nel **_fare insieme_** la
 dimensione per la creazione di relazioni e progettualità significative.
 
 Oltre al lavoro di cura settimanali ospitiamo tutti i mercoledì

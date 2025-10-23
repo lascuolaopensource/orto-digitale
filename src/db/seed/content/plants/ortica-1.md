@@ -5,8 +5,6 @@ zoning: "percorso-alimurgico"
 season: "spring-summer"
 ---
 
-**ORTICA** (Urtica dioica L.)
-
 Il nome Ortica viene dal latino *urere* che significa bruciare.
 
 L'ortica appartiene alla famiglia delle urticacee.

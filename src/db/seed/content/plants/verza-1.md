@@ -5,8 +5,6 @@ zoning: "serra"
 season: "fall-winter"
 ---
 
-**Verza (***Brassica oleracea* L. var. sabauda L.)
-
 La verza, detta anche cavolo verza, è una pianta biennale appartenente
 alla famiglia delle Brassicaceae.
 
