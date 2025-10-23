@@ -45,7 +45,7 @@ export default async function Page(props: PageProps) {
 			<BackLink href="/piante">{it.plants.back_to_plants}</BackLink>
 
 			<div className="flex items-center flex-col md:flex-row gap-10 md:items-start md:justify-center pt-10">
-				<VerticalCard plant={plant} area={area} />
+				<InfoCard plant={plant} area={area} />
 				<div className="space-y-8 md:pt-20">
 					<div>
 						<BoxedHeading tag="h2" className="rotate-1 mb-6">
@@ -70,68 +70,40 @@ export default async function Page(props: PageProps) {
 					)}
 				</div>
 			</div>
-
-			{/* <div>
-  
-
-
-      <header className="mb-6">
-        <h1 className="text-3xl font-bold">
-          {pianta.name} <span className="italic">({pianta.latin_name})</span>
-        </h1>
-    
-      </header>
-
-    
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-  
-        <div className="prose prose-lg">
-          <img src="/Users/giovanniabbatepaolo/Desktop/Achillea_millefolium.jpg" alt="Img" />
-        
-          <PlantAreas areas={areasWithPlant} />
-        </div>
-
-        {pianta.descrizione && (
-          <div className="prose -mt-5">
-            <RichText data={pianta.descrizione as SerializedEditorState} />
-          </div>
-        )}
-      </div>
-    </div> */}
 		</PageContainer>
-	)
-}
-
-function VerticalCard(props: { plant: Plant; area: Area }) {
-	const { plant, area } = props
-	return (
-		<div className="-rotate-2 p-8 flex w-fit flex-col items-center gap-3 bg-stone-100 border border-stone-200 rounded-lg">
-			<div className="size-56 rounded-full block bg-stone-300 mb-2"></div>
-			<T tag="h2">{plant.name}</T>
-			<Container label={it.plants.scientific_name}>
-				<T tag="p" className="italic">
-					{plant.latin_name}
-				</T>
-			</Container>
-			<Container label={it.plants.season} className="gap-0.5">
-				<SeasonTag season={plant.season} className="text-md" />
-			</Container>
-			<Container label={it.plants.you_find_in} className="gap-1 self-stretch">
-				<LinkButtonArrow href={`/aree/${area.key}`}>{area.name}</LinkButtonArrow>
-			</Container>
-		</div>
 	)
 }
 
 //
 
-type ContainerProps = {
+function InfoCard(props: { plant: Plant; area: Area }) {
+	const { plant, area } = props
+	return (
+		<div className="-rotate-2 p-8 flex w-fit flex-col items-center gap-3 bg-stone-100 border border-stone-200 rounded-lg">
+			<div className="size-56 rounded-full block bg-stone-300 mb-2"></div>
+			<T tag="h2">{plant.name}</T>
+			<InfoContainer label={it.plants.scientific_name}>
+				<T tag="p" className="italic">
+					{plant.latin_name}
+				</T>
+			</InfoContainer>
+			<InfoContainer label={it.plants.season} className="gap-0.5">
+				<SeasonTag season={plant.season} className="text-md" />
+			</InfoContainer>
+			<InfoContainer label={it.plants.you_find_in} className="gap-1 self-stretch">
+				<LinkButtonArrow href={`/aree/${area.key}`}>{area.name}</LinkButtonArrow>
+			</InfoContainer>
+		</div>
+	)
+}
+
+type InfoContainerProps = {
 	label: string
 	children: React.ReactNode
 	className?: string
 }
 
-function Container(props: ContainerProps) {
+function InfoContainer(props: InfoContainerProps) {
 	const { label, children, className } = props
 	return (
 		<div className={cn('flex flex-col items-center', className)}>
