@@ -3,8 +3,7 @@ import { Card } from '#/components/card'
 import { CollectionPage } from '#/components/collection-page'
 import { T } from '#/components/t'
 import it from '#/i18n/it.json'
-import { getRecords } from '#/utils'
-import { getDb } from '#/utils/db'
+import { getDb, getRecords } from '#/utils/server'
 
 import { Area } from '@/payload-types'
 
@@ -34,7 +33,7 @@ export default async function HomePage() {
 function AreaCard({ area }: { area: Area }) {
 	const plants = getRecords(area.plants?.docs)
 	return (
-		<Card href={`/scopri/${area.id}`}>
+		<Card href={`/scopri/${area.key}`}>
 			<T>{area.name}</T>
 			{plants.length > 0 && (
 				<Badge className="bg-green-600 mt-1">

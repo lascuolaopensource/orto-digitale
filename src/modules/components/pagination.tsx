@@ -1,6 +1,6 @@
 import type { PaginatedDocs } from 'payload'
 
-import { PageProps } from '#/utils'
+import { PageProps } from '#/utils/server'
 import {
 	PaginationContent,
 	PaginationItem,

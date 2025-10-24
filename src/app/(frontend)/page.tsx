@@ -1,7 +1,7 @@
 import { BoxedHeading } from '#/components/boxed-heading'
 import OrtoMap from '#/components/orto-map'
 import { T } from '#/components/t'
-import { getDb } from '#/utils/db'
+import { getDb } from '#/utils/server'
 import { cn } from '$/lib/utils'
 import { ArrowBigDown } from 'lucide-react'
 

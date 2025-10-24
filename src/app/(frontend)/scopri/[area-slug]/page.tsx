@@ -3,8 +3,7 @@ import { BoxedHeading } from '#/components/boxed-heading'
 import { PageContainer } from '#/components/page-container'
 import { RichText } from '#/components/richtext'
 import it from '#/i18n/it.json'
-import { getOne, getRecords } from '#/utils'
-import { getDb } from '#/utils/db'
+import { getDb, getOne, getRecords } from '#/utils/server'
 
 import { PlantCard } from '../../piante/page'
 
@@ -16,12 +15,12 @@ type Props = {
 
 export default async function Page(props: Props) {
 	const db = await getDb()
-	const areaId = (await props.params)['area-slug']
+	const key = (await props.params)['area-slug']
 
 	const area = getOne(
 		await db.find({
 			collection: 'areas',
-			where: { id: { equals: areaId } },
+			where: { key: { equals: key } },
 		}),
 	)
 
