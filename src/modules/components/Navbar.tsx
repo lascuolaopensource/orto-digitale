@@ -14,6 +14,7 @@ import { useState } from 'react'
 type Link = {
 	href: string
 	text: string
+	external?: boolean
 }
 
 type Props = {
@@ -25,14 +26,14 @@ export function Navbar(props: Props) {
 	const [open, setOpen] = useState(false)
 
 	const navbarLinks: Link[] = [
-		{ href: '/piante', text: '🌱 Piante' },
-		{ href: '/scopri', text: "🍱 Scopri l'orto" },
-		{ href: '/ricette', text: '🍽️ Ricette' },
 		{ href: '/about', text: '👤 About' },
+		{ href: '/scopri', text: "🍱 Scopri l'orto" },
+		{ href: '/piante', text: '🌱 Piante' },
+		{ href: '/ricette', text: '🍽️ Ricette' },
 	]
 
 	if (formUrl) {
-		navbarLinks.push({ href: formUrl, text: `💬 ${it.Suggest_a_recipe}` })
+		navbarLinks.push({ href: formUrl, text: `💬 ${it.Suggest_a_recipe}`, external: true })
 	}
 
 	return (
