@@ -4,7 +4,9 @@ import { PageContainer } from '#/components/page-container'
 import { RichText } from '#/components/richtext'
 import { T } from '#/components/t'
 import it from '#/i18n/it.json'
-import { getDb, getOne, getRecords } from '#/utils'
+import { getOne, getRecords } from '#/utils'
+import { getDb } from '#/utils/db'
+
 import { PlantCard } from '../../piante/page'
 
 //

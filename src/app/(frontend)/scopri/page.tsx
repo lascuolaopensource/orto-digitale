@@ -3,7 +3,9 @@ import { Card } from '#/components/card'
 import { CollectionPage } from '#/components/collection-page'
 import { T } from '#/components/t'
 import it from '#/i18n/it.json'
-import { getDb, getRecords } from '#/utils'
+import { getRecords } from '#/utils'
+import { getDb } from '#/utils/db'
+
 import { Area } from '@/payload-types'
 
 //

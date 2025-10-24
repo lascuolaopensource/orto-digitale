@@ -5,9 +5,12 @@ import { PageContainer } from '#/components/page-container'
 import { RichText } from '#/components/richtext'
 import { T } from '#/components/t'
 import it from '#/i18n/it.json'
-import { getDb, getOne, getRecord, getRecords } from '#/utils'
+import { getOne, getRecord, getRecords } from '#/utils'
+import { getDb } from '#/utils/db'
 import { cn } from '$/lib/utils'
+
 import { Area, Plant } from '@/payload-types'
+
 import { SeasonTag } from '../utils'
 
 //

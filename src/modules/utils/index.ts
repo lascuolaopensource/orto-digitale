@@ -1,12 +1,7 @@
-import config from '@payload-config'
 import { notFound } from 'next/navigation'
-import { getPayload, PaginatedDocs, type Payload } from 'payload'
+import { PaginatedDocs } from 'payload'
 
 //
-
-export async function getDb(): Promise<Payload> {
-	return getPayload({ config }) as Promise<Payload>
-}
 
 export function getOne<Docs extends PaginatedDocs>(docs: Docs): Docs['docs'][number] {
 	const doc = docs.docs[0]

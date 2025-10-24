@@ -1,3 +1,5 @@
+import type { PaginatedDocs } from 'payload'
+
 import { PageProps } from '#/utils'
 import {
 	PaginationContent,
@@ -8,7 +10,6 @@ import {
 	Pagination as RootPagination,
 } from '$/components/ui/pagination'
 import { Array } from 'Effect'
-import type { PaginatedDocs } from 'payload'
 
 //
 

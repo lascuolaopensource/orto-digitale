@@ -1,11 +1,19 @@
+import { BoxedHeading } from '#/components/boxed-heading'
+import OrtoMap from '#/components/orto-map'
+import { T } from '#/components/t'
+import { getDb } from '#/utils/db'
 import { cn } from '$/lib/utils'
 import { ArrowBigDown } from 'lucide-react'
 
-import { BoxedHeading } from '@/modules/components/boxed-heading'
-import Giardino from '@/modules/components/giardino'
-import { T } from '@/modules/components/t'
+//
 
 export default async function HomePage() {
+	const db = await getDb()
+	const { docs } = await db.find({
+		collection: 'areas',
+		limit: 0,
+	})
+
 	return (
 		<div
 			className={cn(
@@ -13,7 +21,7 @@ export default async function HomePage() {
 				'xl:flex-col xl:max-w-7xl xl:mx-auto xl:overflow-auto xl:w-full',
 			)}
 		>
-			<Giardino className="h-[calc(100svh-102px)] xl:h-auto">
+			<OrtoMap areas={docs} className="h-[calc(100svh-102px)] xl:h-auto">
 				<div className="flex items-center gap-8 pr-6">
 					<ArrowBigDown size={40} className="animate-bounce rotate-90" />
 					<div className="flex flex-col items-end">
@@ -26,7 +34,7 @@ export default async function HomePage() {
 						</T>
 					</div>
 				</div>
-			</Giardino>
+			</OrtoMap>
 		</div>
 	)
 }

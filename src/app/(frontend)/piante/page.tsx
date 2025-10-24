@@ -1,9 +1,10 @@
 import { Card } from '#/components/card'
+import { CollectionPage } from '#/components/collection-page'
 import { getPageParam } from '#/components/pagination'
 import it from '#/i18n/it.json'
-import { getDb, PageProps } from '#/utils'
+import { PageProps } from '#/utils'
+import { getDb } from '#/utils/db'
 
-import { CollectionPage } from '#/components/collection-page'
 import { Plant } from '@/payload-types'
 
 import { SeasonTag } from './utils'
