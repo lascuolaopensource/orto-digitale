@@ -99,9 +99,11 @@ export interface Config {
   };
   globals: {
     about: About;
+    meta: Meta;
   };
   globalsSelect: {
     about: AboutSelect<false> | AboutSelect<true>;
+    meta: MetaSelect<false> | MetaSelect<true>;
   };
   locale: null;
   user: User & {
@@ -484,10 +486,30 @@ export interface About {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "meta".
+ */
+export interface Meta {
+  id: number;
+  recipes_form_url?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "about_select".
  */
 export interface AboutSelect<T extends boolean = true> {
   description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "meta_select".
+ */
+export interface MetaSelect<T extends boolean = true> {
+  recipes_form_url?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

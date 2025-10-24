@@ -1,5 +1,8 @@
-import * as F from '@/db/fields'
 import { GlobalConfig } from 'payload'
+
+import * as F from '@/db/fields'
+
+//
 
 export const About: GlobalConfig = {
 	slug: 'about',

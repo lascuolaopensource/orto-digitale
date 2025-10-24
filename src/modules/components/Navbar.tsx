@@ -1,5 +1,6 @@
 'use client'
 
+import it from '#/i18n/it.json'
 import { getRandomRotationClass } from '#/utils'
 import { Button } from '$/components/ui/button'
 import { Drawer, DrawerClose, DrawerContent, DrawerTitle } from '$/components/ui/drawer'
@@ -15,15 +16,24 @@ type Link = {
 	text: string
 }
 
-const navbarLinks: Link[] = [
-	{ href: '/piante', text: '🌱 Piante' },
-	{ href: '/scopri', text: "🍱 Scopri l'orto" },
-	{ href: '/ricette', text: '🍽️ Ricette' },
-	{ href: '/about', text: '👤 About' },
-]
+type Props = {
+	formUrl?: string | null
+}
 
-export function Navbar() {
+export function Navbar(props: Props) {
+	const { formUrl } = props
 	const [open, setOpen] = useState(false)
+
+	const navbarLinks: Link[] = [
+		{ href: '/piante', text: '🌱 Piante' },
+		{ href: '/scopri', text: "🍱 Scopri l'orto" },
+		{ href: '/ricette', text: '🍽️ Ricette' },
+		{ href: '/about', text: '👤 About' },
+	]
+
+	if (formUrl) {
+		navbarLinks.push({ href: formUrl, text: `💬 ${it.Suggest_a_recipe}` })
+	}
 
 	return (
 		<>
@@ -31,7 +41,7 @@ export function Navbar() {
 				<div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
 					<NavbarLink href="/" text="🏠 Home" />
 
-					<div className="-space-x-0.5 hidden sm:flex">
+					<div className="space-x-0.5 hidden md:flex">
 						{navbarLinks.map((link) => (
 							<NavbarLink key={link.href} {...link} />
 						))}
@@ -39,7 +49,7 @@ export function Navbar() {
 
 					<Button
 						onClick={() => setOpen(true)}
-						className={cn(buttonClasses(), 'sm:hidden flex items-center cursor-pointer')}
+						className={cn(buttonClasses(), 'md:hidden flex items-center cursor-pointer')}
 					>
 						<MenuIcon size={24} />
 						<span>Menu</span>
@@ -90,12 +100,18 @@ function buttonClasses() {
 type NavbarLinkProps = Link & {
 	className?: string
 	onClick?: () => void
+	external?: boolean
 }
 
 function NavbarLink(props: NavbarLinkProps) {
-	const { href, text, className, onClick } = props
+	const { href, text, className, onClick, external } = props
 	return (
-		<Link href={href} className={cn(buttonClasses(), className)} onClick={onClick}>
+		<Link
+			href={href}
+			className={cn(buttonClasses(), className)}
+			onClick={onClick}
+			target={external ? '_blank' : undefined}
+		>
 			{text}
 		</Link>
 	)

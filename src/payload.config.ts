@@ -14,6 +14,7 @@ import { Plants } from './db/collections/Plants'
 import { Recipes } from './db/collections/Recipes'
 import { Users } from './db/collections/Users'
 import { About } from './db/globals/About'
+import { Meta } from './db/globals/Meta'
 
 //
 
@@ -22,7 +23,7 @@ const dirname = path.dirname(filename)
 
 export default buildConfig({
 	collections: [Users, Media, Areas, Plants, Recipes],
-	globals: [About],
+	globals: [About, Meta],
 
 	plugins: [
 		// payloadCloudPlugin(),

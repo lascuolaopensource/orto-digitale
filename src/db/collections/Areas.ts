@@ -42,6 +42,7 @@ export const Areas = {
 				value: id,
 			})),
 			required: true,
+			unique: true,
 			admin: {
 				position: 'sidebar',
 			},

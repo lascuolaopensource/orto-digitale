@@ -1,4 +1,3 @@
-import { Area, Plant, Recipe } from '@/payload-types'
 import config from '@payload-config'
 import { convertMarkdownToLexical, editorConfigFactory } from '@payloadcms/richtext-lexical'
 import { arrayShuffle } from 'array-shuffle'
@@ -6,6 +5,8 @@ import frontMatter from 'front-matter'
 import fs from 'fs'
 import { CollectionSlug, getPayload, Payload } from 'payload'
 import z from 'zod'
+
+import { Area, Plant, Recipe } from '@/payload-types'
 
 /* Procedure */
 
@@ -19,6 +20,7 @@ const areas = await createAreas(payload, markdownConverter)
 const plants = await createPlants(payload, markdownConverter, areas)
 await createRecipes(payload, markdownConverter, plants)
 await createAbout(payload, markdownConverter)
+await createMeta(payload)
 
 console.log('✅ Seed completed')
 process.exit(0)
@@ -63,12 +65,15 @@ async function createPlants(payload: Payload, markdownConverter: MarkdownConvert
 		const content = markdownConverter(body)
 		const meta = schema.parse(attributes)
 		const area = areas.find((area) => area.key === meta.zoning)
+		if (!area) {
+			throw new Error(`Area not found: ${meta.zoning}`)
+		}
 		const plantRecord = await payload.create({
 			collection: 'plants',
 			data: {
 				name: meta.name,
 				latin_name: meta.latinName,
-				area: area?.id,
+				area: area.id,
 				season: meta.season as never,
 				description: content,
 			},
@@ -115,6 +120,15 @@ async function createAbout(payload: Payload, markdownConverter: MarkdownConverte
 		data: {
 			description: content,
 		},
+	})
+}
+
+async function createMeta(payload: Payload) {
+	const meta = fs.readFileSync('./src/db/seed/content/globals/meta.json', 'utf-8')
+	const content = JSON.parse(meta)
+	await payload.updateGlobal({
+		slug: 'meta',
+		data: content,
 	})
 }
 
