@@ -20,8 +20,8 @@ export function OrtoMapDrawer(props: Props) {
 
 	return (
 		<Drawer open={open} onOpenChange={setOpen}>
-			<DrawerContent>
-				<div>
+			<DrawerContent className="min-h-[50vh]">
+				<div className="mx-auto max-w-lg py-6 overflow-y-auto space-y-6">
 					<DrawerTitle asChild>
 						<BoxedHeading tag="h1" className="w-fit">
 							{area?.name}
