@@ -54,7 +54,7 @@ export default function Giardino(props: Props) {
 			/>
 
 			<SeasonSwitch
-				className="fixed right-6 bottom-6 z-10"
+				className="fixed right-6 bottom-6 xl:absolute xl:right-0 xl:bottom-0 z-10"
 				checked={currentSeason === 'estate'}
 				onCheckedChange={(checked) => {
 					setCurrentSeason(checked ? 'estate' : 'inverno')
