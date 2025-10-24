@@ -5,9 +5,11 @@ import { PageContainer } from '#/components/page-container'
 import { RichText } from '#/components/richtext'
 import { T } from '#/components/t'
 import it from '#/i18n/it.json'
-import { getDb, getOne, getRecord, getRecords } from '#/utils'
+import { getDb, getOne, getRecord, getRecords } from '#/utils/server'
 import { cn } from '$/lib/utils'
+
 import { Area, Plant } from '@/payload-types'
+
 import { SeasonTag } from '../utils'
 
 //
@@ -41,6 +43,7 @@ export default async function Page(props: PageProps) {
 
 			<div className="flex items-center flex-col md:flex-row gap-10 md:items-start md:justify-center pt-10">
 				<InfoCard plant={plant} area={area} />
+
 				<div className="space-y-8 md:pt-20">
 					<div>
 						<BoxedHeading tag="h2" className="rotate-1 mb-6">
@@ -86,7 +89,7 @@ function InfoCard(props: { plant: Plant; area: Area }) {
 				<SeasonTag season={plant.season} className="text-md" />
 			</InfoContainer>
 			<InfoContainer label={it.plants.you_find_in} className="gap-1 self-stretch">
-				<LinkButtonArrow href={`/aree/${area.key}`}>{area.name}</LinkButtonArrow>
+				<LinkButtonArrow href={`/scopri/${area.key}`}>{area.name}</LinkButtonArrow>
 			</InfoContainer>
 		</div>
 	)

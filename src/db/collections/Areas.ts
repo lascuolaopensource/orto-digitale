@@ -1,5 +1,8 @@
-import * as F from '@/db/fields'
 import type { CollectionConfig } from 'payload'
+
+import * as F from '@/db/fields'
+
+//
 
 export const AREAS_IDS = {
 	alberiDaFrutto: 'alberi-da-frutto',

@@ -1,4 +1,3 @@
-import Footer from '#/components/footer'
 import { Navbar } from '#/components/navbar'
 import React from 'react'
 
@@ -12,10 +11,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
 			<body>
-				<main>
+				<main className="min-h-screen flex flex-col">
 					<Navbar />
 					{children}
-					<Footer />
+					{/* <Footer /> */}
 				</main>
 			</body>
 		</html>
