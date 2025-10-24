@@ -119,3 +119,16 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+@layer base {
+	--animate-oscillate: oscillate 1s ease-in-out infinite alternate;
+
+	@keyframes oscillate {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(10px);
+		}
+	}
+}
