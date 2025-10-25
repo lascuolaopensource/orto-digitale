@@ -17,15 +17,7 @@ export function BoxedHeading(props: Props) {
 		'rotate-3',
 	])
 	return (
-		<T
-			className={cn(
-				'rounded-lg py-2!',
-				'text-center text-green-900 wavy',
-				randomRotationClass,
-				className,
-			)}
-			{...rest}
-		>
+		<T className={cn('py-2! w-fit text-primary wavy', randomRotationClass, className)} {...rest}>
 			{children}
 		</T>
 	)

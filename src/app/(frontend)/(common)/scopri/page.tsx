@@ -36,7 +36,7 @@ function AreaCard({ area }: { area: Area }) {
 		<Card href={`/scopri/${area.key}`}>
 			<T>{area.name}</T>
 			{plants.length > 0 && (
-				<Badge className="bg-green-600 mt-1">
+				<Badge className="bg-primary/10 text-primary mt-1">
 					{plants.length} {it.plants_count}
 				</Badge>
 			)}

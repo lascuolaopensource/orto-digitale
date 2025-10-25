@@ -1,7 +1,7 @@
 import { Badge } from '#/components/badge'
+import { cn } from '#/components/shadcn/lib/utils'
 import it from '#/i18n/it.json'
 
-import { cn } from '@/modules/components/shadcn/lib/utils'
 import { Plant } from '@/payload-types'
 
 //
@@ -10,28 +10,20 @@ type Season = Plant['season']
 
 type SeasonDisplayData = {
 	tagClassName: string
-	// cardClassName: string
-	// titleClassName: string
 	label: string
 }
 
 const seasonDisplayDataMap: Record<Season, SeasonDisplayData> = {
 	'spring-summer': {
-		tagClassName: 'bg-yellow-200 text-yellow-800',
-		// cardClassName: 'border-yellow-300 hover:border-yellow-400',
-		// titleClassName: '',
+		tagClassName: 'bg-yellow-100 text-yellow-700',
 		label: it.plants.seasons.spring_summer,
 	},
 	'fall-winter': {
-		tagClassName: 'bg-sky-200 text-sky-800',
-		// cardClassName: 'border-sky-300 hover:border-sky-400',
-		// titleClassName: '',
+		tagClassName: 'bg-sky-100 text-sky-700',
 		label: it.plants.seasons.fall_winter,
 	},
 	'all-year': {
-		tagClassName: 'bg-lime-200 text-lime-900',
-		// cardClassName: 'border-lime-400 hover:border-lime-500',
-		// titleClassName: '',
+		tagClassName: 'bg-lime-100 text-lime-700',
 		label: it.plants.seasons.all_year,
 	},
 }

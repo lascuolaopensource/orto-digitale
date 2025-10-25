@@ -3,6 +3,8 @@ import { getDb } from '#/utils/server'
 import { Solway } from 'next/font/google'
 import React from 'react'
 
+import { cn } from '#/components/shadcn/lib/utils'
+
 import './layout.css'
 
 //
@@ -22,9 +24,9 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 	})
 
 	return (
-		<html lang="en" className={crimsonPro.className}>
+		<html lang="en" className={cn(crimsonPro.className, 'bg-primary')}>
 			<body>
-				<main className="min-h-screen flex flex-col">
+				<main className="min-h-screen flex flex-col bg-background">
 					<Navbar formUrl={meta.recipes_form_url} />
 					{children}
 				</main>

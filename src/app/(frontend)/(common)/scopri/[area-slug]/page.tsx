@@ -1,6 +1,7 @@
 import { BackLink } from '#/components/backlink'
 import { BoxedHeading } from '#/components/boxed-heading'
 import { PageContainer } from '#/components/page-container'
+import { PageGrid } from '#/components/page-grid'
 import { RichText } from '#/components/richtext'
 import it from '#/i18n/it.json'
 import { getDb, getOne, getRecords } from '#/utils/server'
@@ -29,22 +30,20 @@ export default async function Page(props: Props) {
 	return (
 		<PageContainer className="max-w-4xl space-y-10">
 			<BackLink href="/scopri">{it.discover.back}</BackLink>
-			<div className="flex flex-col items-center justify-center gap-4">
+			<div className="space-y-6">
 				<BoxedHeading tag="h1" className="w-fit">
 					{area.name}
 				</BoxedHeading>
 				{area.description && <RichText data={area.description} className="max-w-xl" />}
 			</div>
 			{plants.length > 0 && (
-				<div className="flex flex-col items-center justify-center gap-4">
-					<BoxedHeading tag="h3" className="text-center w-fit">
-						{it.discover.plants}
-					</BoxedHeading>
-					<div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+				<div className="flex flex-col items-center justify-center gap-6">
+					<BoxedHeading tag="h3">{it.discover.plants}</BoxedHeading>
+					<PageGrid>
 						{plants.map((plant) => (
 							<PlantCard key={plant.id} plant={plant} />
 						))}
-					</div>
+					</PageGrid>
 				</div>
 			)}
 		</PageContainer>

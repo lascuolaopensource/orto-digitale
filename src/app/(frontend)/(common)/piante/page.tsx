@@ -1,10 +1,11 @@
 import { Card } from '#/components/card'
 import { CollectionPage } from '#/components/collection-page'
 import { getPageParam } from '#/components/pagination'
+import { cn } from '#/components/shadcn/lib/utils'
+import { T } from '#/components/t'
 import it from '#/i18n/it.json'
 import { getDb, PageProps } from '#/utils/server'
 
-import { cn } from '@/modules/components/shadcn/lib/utils'
 import { Plant } from '@/payload-types'
 
 import { getSeasonDisplayData, SeasonTag } from './utils'
@@ -16,7 +17,7 @@ export default async function HomePage(props: PageProps) {
 
 	const plants = await db.find({
 		collection: 'plants',
-		limit: 12,
+		limit: 18,
 		page: await getPageParam(props),
 		sort: 'name',
 	})
@@ -41,25 +42,9 @@ type PlantCardProps = {
 export function PlantCard({ plant, className }: PlantCardProps) {
 	const { tagClassName } = getSeasonDisplayData(plant.season)
 	return (
-		<Card
-			href={`/piante/${plant.slug}`}
-			image={true}
-			className={cn(
-				className,
-				'bg-white border-green-900 hover:border-green-900 hover:ring-2 ring-green-900 notebook',
-			)}
-			arrowClassName="text-green-900/20 group-hover:text-green-900"
-		>
-			<h3
-				className={cn(
-					'text-green-900',
-					'text-base text-balance font-medium transition-colors',
-					'leading-tight mb-1',
-				)}
-			>
-				{plant.name}
-			</h3>
-			<p className="text-xs italic text-green-900/70 text-balance mb-3">{plant.latin_name}</p>
+		<Card href={`/piante/${plant.slug}`} image={true} className={className}>
+			<T className="font-medium text-balance">{plant.name}</T>
+			<p className="text-xs text-primary/70 text-balance italic mb-3">{plant.latin_name}</p>
 			<SeasonTag season={plant.season} className={cn(tagClassName, '-translate-x-1')} />
 		</Card>
 	)

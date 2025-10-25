@@ -4,7 +4,7 @@ import { getPageParam } from '#/components/pagination'
 import it from '#/i18n/it.json'
 import { PageProps, getDb } from '#/utils/server'
 
-import { LinkButtonArrow } from '@/modules/components/link-button-arrow'
+import { LinkButtonArrow } from '#/components/link-button-arrow'
 
 //
 
