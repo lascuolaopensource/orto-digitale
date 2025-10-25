@@ -1,6 +1,5 @@
 import { Badge } from '#/components/badge'
 import it from '#/i18n/it.json'
-import { cn } from '$/lib/utils'
 
 import { Plant } from '@/payload-types'
 
@@ -9,34 +8,44 @@ import { Plant } from '@/payload-types'
 type Season = Plant['season']
 
 type SeasonDisplayData = {
-	bgClass: string
+	tagClassName: string
+	cardClassName: string
+	titleClassName: string
 	label: string
 }
 
 const seasonDisplayDataMap: Record<Season, SeasonDisplayData> = {
 	'spring-summer': {
-		bgClass: 'bg-yellow-500',
+		tagClassName: 'bg-yellow-200 text-yellow-800',
+		cardClassName: 'border-yellow-300 hover:border-yellow-400',
+		titleClassName: '',
 		label: it.plants.seasons.spring_summer,
 	},
 	'fall-winter': {
-		bgClass: 'bg-blue-500',
+		tagClassName: 'bg-sky-200 text-sky-800',
+		cardClassName: 'border-sky-300 hover:border-sky-400',
+		titleClassName: '',
 		label: it.plants.seasons.fall_winter,
 	},
 	'all-year': {
-		bgClass: 'bg-purple-500',
+		tagClassName: 'bg-lime-200 text-lime-900',
+		cardClassName: 'border-lime-400 hover:border-lime-500',
+		titleClassName: '',
 		label: it.plants.seasons.all_year,
 	},
 }
 
+export function getSeasonDisplayData(season: Season): SeasonDisplayData {
+	return seasonDisplayDataMap[season]
+}
+
 type SeasonTagProps = {
-	season: Season
+	children: React.ReactNode
 	className?: string
 }
 
 export function SeasonTag(props: SeasonTagProps) {
-	const { season, className } = props
-	const seasonDisplayData = seasonDisplayDataMap[season]
-	return (
-		<Badge className={cn(seasonDisplayData.bgClass, className)}>{seasonDisplayData.label}</Badge>
-	)
+	const { children, className } = props
+
+	return <Badge className={className}>{children}</Badge>
 }

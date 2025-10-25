@@ -1,4 +1,5 @@
 import { Navbar } from '#/components/navbar'
+import { Solway } from 'next/font/google'
 import React from 'react'
 
 import { getDb } from '@/modules/utils/server'
@@ -6,6 +7,12 @@ import { getDb } from '@/modules/utils/server'
 import './layout.css'
 
 //
+
+const crimsonPro = Solway({
+	subsets: ['latin'],
+	weight: ['300', '400', '500', '700', '800'],
+	variable: '--font-solway',
+})
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
 	const { children } = props
@@ -16,7 +23,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 	})
 
 	return (
-		<html lang="en">
+		<html lang="en" className={crimsonPro.className}>
 			<body>
 				<main className="min-h-screen flex flex-col">
 					<Navbar formUrl={meta.recipes_form_url} />

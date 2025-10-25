@@ -21,7 +21,7 @@ export function CollectionPage<Docs extends PaginatedDocs>(props: Props<Docs>) {
 	return (
 		<PageContainer className="space-y-8">
 			<div className="py-5 flex flex-col items-center justify-center">
-				<BoxedHeading tag="h1" className="text-center px-12!">
+				<BoxedHeading tag="h1" className="text-center">
 					{title}
 				</BoxedHeading>
 				{subtitle}

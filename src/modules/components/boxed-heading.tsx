@@ -19,8 +19,8 @@ export function BoxedHeading(props: Props) {
 	return (
 		<T
 			className={cn(
-				'bg-stone-100 border border-stone-200 rounded-lg p-2!',
-				'text-center',
+				'rounded-lg py-2!',
+				'text-center text-green-900 wavy',
 				randomRotationClass,
 				className,
 			)}

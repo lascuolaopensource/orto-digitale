@@ -10,30 +10,37 @@ type Props = {
 	href: string
 	className?: string
 	image?: boolean
+	arrowClassName?: string
 }
 
 export function Card(props: Props) {
-	const { children, href, className, image = true } = props
+	const { children, href, className, image = true, arrowClassName } = props
+	const [outerRotationClass, innerRotationClass] = getRandomRotationClass('lg')
 
 	return (
 		<Link
 			href={href}
 			className={cn(
-				'p-4 group flex justify-between items-center rounded-lg gap-4 bg-card',
+				'p-4 group rounded-lg bg-card',
 				'border border-gray-200 hover:border-gray-300 hover:shadow-sm',
-				getRandomRotationClass('lg'),
-				'transition-transform hover:z-10',
+				outerRotationClass,
+				'transition-transform hover:z-10 hover:-translate-1',
 				className,
 			)}
 		>
-			<div className="flex items-center gap-4">
-				{image && <FallbackImage />}
-				<div>{children}</div>
+			<div className={cn(innerRotationClass, 'flex justify-between items-center gap-5')}>
+				<div className="flex items-center gap-4">
+					{image && <FallbackImage />}
+					<div>{children}</div>
+				</div>
+				<ArrowRight
+					size={20}
+					className={cn(
+						'text-primary/20 transition-transform group-hover:translate-x-1 shrink-0',
+						arrowClassName,
+					)}
+				/>
 			</div>
-			<ArrowRight
-				size={24}
-				className="text-primary/20 transition-transform group-hover:translate-x-1"
-			/>
 		</Link>
 	)
 }
@@ -42,7 +49,7 @@ function FallbackImage() {
 	return (
 		<div
 			className={cn(
-				'shrink-0 h-16 w-16 rounded-lg overflow-hidden bg-gray-100',
+				'shrink-0 h-12 w-12 rounded-full overflow-hidden bg-orange-900/5',
 				'flex items-center justify-center',
 			)}
 		>
