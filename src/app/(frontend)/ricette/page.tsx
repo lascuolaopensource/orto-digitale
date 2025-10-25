@@ -16,6 +16,7 @@ export default async function HomePage(props: PageProps) {
 		page: await getPageParam(props),
 		select: {
 			name: true,
+			slug: true,
 		},
 	})
 
@@ -32,7 +33,7 @@ export default async function HomePage(props: PageProps) {
 			basePath="/ricette"
 			title={it.recipes.page_title}
 			item={(recipe) => (
-				<Card key={recipe.id} href={`/ricette/${recipe.id}`}>
+				<Card key={recipe.id} href={`/ricette/${recipe.slug}`}>
 					{recipe.name}
 				</Card>
 			)}

@@ -83,6 +83,7 @@ export const Plants: CollectionConfig = {
 			collection: 'recipes',
 			on: 'plants_used',
 			admin: { position: 'sidebar' },
+			defaultSort: F.name.name,
 		}),
 	],
 }

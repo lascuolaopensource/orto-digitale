@@ -20,15 +20,15 @@ type PageProps = {
 
 export default async function Page(props: PageProps) {
 	const db = await getDb()
-	const plantId = (await props.params)['plant-slug']
+	const plantSlug = (await props.params)['plant-slug']
 
 	const plant = getOne(
 		await db.find({
 			collection: 'plants',
 			depth: 2,
 			where: {
-				id: {
-					equals: plantId,
+				slug: {
+					equals: plantSlug,
 				},
 			},
 		}),
@@ -59,7 +59,7 @@ export default async function Page(props: PageProps) {
 							</BoxedHeading>
 							<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
 								{recipes.map((recipe) => (
-									<LinkButtonArrow key={recipe.id} href={`/ricette/${recipe.id}`}>
+									<LinkButtonArrow key={recipe.id} href={`/ricette/${recipe.slug}`}>
 										{recipe.name}
 									</LinkButtonArrow>
 								))}

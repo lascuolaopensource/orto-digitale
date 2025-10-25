@@ -72,6 +72,7 @@ export const Areas = {
 			label: "Piante nell'area",
 			collection: 'plants',
 			on: 'area',
+			defaultSort: F.name.name,
 			admin: {
 				defaultColumns: ['name'],
 			},

@@ -57,6 +57,7 @@ export function join<C extends Collection>(
 		...rest,
 		type: 'join',
 		collection,
+		defaultLimit: 0,
 		on: on as string,
 	}
 }

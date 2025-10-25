@@ -39,7 +39,7 @@ type PlantCardProps = {
 
 export function PlantCard({ plant, className }: PlantCardProps) {
 	return (
-		<Card href={`/piante/${plant.id}`} image={true} className={className}>
+		<Card href={`/piante/${plant.slug}`} image={true} className={className}>
 			<h3 className="text-base font-medium transition-colors group-hover:text-primary">
 				{plant.name}
 			</h3>

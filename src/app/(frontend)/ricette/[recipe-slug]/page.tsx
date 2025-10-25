@@ -16,14 +16,14 @@ type Props = {
 
 export default async function Page(props: Props) {
 	const db = await getDb()
-	const recipeId = (await props.params)['recipe-slug']
+	const recipeSlug = (await props.params)['recipe-slug']
 
 	const recipe = getOne(
 		await db.find({
 			collection: 'recipes',
 			where: {
-				id: {
-					equals: recipeId,
+				slug: {
+					equals: recipeSlug,
 				},
 			},
 		}),
