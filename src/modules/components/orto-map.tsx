@@ -90,7 +90,7 @@ export default function OrtoMap(props: Props) {
 								id={path.id}
 								d={path.d}
 								fill={path.fill}
-								className="group-hover:opacity-30 hover:opacity-100! transition-opacity duration-300 hover:cursor-pointer"
+								className="group-hover:opacity-30 hover:opacity-100! duration-300 hover:cursor-pointer transition-all"
 								onClick={() => onAreaClick(path.id)}
 							/>
 						))}
