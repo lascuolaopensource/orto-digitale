@@ -16,10 +16,10 @@ export function LinkButtonArrow(props: Props) {
 			href={href}
 			className={cn(
 				'group',
-				'flex justify-center items-center gap-1 ',
+				'flex justify-center items-center gap-1 transition-all',
 				'p-3 py-2 rounded-lg',
-				'bg-card text-orange-600 border border-orange-500',
-				'hover:ring-2 hover:ring-orange-600',
+				' text-rose-400 bg-rose-50 border border-rose-300',
+				'hover:ring-2',
 				className,
 			)}
 			target={external ? '_blank' : undefined}

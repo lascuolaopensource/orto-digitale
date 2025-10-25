@@ -39,17 +39,19 @@ type PlantCardProps = {
 }
 
 export function PlantCard({ plant, className }: PlantCardProps) {
-	const { tagClassName, label, cardClassName, titleClassName } = getSeasonDisplayData(plant.season)
+	const { tagClassName } = getSeasonDisplayData(plant.season)
 	return (
 		<Card
 			href={`/piante/${plant.slug}`}
 			image={true}
-			className={cn(className, cardClassName, 'bg-[#fef4e0]')}
+			className={cn(
+				className,
+				'bg-white border-green-900 hover:border-green-900 hover:ring-2 ring-green-900 notebook',
+			)}
 			arrowClassName="text-green-900/20 group-hover:text-green-900"
 		>
 			<h3
 				className={cn(
-					titleClassName,
 					'text-green-900',
 					'text-base text-balance font-medium transition-colors',
 					'leading-tight mb-1',
@@ -58,7 +60,7 @@ export function PlantCard({ plant, className }: PlantCardProps) {
 				{plant.name}
 			</h3>
 			<p className="text-xs italic text-green-900/70 text-balance mb-3">{plant.latin_name}</p>
-			<SeasonTag className={cn(tagClassName, '-translate-x-1')}>{label}</SeasonTag>
+			<SeasonTag season={plant.season} className={cn(tagClassName, '-translate-x-1')} />
 		</Card>
 	)
 }

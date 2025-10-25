@@ -44,9 +44,9 @@ export default async function Page(props: PageProps) {
 			<div className="flex items-center flex-col md:flex-row gap-10 md:items-start md:justify-center pt-10">
 				<InfoCard plant={plant} area={area} />
 
-				<div className="space-y-8 md:pt-20">
+				<div className="space-y-8">
 					<div>
-						<BoxedHeading tag="h2" className="rotate-1 mb-6">
+						<BoxedHeading tag="h2" className="rotate-1 mb-6 w-fit">
 							{it.tell_me_everything}
 						</BoxedHeading>
 						{plant.description && <RichText data={plant.description} />}
@@ -77,7 +77,7 @@ export default async function Page(props: PageProps) {
 function InfoCard(props: { plant: Plant; area: Area }) {
 	const { plant, area } = props
 	return (
-		<div className="-rotate-2 p-8 flex w-fit flex-col items-center gap-3 bg-stone-100 border border-stone-200 rounded-lg">
+		<div className="-rotate-2 p-8 flex w-fit flex-col items-center gap-3 bg-white notebook border border-green-900 rounded-lg md:sticky md:top-0">
 			<div className="size-56 rounded-full block bg-stone-300 mb-2"></div>
 			<T tag="h2">{plant.name}</T>
 			<InfoContainer label={it.plants.scientific_name}>

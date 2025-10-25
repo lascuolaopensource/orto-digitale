@@ -39,7 +39,7 @@ export default async function HomePage(props: PageProps) {
 			)}
 			subtitle={
 				<div className="pt-6">
-					<LinkButtonArrow href={recipes_form_url} className="w-fit">
+					<LinkButtonArrow href={recipes_form_url} className="w-fit -rotate-1 hover:-rotate-2">
 						{it.Suggest_a_recipe}
 					</LinkButtonArrow>
 				</div>

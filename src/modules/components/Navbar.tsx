@@ -1,7 +1,5 @@
 'use client'
 
-import it from '#/i18n/it.json'
-import { getRandomRotationClass } from '#/utils'
 import { Button } from '$/components/ui/button'
 import { Drawer, DrawerClose, DrawerContent, DrawerTitle } from '$/components/ui/drawer'
 import { cn } from '$/lib/utils'
@@ -31,10 +29,6 @@ export function Navbar(props: Props) {
 		{ href: '/piante', text: '🌱 Piante' },
 		{ href: '/ricette', text: '🍽️ Ricette' },
 	]
-
-	if (formUrl) {
-		navbarLinks.push({ href: formUrl, text: `💬 ${it.Suggest_a_recipe}`, external: true })
-	}
 
 	return (
 		<>
@@ -91,9 +85,9 @@ export function Navbar(props: Props) {
 
 function buttonClasses() {
 	return cn(
-		'border border-red-500 p-2 rounded-lg block w-fit bg-card',
-		'text-sm font-medium text-primary hover:text-primary/80',
-		'transition-transform hover:bg-red-400 hover:text-white hover:z-10 cursor-pointer',
+		'p-2 rounded-lg block w-fit',
+		'text-sm font-medium text-green-900',
+		'transition-transform hover:bg-green-900 hover:text-white hover:z-10 cursor-pointer',
 	)
 }
 
@@ -117,7 +111,7 @@ function NavbarLink(props: NavbarLinkProps) {
 			className={cn(
 				buttonClasses(),
 				className,
-				isHydrated ? getRandomRotationClass('md') : undefined,
+				// isHydrated ? getRandomRotationClass('md') : undefined,
 			)}
 			onClick={onClick}
 			target={external ? '_blank' : undefined}
