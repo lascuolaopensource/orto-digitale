@@ -9,16 +9,14 @@ const footerLinks = [
 
 export default async function Footer() {
 	return (
-		<footer className="bg-green-900 text-white grow">
+		<footer className="bg-green-900 text-white grow mt-20">
 			<div className="mx-auto max-w-7xl px-8 py-6">
 				<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
 					{/* Left side: Links */}
 					<ul className="flex flex-wrap items-center gap-x-4 gap-y-2">
 						{footerLinks.map(({ title, href }) => (
 							<li key={title}>
-								<Link href={href} className="text-sm text-muted-foreground hover:text-foreground">
-									{title}
-								</Link>
+								<Link href={href}>{title}</Link>
 							</li>
 						))}
 					</ul>
