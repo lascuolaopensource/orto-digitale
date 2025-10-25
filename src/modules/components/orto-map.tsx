@@ -191,37 +191,35 @@ function SeasonSwitch({ className, ...props }: SeasonSwitchProps) {
 			data-slot="switch"
 			className={cn(
 				'data-[state=checked]:bg-yellow-500 data-[state=unchecked]:bg-sky-500',
-				'flex w-[138px] shrink-0 items-center p-[4px]',
-				'rounded-lg border border-transparent shadow-xs outline-none focus-visible:ring-[3px]',
+				'flex w-42 shrink-0 items-center p-1',
+				'rounded-lg border border-transparent shadow-xs outline-none focus-visible:ring-[1rem]',
 				'disabled:cursor-not-allowed disabled:opacity-50',
 				'focus-visible:border-ring focus-visible:ring-ring/50',
-				'peer transition-all relative',
+				'peer transition-all relative group',
 				className,
 			)}
 			{...props}
 		>
-			<span className={cn('absolute opacity-45 top-[4px] left-[4px]', thumbBaseClasses)}>
-				{it.winter}
-			</span>
-			<span className={cn('absolute opacity-45 top-[4px] right-[4px]', thumbBaseClasses)}>
-				{it.summer}
-			</span>
-
 			<SwitchPrimitive.Thumb
 				data-slot="switch-thumb"
 				className={cn(
-					'data-[state=checked]:translate-x-[64px] data-[state=unchecked]:translate-x-0 transition-transform',
+					'data-[state=checked]:translate-x-20 data-[state=unchecked]:translate-x-0 transition-transform',
 					'bg-background pointer-events-none block rounded-md ring-0',
-					'w-[64px] px-2 py-0.5 flex items-center justify-center',
-					'group',
 					thumbBaseClasses,
 				)}
-			>
-				<span className="group-data-[state=checked]:hidden">{it.winter}</span>
-				<span className="group-data-[state=unchecked]:hidden">{it.summer}</span>
-			</SwitchPrimitive.Thumb>
+			/>
+			<div className="absolute top-0 left-0 w-full h-full p-1 flex">
+				<span
+					className={cn('opacity-45 group-data-[state=unchecked]:opacity-100', thumbBaseClasses)}
+				>
+					{it.winter}
+				</span>
+				<span className={cn('opacity-45 group-data-[state=checked]:opacity-100', thumbBaseClasses)}>
+					{it.summer}
+				</span>
+			</div>
 		</SwitchPrimitive.Root>
 	)
 }
 
-const thumbBaseClasses = 'w-[64px] px-2 py-0.5 flex items-center justify-center'
+const thumbBaseClasses = 'w-20 px-2 h-8 flex items-center justify-center'
