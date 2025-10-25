@@ -10,7 +10,7 @@ const footerLinks = [
 export default async function Footer() {
 	return (
 		<footer className="bg-green-900 text-white grow mt-20">
-			<div className="mx-auto max-w-7xl px-8 py-6">
+			<div className="mx-auto max-w-7xl px-8 py-6 pt-20">
 				<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
 					{/* Left side: Links */}
 					<ul className="flex flex-wrap items-center gap-x-4 gap-y-2">

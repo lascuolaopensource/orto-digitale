@@ -1,32 +1,30 @@
-import { getRandomRotationClass } from '#/utils'
+import { getRandomRotationClass, LinkProps } from '#/utils'
 import { cn } from '$/lib/utils'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 //
 
-type Props = {
-	children: React.ReactNode
-	href: string
-	className?: string
+type Props = LinkProps & {
 	image?: boolean
-	arrowClassName?: string
 }
 
 export function Card(props: Props) {
-	const { children, href, className, image = true, arrowClassName } = props
+	const { children, href, className, image = true, ...rest } = props
 	const [outerRotationClass, innerRotationClass] = getRandomRotationClass('lg')
 
 	return (
 		<Link
 			href={href}
 			className={cn(
-				'p-4 group rounded-lg bg-card',
-				'border border-gray-200 hover:border-gray-300 hover:shadow-sm',
+				'p-4 group rounded-lg bg-card transition-all',
+				'border border-primary',
+				'hover:border-primary hover:shadow-sm',
 				outerRotationClass,
-				'transition-transform hover:z-10 hover:-translate-1',
+				'hover:z-10 hover:-translate-1 hover:ring-2 hover:ring-primary',
 				className,
 			)}
+			{...rest}
 		>
 			<div className={cn(innerRotationClass, 'flex justify-between items-center gap-5')}>
 				<div className="flex items-center gap-4">
@@ -35,10 +33,7 @@ export function Card(props: Props) {
 				</div>
 				<ArrowRight
 					size={20}
-					className={cn(
-						'text-primary/20 transition-transform group-hover:translate-x-1 shrink-0',
-						arrowClassName,
-					)}
+					className="text-primary/20 transition-transform group-hover:translate-x-1 group-hover:text-primary shrink-0"
 				/>
 			</div>
 		</Link>
