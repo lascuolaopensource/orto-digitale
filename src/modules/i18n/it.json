@@ -1,12 +1,12 @@
 {
 	"recipes": {
 		"page_title": "Scopri le nostre ricette!",
-		"back_to_recipes": "Torna alle ricette",
+		"back_to_recipes": "Tutte le ricette",
 		"plants_used": "Piante utilizzate"
 	},
 	"discover": {
 		"page_title": "Scopri l'orto!",
-		"back": "Indietro",
+		"back": "Tutte le aree",
 		"plants": "Qui trovi queste piante:"
 	},
 	"back": "Indietro",
@@ -17,7 +17,7 @@
 	"plants_count": "piante",
 	"plants": {
 		"page_title": "Scopri le nostre piante!",
-		"back_to_plants": "Torna alle piante",
+		"back_to_plants": "Tutte le piante",
 		"season": "Stagione",
 		"you_find_in": "Puoi trovarla in",
 		"scientific_name": "Nome scientifico",

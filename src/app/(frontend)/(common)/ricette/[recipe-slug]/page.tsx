@@ -1,10 +1,11 @@
 import { BackLink } from '#/components/backlink'
-import { BoxedHeading } from '#/components/boxed-heading'
 import { PageContainer } from '#/components/page-container'
-import { RichText } from '#/components/richtext'
-import { T } from '#/components/t'
 import it from '#/i18n/it.json'
 import { getDb, getOne, getRecords } from '#/utils/server'
+
+import { BoxedHeading } from '@/modules/components/boxed-heading'
+import { RichText } from '@/modules/components/richtext'
+import { T } from '@/modules/components/t'
 
 import { PlantCard } from '../../piante/page'
 
@@ -35,19 +36,19 @@ export default async function Page(props: Props) {
 		<PageContainer className="max-w-4xl space-y-10">
 			<BackLink href="/ricette">{it.recipes.back_to_recipes}</BackLink>
 			<div className="flex flex-col sm:flex-row items-start gap-10">
-				<div className="bg-white border border-green-900 rounded-lg notebook -mx-2 sm:mx-0 p-6 -rotate-1">
+				<div className="bg-white max-w-lg border border-primary/30 rounded-lg notebook -mx-2 sm:mx-0 p-6 -rotate-1">
 					<div className="space-y-10">
-						<BoxedHeading tag="h1" className="w-fit -rotate-1">
+						<BoxedHeading tag="h1" className="rotate-0">
 							{recipe.name}
 						</BoxedHeading>
-						{recipe.description && <RichText data={recipe.description} className="max-w-xl" />}
+						{recipe.description && <RichText data={recipe.description} />}
 					</div>
 				</div>
 
 				{plants.length > 0 && (
-					<div className="space-y-2 w-full sm:w-auto pt-20">
+					<div className="space-y-2 w-full sm:w-auto sm:pt-30">
 						<T tag="h3">{it.recipes.plants_used}</T>
-						<div className="space-y-1">
+						<div className="flex flex-col gap-4 pt-2">
 							{plants.map((plant) => (
 								<PlantCard key={plant.id} plant={plant} />
 							))}

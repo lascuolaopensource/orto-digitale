@@ -1,3 +1,4 @@
+import type { ArrowBigDown } from 'lucide-react'
 import type Link from 'next/link'
 import type { ComponentProps } from 'react'
 
@@ -34,3 +35,4 @@ export function getRandomRotationClass(amplitude: Amplitude = 'md'): [string, st
 //
 
 export type LinkProps = ComponentProps<typeof Link>
+export type IconComponent = ComponentProps<typeof ArrowBigDown>

@@ -4,6 +4,7 @@ import { CollectionPage } from '#/components/collection-page'
 import { T } from '#/components/t'
 import it from '#/i18n/it.json'
 import { getDb, getRecords } from '#/utils/server'
+import { Milestone } from 'lucide-react'
 
 import { Area } from '@/payload-types'
 
@@ -33,7 +34,7 @@ export default async function HomePage() {
 function AreaCard({ area }: { area: Area }) {
 	const plants = getRecords(area.plants?.docs)
 	return (
-		<Card href={`/scopri/${area.key}`}>
+		<Card href={`/scopri/${area.key}`} icon={<Milestone />}>
 			<T>{area.name}</T>
 			{plants.length > 0 && (
 				<Badge className="bg-primary/10 text-primary mt-1">

@@ -1,10 +1,10 @@
 import { Card } from '#/components/card'
 import { CollectionPage } from '#/components/collection-page'
+import { LinkButtonArrow } from '#/components/link-button-arrow'
 import { getPageParam } from '#/components/pagination'
 import it from '#/i18n/it.json'
 import { PageProps, getDb } from '#/utils/server'
-
-import { LinkButtonArrow } from '#/components/link-button-arrow'
+import { UtensilsCrossed } from 'lucide-react'
 
 //
 
@@ -33,7 +33,7 @@ export default async function HomePage(props: PageProps) {
 			basePath="/ricette"
 			title={it.recipes.page_title}
 			item={(recipe) => (
-				<Card key={recipe.id} href={`/ricette/${recipe.slug}`}>
+				<Card key={recipe.id} href={`/ricette/${recipe.slug}`} icon={<UtensilsCrossed />}>
 					{recipe.name}
 				</Card>
 			)}

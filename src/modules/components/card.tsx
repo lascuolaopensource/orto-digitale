@@ -7,10 +7,11 @@ import Link from 'next/link'
 
 type Props = LinkProps & {
 	image?: boolean
+	icon?: React.ReactNode
 }
 
 export function Card(props: Props) {
-	const { children, href, className, image = true, ...rest } = props
+	const { children, href, className, image = true, icon = <LeafIcon />, ...rest } = props
 	const [outerRotationClass, innerRotationClass] = getRandomRotationClass('lg')
 
 	return (
@@ -26,7 +27,7 @@ export function Card(props: Props) {
 		>
 			<div className={cn(innerRotationClass, 'flex justify-between items-center gap-5')}>
 				<div className="flex items-center gap-4 text-primary">
-					{image && <FallbackImage />}
+					{image && <FallbackImage>{icon}</FallbackImage>}
 					<div>{children}</div>
 				</div>
 				<ArrowRight
@@ -38,7 +39,8 @@ export function Card(props: Props) {
 	)
 }
 
-function FallbackImage() {
+function FallbackImage(props: { children: React.ReactNode }) {
+	const { children } = props
 	return (
 		<div
 			className={cn(
@@ -46,7 +48,7 @@ function FallbackImage() {
 				'flex items-center justify-center',
 			)}
 		>
-			<LeafIcon />
+			{children}
 		</div>
 	)
 }

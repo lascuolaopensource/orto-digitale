@@ -27,7 +27,7 @@ export async function BackLink({ href, children, className }: BackLinkProps) {
 			href={actualHref}
 			className={cn(
 				'flex gap-1 items-center',
-				'text-sm font-medium text-primary transition-colors hover:text-primary/80 hover:underline',
+				'text-sm font-medium text-primary transition-colors hover:text-primary-foreground hover:bg-primary p-2 rounded-lg w-fit',
 				className,
 			)}
 		>
