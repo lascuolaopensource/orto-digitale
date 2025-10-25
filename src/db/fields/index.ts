@@ -1,4 +1,3 @@
-import type { Area, Media, Plant, Recipe, User } from '@/payload-types'
 import {
 	CollectionSlug,
 	JoinField,
@@ -7,6 +6,8 @@ import {
 	TextField,
 	UploadField,
 } from 'payload'
+
+import type { Area, Media, Plant, Recipe, User } from '@/payload-types'
 
 //
 

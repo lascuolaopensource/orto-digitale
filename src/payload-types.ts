@@ -241,6 +241,11 @@ export interface Plant {
     };
     [k: string]: unknown;
   } | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
   latin_name: string;
   season: 'spring-summer' | 'fall-winter' | 'all-year';
   area: number | Area;
@@ -275,6 +280,11 @@ export interface Recipe {
     };
     [k: string]: unknown;
   } | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
   plants_used?: (number | Plant)[] | null;
   updatedAt: string;
   createdAt: string;
@@ -409,6 +419,8 @@ export interface AreasSelect<T extends boolean = true> {
 export interface PlantsSelect<T extends boolean = true> {
   name?: T;
   description?: T;
+  generateSlug?: T;
+  slug?: T;
   latin_name?: T;
   season?: T;
   area?: T;
@@ -424,6 +436,8 @@ export interface PlantsSelect<T extends boolean = true> {
 export interface RecipesSelect<T extends boolean = true> {
   name?: T;
   description?: T;
+  generateSlug?: T;
+  slug?: T;
   plants_used?: T;
   updatedAt?: T;
   createdAt?: T;

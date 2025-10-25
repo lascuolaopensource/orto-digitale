@@ -4,6 +4,7 @@ import { arrayShuffle } from 'array-shuffle'
 import frontMatter from 'front-matter'
 import fs from 'fs'
 import { CollectionSlug, getPayload, Payload } from 'payload'
+import slugify from 'slugify'
 import z from 'zod'
 
 import { Area, Plant, Recipe } from '@/payload-types'
@@ -76,6 +77,7 @@ async function createPlants(payload: Payload, markdownConverter: MarkdownConvert
 				area: area.id,
 				season: meta.season as never,
 				description: content,
+				slug: generateSlug(meta.name),
 			},
 		})
 		plantsRecords.push(plantRecord)
@@ -102,6 +104,7 @@ async function createRecipes(
 			data: {
 				name: meta.name,
 				description: content,
+				slug: generateSlug(meta.name),
 				plants_used: arrayShuffle(plants)
 					.slice(0, 3)
 					.map((plant) => plant.id),
@@ -163,3 +166,7 @@ async function createMarkdownConverter() {
 }
 
 type MarkdownConverter = Awaited<ReturnType<typeof createMarkdownConverter>>
+
+function generateSlug(text: string) {
+	return slugify(text, { lower: true, strict: true, trim: true, locale: 'it' })
+}

@@ -1,5 +1,6 @@
+import { slugField, type CollectionConfig } from 'payload'
+
 import * as F from '@/db/fields'
-import type { CollectionConfig } from 'payload'
 
 export const Recipes: CollectionConfig = {
 	slug: 'recipes',
@@ -16,6 +17,10 @@ export const Recipes: CollectionConfig = {
 	fields: [
 		F.name,
 		F.description,
+		slugField({
+			fieldToUse: F.name.name,
+			position: 'sidebar',
+		}),
 		F.relation({
 			name: 'plants_used',
 			label: 'Piante utilizzate',

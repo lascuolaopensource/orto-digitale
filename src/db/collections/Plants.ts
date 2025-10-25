@@ -1,6 +1,7 @@
+import { slugField, type CollectionConfig } from 'payload'
+
 import * as F from '@/db/fields'
 import { Plant } from '@/payload-types'
-import type { CollectionConfig } from 'payload'
 
 //
 
@@ -20,6 +21,10 @@ export const Plants: CollectionConfig = {
 	fields: [
 		F.name,
 		F.description,
+		slugField({
+			fieldToUse: F.name.name,
+			position: 'sidebar',
+		}),
 
 		{
 			name: 'latin_name',

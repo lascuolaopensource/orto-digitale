@@ -1,11 +1,11 @@
 ---
-name: "Peperoncino"
-latinName: "Pyrus communis L."
-zoning: "serra"
-season: "spring-summer"
+name: 'Pero'
+latinName: 'Pyrus communis L.'
+zoning: 'serra'
+season: 'spring-summer'
 ---
 
-## 
+##
 
 Il pero appartiene alla famiglia delle Rosacee.
 
@@ -14,12 +14,12 @@ continente, era conosciuta già dai greci e dai romani. cresce
 spontaneamente nei boschi di tutta Europa.
 
 Il pero è un albero deciduo che può raggiungere anche i 15
-metri di altezza se non viene potato. Le foglie** **sono ovali,
+metri di altezza se non viene potato. Le foglie\*\* **sono ovali,
 di colore verde intenso sulla pagina superiore, più chiaro su quella
 inferiore. La fioritura inizia a fine marzo e dura circa tre settimane.
 I** **fiori sono di colore bianco, dotati di cinque petali, e riuniti in
 corimbi. Dopo la fioritura compaiono i frutti che maturano da giugno a
-ottobre a seconda della varietà. Le varietà** ** più coltivate sono:
+ottobre a seconda della varietà. Le varietà** \*\* più coltivate sono:
 William, Kaiser, Abate, Decana, Conference e Santa Maria.
 
 Il pero è una pianta che richiede per il suo sviluppo molta luce e
@@ -48,12 +48,12 @@ zinco e rame sono presenti in buone quantità.
 
 Ha proprietà antiossidanti, rafforza il sistema immunitario, è una
 valida alleata della salute della pelle, del
-cuore** **e delle ossa. La buccia della pera, invece**, **è ricca di
+cuore\*\* **e delle ossa. La buccia della pera, invece**, \*\*è ricca di
 fitonutrienti che garantiscono un valido apporto di acidi grassi sani
 e hanno capacità antinfiammatorie e protettive contro diverse forme
 tumorali.
 
-È un valido supporto per l'intestino** **grazie all'alto contenuto di
+È un valido supporto per l'intestino\*\* \*\*grazie all'alto contenuto di
 fibre, contribuendo e migliorando la motilità intestinale.
 
 **Curiosità**

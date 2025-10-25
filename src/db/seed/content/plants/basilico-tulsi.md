@@ -1,5 +1,5 @@
 ---
-name: 'Basilico'
+name: 'Basilico Tulsi'
 latinName: 'Ocinum sanctum (o anche Ocimum tenuiflorum)'
 zoning: 'percorso-aromatico'
 season: 'spring-summer'

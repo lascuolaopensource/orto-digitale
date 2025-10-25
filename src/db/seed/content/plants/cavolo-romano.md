@@ -1,8 +1,8 @@
 ---
-name: "Cavolo Cappuccio"
-latinName: "Brassica capitata L."
-zoning: "serra"
-season: "fall-winter"
+name: 'Cavolo Romano'
+latinName: 'Brassica capitata L.'
+zoning: 'serra'
+season: 'fall-winter'
 ---
 
 È una specie botanica della grande famiglia delle Brassicacee, molto
