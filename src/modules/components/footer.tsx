@@ -7,9 +7,9 @@ const footerLinks = [
 	},
 ]
 
-export default function Footer() {
+export default async function Footer() {
 	return (
-		<footer className="">
+		<footer className="bg-green-900 text-white grow">
 			<div className="mx-auto max-w-7xl px-8 py-6">
 				<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
 					{/* Left side: Links */}

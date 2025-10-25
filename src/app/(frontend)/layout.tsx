@@ -1,8 +1,7 @@
 import { Navbar } from '#/components/navbar'
+import { getDb } from '#/utils/server'
 import { Solway } from 'next/font/google'
 import React from 'react'
-
-import { getDb } from '@/modules/utils/server'
 
 import './layout.css'
 
@@ -28,7 +27,6 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 				<main className="min-h-screen flex flex-col">
 					<Navbar formUrl={meta.recipes_form_url} />
 					{children}
-					{/* <Footer /> */}
 				</main>
 			</body>
 		</html>

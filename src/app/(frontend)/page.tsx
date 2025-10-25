@@ -21,11 +21,11 @@ export default async function HomePage() {
 				'xl:flex-col xl:max-w-7xl xl:mx-auto xl:overflow-auto xl:w-full',
 			)}
 		>
-			<OrtoMap areas={docs} className="h-[calc(100svh-102px)] xl:h-auto">
+			<OrtoMap areas={docs} className="h-[calc(100svh-6.5rem)] xl:h-auto">
 				<div className="flex items-center gap-6 pr-6">
-					<ArrowBigDown size={40} className="animate-bounce rotate-90 text-green-900" />
+					<ArrowBigDown size={40} className="animate-bounce rotate-90 text-primary" />
 					<div className="flex flex-col items-end">
-						<BoxedHeading tag="h2" className="w-fit mb-2 translate-x-2">
+						<BoxedHeading tag="h1" className="w-fit mb-2 translate-x-2">
 							Scopri l'orto!
 						</BoxedHeading>
 						<T className="max-w-[300px] text-balance text-right">

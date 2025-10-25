@@ -5,15 +5,12 @@ import { Drawer, DrawerClose, DrawerContent, DrawerTitle } from '$/components/ui
 import { cn } from '$/lib/utils'
 import { MenuIcon, XIcon } from 'lucide-react'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+
+import { LinkProps } from '../utils'
+import { T } from './t'
 
 //
-
-type Link = {
-	href: string
-	text: string
-	external?: boolean
-}
 
 type Props = {
 	formUrl?: string | null
@@ -23,27 +20,34 @@ export function Navbar(props: Props) {
 	const { formUrl } = props
 	const [open, setOpen] = useState(false)
 
-	const navbarLinks: Link[] = [
-		{ href: '/about', text: '👤 About' },
-		{ href: '/scopri', text: "🍱 Scopri l'orto" },
-		{ href: '/piante', text: '🌱 Piante' },
-		{ href: '/ricette', text: '🍽️ Ricette' },
+	const navbarLinks: LinkProps[] = [
+		{ href: '/about', title: '👤 About' },
+		{ href: '/scopri', title: "🍱 Scopri l'orto" },
+		{ href: '/piante', title: '🌱 Piante' },
+		{ href: '/ricette', title: '🍽️ Ricette' },
+		{
+			href: formUrl ?? '',
+			title: '💬 Proponi una ricetta',
+			target: '_blank',
+			className: 'visible sm:hidden',
+		},
 	]
 
 	return (
 		<>
 			<div>
 				<div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
-					<NavbarLink href="/" text="🏠 Home" />
+					<NavbarLink href="/" title="🏠 Home" />
 
 					<div className="space-x-0.5 hidden md:flex">
 						{navbarLinks.map((link) => (
-							<NavbarLink key={link.href} {...link} />
+							<NavbarLink key={link.href.toString()} {...link} />
 						))}
 					</div>
 
 					<Button
 						onClick={() => setOpen(true)}
+						variant={'ghost'}
 						className={cn(buttonClasses(), 'md:hidden flex items-center cursor-pointer')}
 					>
 						<MenuIcon size={24} />
@@ -53,24 +57,27 @@ export function Navbar(props: Props) {
 			</div>
 
 			<Drawer open={open} onOpenChange={setOpen} direction="right">
-				<DrawerContent className="min-h-[50vh] p-6">
+				<DrawerContent className="min-h-[50vh] p-6" aria-describedby={undefined}>
 					<DrawerTitle asChild>
 						<div className="flex items-center justify-between">
-							<p>Menu</p>
+							<T className="text-primary">Menu</T>
 							<DrawerClose asChild>
-								<Button className={buttonClasses()}>
+								<Button
+									variant="default"
+									className={cn(buttonClasses(), 'text-primary-foreground hover:bg-primary/90')}
+								>
 									<XIcon />
 								</Button>
 							</DrawerClose>
 						</div>
 					</DrawerTitle>
 
-					<div className="space-y-2 pt-6">
+					<div className="flex flex-col gap-2 items-center pt-6">
 						{navbarLinks.map((link) => (
 							<NavbarLink
-								key={link.href}
+								key={link.href.toString()}
 								{...link}
-								className="w-full text-center"
+								className="text-center border w-full max-w-[300px] bg-primary text-primary-foreground hover:bg-primary/90"
 								onClick={() => setOpen(false)}
 							/>
 						))}
@@ -83,40 +90,20 @@ export function Navbar(props: Props) {
 
 //
 
-function buttonClasses() {
-	return cn(
-		'p-2 rounded-lg block w-fit',
-		'text-sm font-medium text-green-900',
-		'transition-transform hover:bg-green-900 hover:text-white hover:z-10 cursor-pointer',
+function NavbarLink(props: LinkProps) {
+	const { className, title, ...rest } = props
+	return (
+		<Link className={cn(buttonClasses(), className)} title={title} {...rest}>
+			{title}
+		</Link>
 	)
 }
 
-type NavbarLinkProps = Link & {
-	className?: string
-	onClick?: () => void
-	external?: boolean
-}
-
-function NavbarLink(props: NavbarLinkProps) {
-	const { href, text, className, onClick, external } = props
-
-	const [isHydrated, setIsHydrated] = useState(false)
-	useEffect(() => {
-		setIsHydrated(true)
-	}, [])
-
-	return (
-		<Link
-			href={href}
-			className={cn(
-				buttonClasses(),
-				className,
-				// isHydrated ? getRandomRotationClass('md') : undefined,
-			)}
-			onClick={onClick}
-			target={external ? '_blank' : undefined}
-		>
-			{text}
-		</Link>
+function buttonClasses() {
+	return cn(
+		'p-2 rounded-lg block w-fit cursor-pointer',
+		'font-medium text-primary hover:bg-primary hover:text-primary-foreground',
+		'hover:-rotate-2 transition-transform',
+		'select-none',
 	)
 }

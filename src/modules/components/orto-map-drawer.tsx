@@ -20,14 +20,16 @@ export function OrtoMapDrawer(props: Props) {
 
 	return (
 		<Drawer open={open} onOpenChange={setOpen}>
-			<DrawerContent className="min-h-[50vh]">
-				<div className="mx-auto max-w-lg p-6 overflow-y-auto flex flex-col items-center gap-6">
-					<DrawerTitle asChild>
-						<BoxedHeading tag="h1" className="w-fit">
-							{area?.name}
-						</BoxedHeading>
-					</DrawerTitle>
-					{area?.description && <RichText data={area.description} />}
+			<DrawerContent className="min-h-[50vh] [&>:first-child]:bg-primary">
+				<div className="overflow-y-auto">
+					<div className="flex mx-auto max-w-lg flex-col items-center gap-6 p-6 ">
+						<DrawerTitle asChild>
+							<BoxedHeading tag="h1" className="w-fit">
+								{area?.name}
+							</BoxedHeading>
+						</DrawerTitle>
+						{area?.description && <RichText data={area.description} />}
+					</div>
 				</div>
 			</DrawerContent>
 		</Drawer>

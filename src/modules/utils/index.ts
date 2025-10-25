@@ -1,3 +1,8 @@
+import type Link from 'next/link'
+import type { ComponentProps } from 'react'
+
+//
+
 export function getRandomItem<T>(array: T[]): T {
 	return array[Math.floor(Math.random() * array.length)]
 }
@@ -25,3 +30,7 @@ export function getRandomRotationClass(amplitude: Amplitude = 'md'): [string, st
 
 	return getRandomItem(rotationClasses.slice(0, sizeToIndex[amplitude]))
 }
+
+//
+
+export type LinkProps = ComponentProps<typeof Link>

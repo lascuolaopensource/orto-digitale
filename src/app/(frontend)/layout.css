@@ -52,8 +52,8 @@ html {
 	--card-foreground: oklch(0.147 0.004 49.25);
 	--popover: oklch(1 0 0);
 	--popover-foreground: oklch(0.147 0.004 49.25);
-	--primary: oklch(0.216 0.006 56.043);
-	--primary-foreground: oklch(0.985 0.001 106.423);
+	--primary: var(--color-green-900);
+	--primary-foreground: var(--color-white);
 	--secondary: oklch(0.97 0.001 106.424);
 	--secondary-foreground: oklch(0.216 0.006 56.043);
 	--muted: oklch(0.97 0.001 106.424);
@@ -120,7 +120,7 @@ html {
 		@apply border-border outline-ring/50;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-background text-primary;
 	}
 }
 
@@ -129,17 +129,17 @@ html {
 }
 
 @utility prose {
-	--tw-prose-headings: var(--color-green-900);
-}
-
-.wavy {
-	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='6'><path d='M0,3 Q5,0 10,3 T20,3' fill='none' stroke='oklch(39.3% 0.095 152.535)' stroke-width='3'/></svg>");
-	background-repeat: repeat-x;
-	background-position: bottom;
-	background-size: 20px 6px; /* Adjust wavelength and amplitude */
+	--tw-prose-headings: var(--primary);
 }
 
 @layer components {
+	.wavy {
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='6'><path d='M0,3 Q5,0 10,3 T20,3' fill='none' stroke='oklch(39.3% 0.095 152.535)' stroke-width='3'/></svg>");
+		background-repeat: repeat-x;
+		background-position: bottom;
+		background-size: 20px 6px; /* Adjust wavelength and amplitude */
+	}
+
 	.notebook {
 		position: relative;
 
