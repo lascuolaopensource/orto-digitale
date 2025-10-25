@@ -32,18 +32,20 @@ export default async function Page(props: Props) {
 	const plants = getRecords(recipe.plants_used)
 
 	return (
-		<PageContainer className="max-w-4xl">
+		<PageContainer className="max-w-4xl space-y-10">
 			<BackLink href="/ricette">{it.recipes.back_to_recipes}</BackLink>
-			<div className="py-10">
-				<BoxedHeading tag="h1" className="w-fit">
-					{recipe.name}
-				</BoxedHeading>
-			</div>
 			<div className="flex flex-col sm:flex-row items-start gap-10">
-				{recipe.description && <RichText data={recipe.description} className="max-w-xl" />}
+				<div className="bg-white border border-green-900 rounded-lg notebook -mx-2 sm:mx-0 p-6 -rotate-1">
+					<div className="space-y-10">
+						<BoxedHeading tag="h1" className="w-fit -rotate-1">
+							{recipe.name}
+						</BoxedHeading>
+						{recipe.description && <RichText data={recipe.description} className="max-w-xl" />}
+					</div>
+				</div>
 
 				{plants.length > 0 && (
-					<div className="space-y-2 w-full sm:w-auto">
+					<div className="space-y-2 w-full sm:w-auto pt-20">
 						<T tag="h3">{it.recipes.plants_used}</T>
 						<div className="space-y-1">
 							{plants.map((plant) => (

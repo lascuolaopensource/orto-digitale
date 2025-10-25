@@ -16,7 +16,7 @@ export default async function HomePage() {
 	return (
 		<PageContainer>
 			<div className="max-w-xl mx-auto pt-5">
-				<BoxedHeading tag="h1" className="-rotate-2 mb-8">
+				<BoxedHeading tag="h1" className="-rotate-2 mb-8 w-fit">
 					{it.about_us}
 				</BoxedHeading>
 				<RichText data={about.description} />

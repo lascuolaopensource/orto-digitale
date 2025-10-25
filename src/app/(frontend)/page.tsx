@@ -22,8 +22,8 @@ export default async function HomePage() {
 			)}
 		>
 			<OrtoMap areas={docs} className="h-[calc(100svh-102px)] xl:h-auto">
-				<div className="flex items-center gap-8 pr-6">
-					<ArrowBigDown size={40} className="animate-bounce rotate-90" />
+				<div className="flex items-center gap-6 pr-6">
+					<ArrowBigDown size={40} className="animate-bounce rotate-90 text-green-900" />
 					<div className="flex flex-col items-end">
 						<BoxedHeading tag="h2" className="w-fit mb-2 translate-x-2">
 							Scopri l'orto!
@@ -31,6 +31,7 @@ export default async function HomePage() {
 						<T className="max-w-[300px] text-balance text-right">
 							Clicca su un'area colorata
 							<br /> per scoprire di più!
+							<br /> <span className="text-xs italic">(scrolla a sinistra se serve)</span>
 						</T>
 					</div>
 				</div>

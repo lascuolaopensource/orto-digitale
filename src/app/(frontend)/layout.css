@@ -128,9 +128,26 @@ html {
 	--font-serif: var(--font-solway);
 }
 
+@utility prose {
+	--tw-prose-headings: var(--color-green-900);
+}
+
 .wavy {
 	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='6'><path d='M0,3 Q5,0 10,3 T20,3' fill='none' stroke='oklch(39.3% 0.095 152.535)' stroke-width='3'/></svg>");
 	background-repeat: repeat-x;
 	background-position: bottom;
 	background-size: 20px 6px; /* Adjust wavelength and amplitude */
+}
+
+@layer components {
+	.notebook {
+		position: relative;
+
+		--line-height: 28px;
+		--line-color: rgba(0, 0, 0, 0.06);
+		--margin-size: 44px;
+
+		background-image: linear-gradient(to bottom, var(--line-color) 1px, transparent 1px);
+		background-size: 100% var(--line-height);
+	}
 }
