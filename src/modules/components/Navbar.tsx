@@ -7,7 +7,7 @@ import { Drawer, DrawerClose, DrawerContent, DrawerTitle } from '$/components/ui
 import { cn } from '$/lib/utils'
 import { MenuIcon, XIcon } from 'lucide-react'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 //
 
@@ -94,7 +94,6 @@ function buttonClasses() {
 		'border border-red-500 p-2 rounded-lg block w-fit bg-card',
 		'text-sm font-medium text-primary hover:text-primary/80',
 		'transition-transform hover:bg-red-400 hover:text-white hover:z-10 cursor-pointer',
-		getRandomRotationClass('md'),
 	)
 }
 
@@ -106,10 +105,20 @@ type NavbarLinkProps = Link & {
 
 function NavbarLink(props: NavbarLinkProps) {
 	const { href, text, className, onClick, external } = props
+
+	const [isHydrated, setIsHydrated] = useState(false)
+	useEffect(() => {
+		setIsHydrated(true)
+	}, [])
+
 	return (
 		<Link
 			href={href}
-			className={cn(buttonClasses(), className)}
+			className={cn(
+				buttonClasses(),
+				className,
+				isHydrated ? getRandomRotationClass('md') : undefined,
+			)}
 			onClick={onClick}
 			target={external ? '_blank' : undefined}
 		>
