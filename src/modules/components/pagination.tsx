@@ -9,7 +9,6 @@ import {
 	PaginationPrevious,
 	Pagination as RootPagination,
 } from '$/components/ui/pagination'
-import { Array } from 'Effect'
 
 //
 
@@ -26,7 +25,7 @@ export async function Pagination(props: PaginationProps) {
 	const hasMultiplePages = totalPages > 1
 	if (!hasMultiplePages) return null
 
-	const range = Array.range(1, totalPages)
+	const range = Array.from({ length: totalPages }, (_, i) => i + 1)
 
 	function getPageUrl(page: number) {
 		return `${props.basePath}?${PAGE_PARAM}=${page}`
@@ -63,6 +62,6 @@ export async function getPageParam(pageProps: PageProps) {
 	const searchParams = await pageProps.searchParams
 	if (!(searchParams && PAGE_PARAM in searchParams)) return 1
 	const page = searchParams[PAGE_PARAM]
-	if (!page || Array.isArray(page)) return 1
+	if (!page || typeof page === 'object') return 1
 	return parseInt(page)
 }
