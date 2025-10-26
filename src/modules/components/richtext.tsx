@@ -13,7 +13,7 @@ export function RichText(props: Props) {
 	return (
 		<RichTextConverter
 			{...rest}
-			className={cn(className, 'prose text-green-900 prose-strong:text-green-900')}
+			className={cn(className, 'prose text-primary prose-strong:text-primary')}
 			// converters={jsxConverter}
 		/>
 	)

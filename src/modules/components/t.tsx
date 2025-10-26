@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import React from 'react'
 
-const textVariants = cva('text-green-900', {
+const textVariants = cva('', {
 	variants: {
 		tag: {
 			h1: 'scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl',

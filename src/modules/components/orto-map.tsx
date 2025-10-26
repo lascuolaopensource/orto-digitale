@@ -190,12 +190,12 @@ function SeasonSwitch({ className, ...props }: SeasonSwitchProps) {
 		<SwitchPrimitive.Root
 			data-slot="switch"
 			className={cn(
-				'data-[state=checked]:bg-yellow-500 data-[state=unchecked]:bg-sky-500',
+				'data-[state=checked]:bg-amber-200 data-[state=unchecked]:bg-blue-300',
 				'flex w-42 shrink-0 items-center p-1',
 				'rounded-lg border border-transparent shadow-xs outline-none focus-visible:ring-[1rem]',
 				'disabled:cursor-not-allowed disabled:opacity-50',
 				'focus-visible:border-ring focus-visible:ring-ring/50',
-				'peer transition-all relative group',
+				'peer transition-all relative group cursor-pointer hover:ring-2 hover:ring-amber-400',
 				className,
 			)}
 			{...props}
@@ -203,18 +203,28 @@ function SeasonSwitch({ className, ...props }: SeasonSwitchProps) {
 			<SwitchPrimitive.Thumb
 				data-slot="switch-thumb"
 				className={cn(
-					'data-[state=checked]:translate-x-20 data-[state=unchecked]:translate-x-0 transition-transform',
-					'bg-background pointer-events-none block rounded-md ring-0',
+					'data-[state=checked]:translate-x-20 data-[state=unchecked]:translate-x-0',
+					'bg-white pointer-events-none block ring-0',
 					thumbBaseClasses,
 				)}
 			/>
 			<div className="absolute top-0 left-0 w-full h-full p-1 flex">
 				<span
-					className={cn('opacity-45 group-data-[state=unchecked]:opacity-100', thumbBaseClasses)}
+					className={cn(
+						'group-data-[state=unchecked]:opacity-100',
+						thumbBaseClasses,
+						thumbTextClasses,
+					)}
 				>
 					{it.winter}
 				</span>
-				<span className={cn('opacity-45 group-data-[state=checked]:opacity-100', thumbBaseClasses)}>
+				<span
+					className={cn(
+						'group-data-[state=checked]:opacity-100',
+						thumbBaseClasses,
+						thumbTextClasses,
+					)}
+				>
 					{it.summer}
 				</span>
 			</div>
@@ -222,4 +232,5 @@ function SeasonSwitch({ className, ...props }: SeasonSwitchProps) {
 	)
 }
 
-const thumbBaseClasses = 'w-20 px-2 h-8 flex items-center justify-center'
+const thumbBaseClasses = 'w-20 px-2 h-8 flex items-center justify-center rounded-md transition-all'
+const thumbTextClasses = 'opacity-45 group-hover:opacity-100 group-hover:bg-white/30'

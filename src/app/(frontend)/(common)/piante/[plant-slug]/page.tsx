@@ -92,7 +92,7 @@ function InfoCard(props: { plant: Plant; area: Area }) {
 			<InfoContainer label={it.plants.you_find_in} className="gap-1 self-stretch">
 				<LinkButtonArrow
 					href={`/scopri/${area.key}`}
-					className="bg-white text-orange-600 border border-orange-600 hover:bg-orange-600 hover:text-white font-medium"
+					className="bg-white text-accent border border-accent hover:bg-accent hover:text-accent-foreground font-medium"
 				>
 					{area.name}
 				</LinkButtonArrow>

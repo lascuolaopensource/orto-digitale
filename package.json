@@ -17,7 +17,7 @@
 		"test:e2e": "cross-env NODE_OPTIONS=\"--no-deprecation --no-experimental-strip-types\" pnpm exec playwright test",
 		"test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts",
 		"db:seed": "cross-env NODE_OPTIONS=--no-deprecation payload run src/db/seed/index.ts",
-		"db:purge": "rm orto-digitale.db"
+		"db:purge": "rm data/orto-digitale.db"
 	},
 	"dependencies": {
 		"@payloadcms/db-sqlite": "3.60.0",

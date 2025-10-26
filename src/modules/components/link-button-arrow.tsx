@@ -17,7 +17,7 @@ export function LinkButtonArrow(props: Props) {
 			className={cn(
 				'group',
 				'flex justify-center items-center gap-1 transition-all',
-				'px-4 py-2 rounded-lg bg-orange-500 text-white font-bold',
+				'px-4 py-2 rounded-lg bg-accent text-accent-foreground font-bold',
 				className,
 			)}
 			target={external ? '_blank' : undefined}

@@ -1,9 +1,8 @@
 import { Navbar } from '#/components/navbar'
+import { cn } from '#/components/shadcn/lib/utils'
 import { getDb } from '#/utils/server'
 import { Solway } from 'next/font/google'
 import React from 'react'
-
-import { cn } from '#/components/shadcn/lib/utils'
 
 import './layout.css'
 
