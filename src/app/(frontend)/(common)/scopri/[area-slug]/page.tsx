@@ -2,11 +2,10 @@ import { BackLink } from '#/components/backlink'
 import { BoxedHeading } from '#/components/boxed-heading'
 import { PageContainer } from '#/components/page-container'
 import { PageGrid } from '#/components/page-grid'
+import { PlantCard } from '#/components/plant-card'
 import { RichText } from '#/components/richtext'
 import it from '#/i18n/it.json'
 import { getDb, getOne, getRecords } from '#/utils/server'
-
-import { PlantCard } from '../../piante/page'
 
 //
 

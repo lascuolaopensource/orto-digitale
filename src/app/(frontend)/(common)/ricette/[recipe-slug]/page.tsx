@@ -1,13 +1,12 @@
 import { BackLink } from '#/components/backlink'
 import { PageContainer } from '#/components/page-container'
+import { PlantCard } from '#/components/plant-card'
 import it from '#/i18n/it.json'
 import { getDb, getOne, getRecords } from '#/utils/server'
 
 import { BoxedHeading } from '@/modules/components/boxed-heading'
 import { RichText } from '@/modules/components/richtext'
 import { T } from '@/modules/components/t'
-
-import { PlantCard } from '../../piante/page'
 
 //
 

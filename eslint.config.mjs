@@ -1,5 +1,6 @@
 import { FlatCompat } from '@eslint/eslintrc'
 import perfectionist from 'eslint-plugin-perfectionist'
+import { globalIgnores } from 'eslint/config'
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -13,6 +14,7 @@ const compat = new FlatCompat({
 })
 
 const eslintConfig = [
+	globalIgnores(['./src/app/(payload)/*']),
 	...compat.extends('next/typescript'),
 	{
 		rules: {
