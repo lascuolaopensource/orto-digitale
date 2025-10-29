@@ -14,6 +14,7 @@ COPY package.json pnpm-lock.yaml ./
 RUN corepack enable pnpm && pnpm i --frozen-lockfile
 
 RUN ls
+RUN echo "@@@@"
 
 
 # Rebuild the source code only when needed
