@@ -13,10 +13,6 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 RUN corepack enable pnpm && pnpm i --frozen-lockfile
 
-RUN ls
-RUN echo "@@@@"
-
-
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
@@ -27,6 +23,8 @@ COPY . .
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
+
+VOLUME ["/app/data"]
 
 RUN corepack enable pnpm && pnpm run build
 
