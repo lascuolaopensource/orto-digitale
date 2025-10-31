@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2025 Forkbomb BV
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+services:
+  credimi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+    environment:
+      - DATABASE_URI=file:/app/data/orto-digitale.db
+      - PAYLOAD_SECRET=sal324gjh3gj4k7ftfjkhagsdhla8rwyi2gjkkjrlewjhro329493qrhjekwlhr
+      - MEDIA_DIR=/app/data/files/media
+      - NEXT_PUBLIC_URL=${NEXT_PUBLIC_URL:-https://orto-digitale.lascuolaopensource.eu}
+    ports:
+      - 3000:3000
+    volumes:
+      - ./data/:/app/data
