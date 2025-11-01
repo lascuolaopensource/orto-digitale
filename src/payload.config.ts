@@ -27,7 +27,11 @@ export default buildConfig({
 	collections: [Users, Media, Areas, Plants, Recipes],
 	globals: [About, Meta],
 
-	db: db(),
+	db: postgresAdapter({
+		pool: {
+			connectionString: process.env.DATABASE_URI || '',
+		},
+	}),
 	plugins: [s3()],
 
 	admin: {
