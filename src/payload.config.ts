@@ -1,7 +1,7 @@
 // storage-adapter-import-placeholder
 
 import { postgresAdapter } from '@payloadcms/db-postgres'
-import { sqliteAdapter } from '@payloadcms/db-sqlite'
+// import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { s3Storage } from '@payloadcms/storage-s3'
 import { it } from '@payloadcms/translations/languages/it'
@@ -52,24 +52,24 @@ export default buildConfig({
 	},
 })
 
-function env<T>(props: { prod: T; dev: T }) {
-	return process.env.NODE_ENV === 'production' ? props.prod : props.dev
-}
+// function env<T>(props: { prod: T; dev: T }) {
+// 	return process.env.NODE_ENV === 'production' ? props.prod : props.dev
+// }
 
-function db() {
-	return env({
-		prod: postgresAdapter({
-			pool: {
-				connectionString: process.env.DATABASE_URI || '',
-			},
-		}),
-		dev: sqliteAdapter({
-			client: {
-				url: process.env.DATABASE_URI || '',
-			},
-		}),
-	})
-}
+// function db() {
+// 	return env({
+// 		prod: postgresAdapter({
+// 			pool: {
+// 				connectionString: process.env.DATABASE_URI || '',
+// 			},
+// 		}),
+// 		dev: sqliteAdapter({
+// 			client: {
+// 				url: process.env.DATABASE_URI || '',
+// 			},
+// 		}),
+// 	})
+// }
 
 function s3() {
 	return s3Storage({
