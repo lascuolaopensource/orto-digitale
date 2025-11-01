@@ -75,10 +75,7 @@ function s3() {
 	return s3Storage({
 		disableLocalStorage: true,
 		collections: {
-			[Media.slug]: {
-				disableLocalStorage: true,
-				prefix: 'media',
-			},
+			[Media.slug]: true,
 		},
 		bucket: process.env.S3_BUCKET!,
 		enabled: process.env.NODE_ENV === 'production',
