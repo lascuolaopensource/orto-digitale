@@ -9,6 +9,8 @@ import { getDb, getOne, getRecords } from '#/utils/server'
 
 //
 
+export const dynamic = 'force-dynamic'
+
 type Props = {
 	params: Promise<{ 'area-slug': string }>
 }

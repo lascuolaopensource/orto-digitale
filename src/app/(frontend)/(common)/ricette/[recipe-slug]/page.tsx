@@ -10,6 +10,8 @@ import { T } from '@/modules/components/t'
 
 //
 
+export const dynamic = 'force-dynamic'
+
 type Props = {
 	params: Promise<{ 'recipe-slug': string }>
 }

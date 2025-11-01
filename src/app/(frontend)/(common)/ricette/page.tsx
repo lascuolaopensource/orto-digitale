@@ -8,6 +8,8 @@ import { UtensilsCrossed } from 'lucide-react'
 
 //
 
+export const dynamic = 'force-dynamic'
+
 export default async function HomePage(props: PageProps) {
 	const db = await getDb()
 

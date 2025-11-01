@@ -15,6 +15,8 @@ import { SeasonTag } from '../utils'
 
 //
 
+export const dynamic = 'force-dynamic'
+
 type PageProps = {
 	params: Promise<{ 'plant-slug': string }>
 }
