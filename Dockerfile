@@ -27,6 +27,7 @@ COPY . .
 # ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN corepack enable pnpm
+RUN ls
 RUN pnpm db:seed
 RUN pnpm run build
 
